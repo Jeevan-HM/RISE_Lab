@@ -23,7 +23,7 @@ We are part of [School of Manufacturing Systems and Networks](https://msn.engine
     </ol>
 
     <!-- Items -->
-    <div class="carousel-inner" markdown="0">
+    <div class="carousel-inner" markdown="0" style="height:500px">
 
         <div class="item active">
             <img src="{{ site.url }}{{ site.baseurl }}/images/slide/groupphoto.jpg" alt="RISE Lab Group Photo" />
