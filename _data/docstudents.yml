@@ -37,6 +37,11 @@
   link2:
     url: https://yzgarrard.github.io/
     display: Website
+    
+- name: Valentin Gaucher
+  photo: sundevil.jpg
+  info: Sys. Eng., 2024-
+  email: vgaucher@asu.edu
 
 - name: Tolemy Nibi
   photo: sundevil.jpg

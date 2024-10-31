@@ -33,9 +33,9 @@ Unmanned aerial vehicles (UAVs) are popular in various applications, such as aer
 	> Software-in-the-Loop Simulation of Aerial Robots
   </summary>
   <h4>Goal</h4>
-  Make a simulation pipeline to rapidly test algorithms for aerial robots
+  Make a simulation pipeline to rapidly test algorithms for aerial robots.
   <h4>Project Description</h4>
-  Integrate controllers using ROS2 into a simulation environment with Ardupilot and PX4 flight controllers
+  Integrate controllers using ROS2 into a simulation environment with Ardupilot and PX4 flight controllers.
 </details>
 
 <details>
@@ -43,9 +43,9 @@ Unmanned aerial vehicles (UAVs) are popular in various applications, such as aer
     > Contact Based Soft Aerial Robots
   </summary>
   <h4>Goal</h4>
-To exploit the physical contact between the multi-rotor drone and its environment for better control and  manipulation and higher safety
+To exploit the physical contact between the multi-rotor drone and its environment for better control and  manipulation and higher safety.
 <h4>Project Description</h4>
-Developing various compliant multi-rotor drones for passive resilience in contacts, detecting the contacts via different sensing methods. Modeling and simulation of contacts/collisions between drones and their physical environment
+Developing various compliant multi-rotor drones for passive resilience in contacts, detecting the contacts via different sensing methods. Modeling and simulation of contacts/collisions between drones and their physical environment.
 
 </details>
 
@@ -54,7 +54,7 @@ Developing various compliant multi-rotor drones for passive resilience in contac
     > Contact Based Safe Navigation for Aerial Robots
   </summary>
 <h4>Goal</h4>
-To exploit the physical contact between the multi-rotor drone and its environment for better control, motion planning and higher safety
+To exploit the physical contact between the multi-rotor drone and its environment for better control, motion planning and higher safety.
 <h4>Project Description</h4>
 Developing a safe planning and control algorithm for collision based efficient navigation. Building a simulator for RL based planning integrating contact model and recovery controller. 
 
@@ -78,7 +78,7 @@ Soft robotics is reshaping the future of technology by developing flexible, adap
     > Soft Robotic Arm
   </summary>
 <h4>Goal</h4> 
-Modeling and control of Soft Robotic Arm 
+Modeling and control of Soft Robotic Arm.
 <h4>Project Description</h4> 
 Work on pneumatically operated soft robotic arm to test, train and implement models and develop control algorithms to achieve tasks including but not limited to trajectory tracking.
 
@@ -105,7 +105,7 @@ To evaluate the effect of exosuit during flexion and extension, surface electrom
 Designed to handle obstacles within the pipes. The large bistable actuator located in the center of the robot generates impact force, allowing it to push away or break through obstructions. The smaller bistable actuators at the head and tail can adapt to diameter changes in pipes. 
 <h4>Projects related to this work including</h4>
 Improving bistable structure (materials, fabrication methods.etc) to make it more reliable and robust
-Control the robot to perform a jumping gait inside the pipe
+Control the robot to perform a jumping gait inside the pipe.
 
 </details>
 </div>
@@ -114,7 +114,7 @@ Control the robot to perform a jumping gait inside the pipe
 ## Human-Robot Interaction
 
 <div class="col-sm-6 clearfix">
-Robots are increasingly employed in close proximity to humans. For the humans and robots to collaborate safely and efficiently, a robot needs to understand human intents, predict human actions, consider human factors, in order to optimize its own actions to complete a task with human safely, efficiently, and friendly. Here we will explore a game-theoretic framework to model the bilateral inference and decision making process between the human and robot. We are interested in both proximal and physical tasks that involve joint decision-making and joint-action between the human and robot. One major challenge is to model the human actions in highly dynamic tasks given the strong variability and uncertainty of humans. We will apply the developed algorithms in various human-robot collaboration scenarios, including autonomous vehicles, collaborative manufacturing, wearable robots, and assistive devices. For more details about how we apply the developed algorithms to autonomous vehicles, please check this page.
+Robots are increasingly employed in close proximity to humans. For the humans and robots to collaborate safely and efficiently, a robot needs to understand human intents, predict human actions, consider human factors, in order to optimize its own actions to complete a task with human safely, efficiently, and friendly. Here we will explore a game-theoretic framework to model the bilateral inference and decision making process between the human and robot. We are interested in both proximal and physical tasks that involve joint decision-making and joint-action between the human and robot. One major challenge is to model the human actions in highly dynamic tasks given the strong variability and uncertainty of humans. We will apply the developed algorithms in various human-robot collaboration scenarios, including autonomous vehicles, collaborative manufacturing, wearable robots, and assistive devices. For more details about how we apply the developed algorithms to autonomous vehicles, please check [this page](../nri.html).
 </div>
 <div class="col-sm-6 clearfix">
 ![]({{ site.url }}{{ site.baseurl }}/images/respic/hri/lab_website_all-HRI_all.png){: style="width: 95%; float: right; border: 10px"}
@@ -127,9 +127,9 @@ Robots are increasingly employed in close proximity to humans. For the humans an
     > Prospect-Theoretic Reinforcement Learning in Overcooked
   </summary>
   <h4>Goal</h4>
-Make AI better understand human preferences and decisions to make AI better able to assist
+Make AI better understand human preferences and decisions to make AI better able to assist.
 <h4>Project Description</h4>
-Integrate risk-aware cognitive models (CPT) into interactive AI planning in an Overcooked environment
+Integrate risk-aware cognitive models (CPT) into interactive AI planning in an Overcooked environment.
 
 </details>
 
@@ -143,7 +143,7 @@ for physical human-robot interactions scenario
 such as controlling assistive wearable robots. 
 <h4>Project Description</h4>
 We are aiming to integrate incomplete information
-	games With optimal control and reinforcement learning
+	games with optimal control and reinforcement learning
 to infer the human intent during HRI tasks and also model
 the possible learning process of the human while interacting
 with the robot.
@@ -157,7 +157,7 @@ with the robot.
  <h4>Goal</h4>
 Apply smart algorithms in vehicular systems to interpret and predict human actions for improved intent inference and assistance.
 <h4>Project Description</h4>
-Design and implement human models, algorithms on standard bicycles and simulated autonomous vehicles to provide advance warning of obstacles and collisions
+Design and implement human models, algorithms on standard bicycles and simulated autonomous vehicles to provide advance warning of obstacles and collisions.
 
 </details>
 </div>
