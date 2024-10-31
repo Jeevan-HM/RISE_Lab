@@ -35,6 +35,8 @@ function openCity(evt, cityName) {
 <h2 style="text-align:center"> Human-Robot Interaction</h2>
 Robots are increasingly employed in close proximity to humans. For the humans and robots to collaborate safely and efficiently, a robot needs to understand human intents, predict human actions, consider human factors, in order to optimize its own actions to complete a task with human safely, efficiently, and friendly. Here we will explore a game-theoretic framework to model the bilateral inference and decision making process between the human and robot. We are interested in both proximal and physical tasks that involve joint decision-making and joint-action between the human and robot. One major challenge is to model the human actions in highly dynamic tasks given the strong variability and uncertainty of humans. We will apply the developed algorithms in various human-robot collaboration scenarios, including autonomous vehicles, collaborative manufacturing, wearable robots, and assistive devices. For more details about how we apply the developed algorithms to autonomous vehicles, please check this page.
 
+<p>hello</p>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSSR6tQiWEjARDXLetuap_K8NM6HorZh8NCsHr5JdYAsuRDOf5GmisTFUZkItpAHtYB3TBGnJyJP6dH/embed?start=false&loop=true" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 <table style="width:100%;height:600px">
 <tr>
 <td style="width:80%">

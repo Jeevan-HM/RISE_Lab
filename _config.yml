@@ -24,6 +24,8 @@ sass:
 
 # Conversion
 markdown: kramdown
+kramdown:
+  parse_block_html: true
 highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"

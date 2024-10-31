@@ -37,6 +37,11 @@
   link2:
     url: https://yzgarrard.github.io/
     display: Website
+    
+- name: Valentin Gaucher
+  photo: sundevil.jpg
+  info: Sys. Eng., 2024-
+  email: vgaucher@asu.edu
 
 - name: Tolemy Nibi
   photo: sundevil.jpg
@@ -47,7 +52,7 @@
 
 - name: Jahnav Rokalaboina
   photo: Jahnav.jpg
-  info: R&AS, 2022-
+  info: R&AS, 2024-
   email: asu.edu
   link:
     url: https://www.linkedin.com/in/jahnav-rokalaboina
