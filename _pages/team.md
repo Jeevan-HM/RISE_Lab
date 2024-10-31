@@ -8,7 +8,7 @@ permalink: /team/
 
 # Group Members
 
- **If you are interested in joining our lab as an undergraduate or masters student, pleas fill out [this form](https://forms.gle/eeDiRDo6nhceJv2K9).** **!**
+ **If you are interested in joining our lab as an undergraduate or masters student, please fill out [this form](https://forms.gle/eeDiRDo6nhceJv2K9).** **!**
 
 
 Jump to [faculty](#faculty), [graduate students](#graduate-students), [undergradaute students](#undergraduate-students), [alumni](#alumni).
