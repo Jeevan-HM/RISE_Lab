@@ -100,6 +100,7 @@ To evaluate the effect of exosuit during flexion and extension, surface electrom
   <summary>
     > Pipe Inspection Robot
   </summary>
+  <h4>Goal</h4>
   This pipe inspection robot consists of several bistable inflatable fabric actuators, enabling it to navigate pipes of various sizes (4-6 inches in diameter) using inchworm locomotion.
 <h4>Project Description</h4>
 Designed to handle obstacles within the pipes. The large bistable actuator located in the center of the robot generates impact force, allowing it to push away or break through obstructions. The smaller bistable actuators at the head and tail can adapt to diameter changes in pipes. 
