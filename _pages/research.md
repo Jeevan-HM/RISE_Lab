@@ -125,18 +125,17 @@ Robots are increasingly employed in close proximity to humans. For the humans an
 <div class="col-sm-12 clearfix">
 <details>
   <summary>
-    > Prospect-Theoretic Reinforcement Learning in Overcooked
+    > Prospect-Theoretic Reinforcement Learning
   </summary>
   <h4>Goal</h4>
 Make AI better understand human preferences and decisions to make AI better able to assist.
 <h4>Project Description</h4>
 Integrate risk-aware cognitive models (CPT) into interactive AI planning in an Overcooked environment.
-
 </details>
 
 <details>
   <summary>
-    > Game Theoretical Modeling of Physical Human-Robot Interactions
+    > Game Theoretical Modeling of Human-Robot Interactions
   </summary>
   <h4>Goal</h4>
 Developing a game theoretical based controller
@@ -144,23 +143,12 @@ for physical human-robot interactions scenario
 such as controlling assistive wearable robots. 
 <h4>Project Description</h4>
 We are aiming to integrate incomplete information
-	games with optimal control and reinforcement learning
+games with optimal control and reinforcement learning
 to infer the human intent during HRI tasks and also model
 the possible learning process of the human while interacting
 with the robot.
-
 </details>
 
-<details>
-  <summary>
-    > Assistive and Autonomous Vehicles
-  </summary>
- <h4>Goal</h4>
-Apply smart algorithms in vehicular systems to interpret and predict human actions for improved intent inference and assistance.
-<h4>Project Description</h4>
-Design and implement human models, algorithms on standard bicycles and simulated autonomous vehicles to provide advance warning of obstacles and collisions.
-
-</details>
 </div>
 
 <p> &nbsp; </p>
