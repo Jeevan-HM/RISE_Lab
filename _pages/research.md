@@ -178,7 +178,7 @@ Control the robot to perform a jumping gait inside the pipe.
 [Design, Characterization, and Dynamic Modeling of BEAST: a Bistable Elastomeric Actuator for Swift Tasks](https://ieeexplore.ieee.org/abstract/document/9762223)
 </div>
 <div class="col-sm-6 clearfix">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4QxHrXKJn4M?si=pcX88zSsp6uS9ZO2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="100%" height="256" src="https://www.youtube.com/embed/4QxHrXKJn4M?si=pcX88zSsp6uS9ZO2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 </details>
 </div>
