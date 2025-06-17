@@ -37,6 +37,8 @@ permalink: /publications/
  </div>
 </div>
 
+<script src="https://bibbase.org/show?bib=https%3A%2F%2Fjonathanbush.github.io%2Fdownloads%2Ftest.bib&jsonp=1"></script>
+
 {% assign number_printed = number_printed | plus: 1 %}
 
 {% if even_odd == 1 %}
