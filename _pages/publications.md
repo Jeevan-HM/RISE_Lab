@@ -11,6 +11,8 @@ permalink: /publications/
 
 <script src="https://bibbase.org/show?bib=https://home.riselab.info/downloads/citations.bib&jsonp=1"></script>
 
+{% comment %}
+
 (For a list of selected journal papers and recent conference papers, see [below](#full-list). A full list of publications can be viewed through [Google Scholar](https://scholar.google.com/citations?user=S2xHIfoAAAAJ&hl=en))
 
 {% comment %}
@@ -81,3 +83,5 @@ permalink: /publications/
 
 {% endfor %}
 </div>
+
+{% endcomment %}
