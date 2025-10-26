@@ -9,8 +9,9 @@ permalink: /publications/
 
 # Publications
 
-<script src="https://bibbase.org/show?bib=https://jonathanbush.github.io/downloads/test.bib&jsonp=1"></script>
-<script src="https://bibbase.org/show?bib=http://www.statistica.it/gianluca/Publications/mypubs.bib&theme=simple&authorFirst=1&group0=year&jsonp=1"></script>
+<script src="https://bibbase.org/show?bib=https://home.riselab.info/downloads/citations.bib&jsonp=1"></script>
+
+{% comment %}
 
 (For a list of selected journal papers and recent conference papers, see [below](#full-list). A full list of publications can be viewed through [Google Scholar](https://scholar.google.com/citations?user=S2xHIfoAAAAJ&hl=en))
 
@@ -82,3 +83,5 @@ permalink: /publications/
 
 {% endfor %}
 </div>
+
+{% endcomment %}
