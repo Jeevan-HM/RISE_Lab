@@ -251,6 +251,24 @@ Jump to [faculty](#faculty), [graduate students](#graduate-students), [undergrad
 </div>
 {% endif %}
 
+## Openings
+### PhD Student in Soft Robotics
+The Robotics and Intelligent Systems Laboratory at the Ira A. Fulton Schools of Engineering, Arizona State University (ASU), invites applications for a fully-funded PhD position starting in Spring 2026 or Fall 2026. The applicant should have a BS or MS degree in mechanical engineering, computer science, or a related field. The project is at the intersection of control systems, robot learning, and soft robotics. Self-motivated students with a strong background in one or more of the following disciplines are encouraged to apply:
+- Dynamic modeling and control of soft robots
+- Design optimization, fabrication, and integration of soft robotic actuators
+- Reinforcement learning, motion planning, and human-in-the-loop optimization
+
+The successful candidates will have opportunities to conduct both analytical and hands-on research, publish papers in professional journals, make presentations at major academic conferences, and serve as mentors for undergraduate research projects. Evidence of abilities to work in collaborative teams and good communication skills (oral and written) is essential.
+
+[More Info](../downloads/opening_phd_2025.pdf)
+
+### Postdoctoral Researcher
+The Robotics and Intelligent Systems Laboratory at the Ira A. Fulton Schools of Engineering, Arizona State University (ASU), invites applications for an open postdoctoral researcher position, with the earliest start date being January 2026. Initial appointment will be for one year, which may be renewed pending satisfactory performance and availability of funding. The applicant should have a PhD degree in mechanical engineering, computer science, or a related field.
+
+The successful candidate will have opportunities to work on design, planning, and control of soft robots in various applications, such as walking assistance, in-pipe inspection, and aerial monitoring and manipulation. We are looking for candidates with a strong background in one or more areas: 1) robot modeling and planning in contact-rich settings, 2) dynamic modeling and high-fidelity simulation of soft robots, and 3) physics-informed machine learning in robot modeling and control.
+
+[More Info](../downloads/opening_postdoc_2025.pdf)
+
 ## Alumni
 
 <div class="row">
