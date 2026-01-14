@@ -9,17 +9,9 @@
 #  education4:
 
 
-- name: Baowen (Aaron) Huang
-  photo: sundevil.jpg
-  info: Mechatronics, Robotics, and Automation Engineering, 2021-
-
 - name: Matthew Herdegen
   photo: sundevil.jpg
   info: Aerospace, Aeronautical and Astronautical Engineering, 2022-
-
-- name: Chach Chaimongkol
-  photo: sundevil.jpg
-  info: Mechatronics, Robotics, and Automation Engineering, 2021-
 
 - name: Raj Kodithyala
   photo: sundevil.jpg
@@ -28,3 +20,7 @@
 - name: Colin Fricke
   photo: Colin_Fricke.jpeg
   info: Robotics Engineering, 2021-
+  
+- name: Ash Srivastava
+  photo: AshSrivastava.jpg
+  info: Computer Science, 2025-
