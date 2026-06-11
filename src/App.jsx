@@ -58,7 +58,6 @@ function Navbar({ labName, theme, toggleTheme }) {
           <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle Theme" style={{ background: 'none', color: 'var(--text-primary)', display: 'flex', alignItems: 'center' }}>
             {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
           </button>
-          <Link to="/admin" className="nav-cta">Admin</Link>
           <button className="nav-hamburger" onClick={() => setMenuOpen(o => !o)} aria-label="Toggle menu">
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -79,7 +78,6 @@ function Navbar({ labName, theme, toggleTheme }) {
               {l.label}
             </NavLink>
           ))}
-          <Link to="/admin" className="nav-link" style={{ padding: '10px 14px', color: 'var(--color-gold)' }}>Admin</Link>
         </div>
       )}
     </nav>
