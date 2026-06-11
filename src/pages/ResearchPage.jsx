@@ -42,7 +42,7 @@ function ProjectItem({ project }) {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
               </div>
             ) : project.image ? (
-              <img src={`/images/${project.image}`} alt={project.title}
+              <img src={`${import.meta.env.BASE_URL}images/${project.image}`} alt={project.title}
                 style={{ width: '100%', borderRadius: 'var(--r-md)', objectFit: 'cover', maxHeight: 240 }} />
             ) : null}
           </div>
@@ -58,14 +58,14 @@ export default function ResearchPage({ data }) {
   const area = areas[active];
 
   const funders = [
-    { name: 'NSF', src: '/images/logopic/NSF_logo.svg' },
-    { name: 'AFOSR', src: '/images/logopic/AFOSR.png' },
-    { name: 'ONR', src: '/images/logopic/ONR.png' },
-    { name: 'NASA', src: '/images/logopic/NASA_seal.svg' },
-    { name: 'SFAz', src: '/images/logopic/sfaz.png' },
-    { name: 'ADHS', src: '/images/logopic/ADHS-ABRC-full-v_3cc.png' },
-    { name: 'Honeywell', src: '/images/logopic/Honeywell_logo.svg' },
-    { name: 'NGC', src: '/images/logopic/ngc.svg' },
+    { name: 'NSF', src: `${import.meta.env.BASE_URL}images/logopic/NSF_logo.svg` },
+    { name: 'AFOSR', src: `${import.meta.env.BASE_URL}images/logopic/AFOSR.png` },
+    { name: 'ONR', src: `${import.meta.env.BASE_URL}images/logopic/ONR.png` },
+    { name: 'NASA', src: `${import.meta.env.BASE_URL}images/logopic/NASA_seal.svg` },
+    { name: 'SFAz', src: `${import.meta.env.BASE_URL}images/logopic/sfaz.png` },
+    { name: 'ADHS', src: `${import.meta.env.BASE_URL}images/logopic/ADHS-ABRC-full-v_3cc.png` },
+    { name: 'Honeywell', src: `${import.meta.env.BASE_URL}images/logopic/Honeywell_logo.svg` },
+    { name: 'NGC', src: `${import.meta.env.BASE_URL}images/logopic/ngc.svg` },
   ];
 
   return (
@@ -101,8 +101,10 @@ export default function ResearchPage({ data }) {
                   <p style={{ color: 'var(--text-secondary)', lineHeight: 1.8 }}>{area.overview}</p>
                 </div>
                 {area.image && (
-                  <img src={`/images/${area.image}`} alt={area.title}
-                    onError={e => { e.target.style.display = 'none'; }} />
+                  <div className="project-image-wrapper">
+                    <img src={`${import.meta.env.BASE_URL}images/${area.image}`} alt={area.title} loading="lazy"
+                         onError={e => { e.target.style.display = 'none'; }} />
+                  </div>
                 )}
               </div>
 

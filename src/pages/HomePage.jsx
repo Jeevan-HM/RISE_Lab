@@ -36,7 +36,7 @@ function Carousel({ images }) {
     <div className="carousel-wrapper">
       {images.map((img, i) => (
         <div key={i} className={`carousel-slide${i === idx ? ' active' : ''}`}>
-          <img src={`/images/slide/${img}`} alt={`Lab photo ${i + 1}`} loading={i === 0 ? 'eager' : 'lazy'} />
+          <img src={`${import.meta.env.BASE_URL}images/slide/${img}`} alt={`Lab photo ${i + 1}`} loading={i === 0 ? 'eager' : 'lazy'} />
         </div>
       ))}
       <button className="carousel-arrow prev" onClick={() => { prev(); resetTimer(); }} aria-label="Previous"><ChevronLeft size={18} /></button>
@@ -191,9 +191,9 @@ export default function HomePage({ data }) {
             <div className="director-card animate-fade-up">
               <img
                 className="director-avatar"
-                src={`/images/teampic/${data.director.photo}`}
+                src={`${import.meta.env.BASE_URL}images/teampic/${data.director.photo}`}
                 alt={data.director.name}
-                onError={e => { e.target.src = '/images/teampic/sundevil.jpg'; }}
+                onError={e => { e.target.src = `${import.meta.env.BASE_URL}images/teampic/sundevil.jpg`; }}
               />
               <div>
                 <p className="director-title">{data.director.title}</p>

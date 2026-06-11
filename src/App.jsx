@@ -158,7 +158,7 @@ function App() {
 
   const loadData = async () => {
     try {
-      const res = await fetch('/database.json');
+      const res = await fetch(`${import.meta.env.BASE_URL}database.json`);
       if (res.ok) setData(await res.json());
     } catch (e) {
       console.error('Failed to load data:', e);
@@ -166,6 +166,14 @@ function App() {
   };
 
   useEffect(() => { loadData(); }, []);
+
+  if (!data) {
+    return (
+      <div style={{ display: 'flex', height: '100vh', justifyContent: 'center', alignItems: 'center', background: 'var(--color-bg)' }}>
+        <div className="badge">Loading...</div>
+      </div>
+    );
+  }
 
   return (
     <Router>

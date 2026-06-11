@@ -6,9 +6,9 @@ function MemberCard({ member, folder = 'teampic' }) {
     <div className="team-card animate-fade-up">
       <img
         className="team-avatar"
-        src={`/images/${folder}/${member.photo}`}
+        src={`${import.meta.env.BASE_URL}images/${folder}/${member.photo}`}
         alt={member.name}
-        onError={e => { e.target.src = '/images/teampic/sundevil.jpg'; }}
+        onError={e => { e.target.src = `${import.meta.env.BASE_URL}images/teampic/sundevil.jpg`; }}
       />
       <div className="team-name">{member.name}</div>
       {member.info && <div className="team-info">{member.info}</div>}
@@ -130,9 +130,9 @@ export default function TeamPage({ data }) {
                   <div className="director-card">
                     <img
                       className="director-avatar"
-                      src={`/images/teampic/${data.director.photo}`}
+                      src={`${import.meta.env.BASE_URL}images/teampic/${data.director.photo}`}
                       alt={data.director.name}
-                      onError={e => { e.target.src = '/images/teampic/sundevil.jpg'; }}
+                      onError={e => { e.target.src = `${import.meta.env.BASE_URL}images/teampic/sundevil.jpg`; }}
                     />
                     <div>
                       <p className="director-title">{data.director.title}</p>

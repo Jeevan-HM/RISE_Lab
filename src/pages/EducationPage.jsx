@@ -48,12 +48,12 @@ export default function EducationPage({ data }) {
               {outreach.events?.map((event, i) => (
                 <div key={i} className="outreach-card animate-fade-up" style={{ animationDelay: `${i * 0.1}s` }}>
                   {event.image && (
-                    <img src={`/images/${event.image}`} alt={event.name}
+                    <img src={`${import.meta.env.BASE_URL}images/${event.image}`} alt={event.name}
                       onError={e => { e.target.style.display = 'none'; }} />
                   )}
                   <div className="outreach-body">
                     {event.logo && (
-                      <img src={`/images/${event.logo}`} alt={event.name}
+                      <img src={`${import.meta.env.BASE_URL}images/${event.logo}`} alt={event.name}
                         style={{ height: 48, width: 'auto', objectFit: 'contain', marginBottom: '1rem', filter: 'brightness(0.85)' }}
                         onError={e => { e.target.style.display = 'none'; }} />
                     )}
