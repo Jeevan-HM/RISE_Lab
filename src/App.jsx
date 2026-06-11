@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { HashRouter as Router, Routes, Route, Link, NavLink, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronUp, Sun, Moon } from 'lucide-react';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from './firebase';
 
 import './index.css';
 import HomePage from './pages/HomePage';
@@ -158,10 +160,15 @@ function App() {
 
   const loadData = async () => {
     try {
-      const res = await fetch(`${import.meta.env.BASE_URL}database.json`);
-      if (res.ok) setData(await res.json());
+      const docRef = doc(db, "website", "data");
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        setData(docSnap.data());
+      } else {
+        console.error("No data document found!");
+      }
     } catch (e) {
-      console.error('Failed to load data:', e);
+      console.error('Failed to load data from Firestore:', e);
     }
   };
 

@@ -5,14 +5,9 @@ import {
   ChevronDown, ChevronUp, Check, Shield, GripVertical
 } from 'lucide-react';
 
-const TOKEN = 'secret_admin_token_123'; // legacy
-
-function bytesToBase64(bytes) {
-  const binString = Array.from(bytes, (byte) =>
-    String.fromCharCode(byte),
-  ).join("");
-  return btoa(binString);
-}
+import { auth, db } from '../firebase';
+import { signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
 
 // ── Helpers ────────────────────────────────────────────────
 function moveItem(arr, fromIdx, toIdx) {
@@ -101,26 +96,22 @@ function Toast({ msg, onDone }) {
 }
 
 // ── Login ──────────────────────────────────────────────────
-function LoginScreen({ onLogin }) {
-  const [repo, setRepo] = useState(localStorage.getItem('gh_repo') || '');
-  const [token, setToken] = useState('');
+function LoginScreen() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [err, setErr] = useState('');
   const [loading, setLoading] = useState(false);
 
   const submit = async e => {
     e.preventDefault();
-    if (!repo || !token) { setErr('Both fields required.'); return; }
+    if (!email || !password) { setErr('Both fields required.'); return; }
     
     setLoading(true);
     setErr('');
     try {
-      const res = await fetch(`https://api.github.com/repos/${repo}`, {
-        headers: { Authorization: `token ${token}` }
-      });
-      if (!res.ok) throw new Error();
-      onLogin(repo, token);
+      await signInWithEmailAndPassword(auth, email, password);
     } catch {
-      setErr('Invalid repository or token (check permissions).');
+      setErr('Invalid email or password.');
     } finally {
       setLoading(false);
     }
@@ -131,15 +122,15 @@ function LoginScreen({ onLogin }) {
       <div className="admin-login-card animate-fade-up">
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: '1.5rem' }}>
           <Shield size={26} style={{ color: 'var(--color-maroon)' }} />
-          <span style={{ fontFamily: 'Outfit', fontWeight: 800, fontSize: '1.15rem', color: 'var(--color-maroon)' }}>GitHub CMS Login</span>
+          <span style={{ fontFamily: 'Outfit', fontWeight: 800, fontSize: '1.15rem', color: 'var(--color-maroon)' }}>Firebase CMS Login</span>
         </div>
-        <p style={{ fontSize: '0.9rem', marginBottom: '1rem', color: 'var(--text-secondary)' }}>Log in using your GitHub Repository and a Personal Access Token (classic) with 'repo' scope.</p>
+        <p style={{ fontSize: '0.9rem', marginBottom: '1rem', color: 'var(--text-secondary)' }}>Log in using your Firebase Authentication Email and Password.</p>
         <form onSubmit={submit} className="admin-form">
-          <Field label="Repository (username/repo)" value={repo} onChange={setRepo} />
-          <Field label="Personal Access Token" value={token} onChange={setToken} type="password" />
+          <Field label="Email Address" value={email} onChange={setEmail} />
+          <Field label="Password" value={password} onChange={setPassword} type="password" />
           {err && <p className="login-error">{err}</p>}
           <button type="submit" className="btn-save" style={{ width: '100%', marginTop: 8 }} disabled={loading}>
-            {loading ? 'Verifying…' : 'Connect to GitHub'}
+            {loading ? 'Verifying…' : 'Log In'}
           </button>
         </form>
       </div>
@@ -540,9 +531,7 @@ const NAV = [
 
 // ── Main Admin Component ───────────────────────────────────
 export default function AdminPage({ data: initialData, onSaved }) {
-  const [repo, setRepo] = useState(() => localStorage.getItem('gh_repo') || '');
-  const [token, setToken] = useState(() => sessionStorage.getItem('gh_token') || '');
-  const [loggedIn, setLoggedIn] = useState(!!token);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [activeSection, setActiveSection] = useState('meta');
   const [data, setData] = useState(initialData || {});
   const [toast, setToast] = useState('');
@@ -550,51 +539,30 @@ export default function AdminPage({ data: initialData, onSaved }) {
 
   useEffect(() => { if (initialData) setData(initialData); }, [initialData]);
 
-  const handleLogin = (r, t) => {
-    setRepo(r); setToken(t);
-    localStorage.setItem('gh_repo', r);
-    sessionStorage.setItem('gh_token', t);
-    setLoggedIn(true);
-  };
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(user => {
+      setLoggedIn(!!user);
+    });
+    return () => unsubscribe();
+  }, []);
 
-  const handleLogout = () => {
-    setToken('');
-    sessionStorage.removeItem('gh_token');
-    setLoggedIn(false);
+  const handleLogout = async () => {
+    await signOut(auth);
   };
 
   const save = async () => {
     setSaving(true);
     try {
-      const path = 'public/database.json';
-      const url = `https://api.github.com/repos/${repo}/contents/${path}`;
-      
-      const getRes = await fetch(url, { headers: { Authorization: `token ${token}` } });
-      if (!getRes.ok) throw new Error('Could not fetch file. Ensure public/database.json exists.');
-      
-      const fileData = await getRes.json();
-      const sha = fileData.sha;
-      
-      const contentStr = JSON.stringify(data, null, 2);
-      const base64Content = bytesToBase64(new TextEncoder().encode(contentStr));
-
-      const putRes = await fetch(url, {
-        method: 'PUT',
-        headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          message: 'Content update via web admin',
-          content: base64Content,
-          sha: sha
-        })
-      });
-
-      if (putRes.ok) { setToast('Changes pushed to GitHub successfully!'); onSaved?.(); }
-      else { const err = await putRes.json(); setToast(`Error: ${err.message || 'Failed to save'}`); }
-    } catch (e) { setToast(e.message || 'Network error.'); }
+      await setDoc(doc(db, "website", "data"), data);
+      setToast('Changes saved to Firebase successfully!');
+      onSaved?.();
+    } catch (e) { 
+      setToast(e.message || 'Network error.'); 
+    }
     finally { setSaving(false); }
   };
 
-  if (!loggedIn) return <LoginScreen onLogin={handleLogin} />;
+  if (!loggedIn) return <LoginScreen />;
 
   const renderPanel = () => {
     switch (activeSection) {
