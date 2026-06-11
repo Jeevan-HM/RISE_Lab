@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, NavLink, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link, NavLink, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronUp, Sun, Moon } from 'lucide-react';
 
 import './index.css';
