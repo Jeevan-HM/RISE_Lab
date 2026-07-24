@@ -87,6 +87,36 @@ function HeroDrawer() {
   );
 }
 
+function NewsDrawer() {
+  const { liveData, updateSection } = useEdit();
+  const items = liveData.news || [];
+  const update = (i, f, v) => updateSection('news', items.map((it, idx) => idx === i ? { ...it, [f]: v } : it));
+  const remove = i => updateSection('news', items.filter((_, idx) => idx !== i));
+  const add = () => updateSection('news', [{ date: '', headline: '' }, ...items]);
+
+  return (
+    <div>
+      <button className="btn-add" onClick={add} style={{ marginBottom: '1rem' }}>
+        <Plus size={13} /> Add News Item
+      </button>
+      {items.map((item, i) => (
+        <div key={i} style={{ background: 'var(--color-bg)', borderRadius: 'var(--r-md)', padding: '0.75rem', marginBottom: '0.75rem', border: '1px solid var(--color-border)' }}>
+          <Field label="Date" value={item.date} onChange={v => update(i, 'date', v)} />
+          <div style={{ marginTop: '0.5rem' }}>
+            <Field label="Headline" value={item.headline} onChange={v => update(i, 'headline', v)} rows={2} />
+          </div>
+          <button className="btn-delete" onClick={() => remove(i)} style={{ marginTop: '0.5rem' }}>
+            <Trash2 size={12} /> Remove
+          </button>
+        </div>
+      ))}
+      {items.length === 0 && (
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', fontStyle: 'italic' }}>No news items yet.</p>
+      )}
+    </div>
+  );
+}
+
 function CarouselDrawer() {
   const { liveData, updateSection } = useEdit();
   const images = liveData.homeCarouselImages || [];
@@ -423,6 +453,9 @@ export default function EditHomePage() {
                   <hr style={{ margin: '2rem 0', borderColor: 'var(--color-border)' }}/>
                   <h3 style={{ marginBottom: '1rem' }}>Carousel Images</h3>
                   <CarouselDrawer />
+                  <hr style={{ margin: '2rem 0', borderColor: 'var(--color-border)' }}/>
+                  <h3 style={{ marginBottom: '1rem' }}>Latest News</h3>
+                  <NewsDrawer />
                 </>
               );
               label = 'Hero Section';

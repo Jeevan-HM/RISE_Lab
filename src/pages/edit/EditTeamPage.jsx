@@ -128,65 +128,133 @@ function EditableStudentSection({ field, label }) {
   );
 }
 
-/* ── Alumni section (unchanged) ─────────────────────────── */
+/* ── Inline-editable alumni item ────────────────────────── */
+function EditableAlumniItem({ item, kind, onChange, onRemove }) {
+  const [editing, setEditing] = useState(false);
+  const [draft, setDraft] = useState(item);
+
+  const save = () => { onChange(draft); setEditing(false); };
+  const cancel = () => { setDraft(item); setEditing(false); };
+
+  if (editing) {
+    return (
+      <div className="alumni-item" style={{ border: '2px solid var(--color-maroon)', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        <Field label="Name" value={draft.name} onChange={v => setDraft(d => ({ ...d, name: v }))} />
+        {kind === 'phd' ? (
+          <>
+            <Field label="Graduated" value={draft.graduated || ''} onChange={v => setDraft(d => ({ ...d, graduated: v }))} />
+            <Field label="Current Position" value={draft.job || ''} onChange={v => setDraft(d => ({ ...d, job: v }))} />
+            <Field label="Thesis Title" value={draft.thesis || ''} onChange={v => setDraft(d => ({ ...d, thesis: v }))} rows={2} />
+          </>
+        ) : (
+          <>
+            <Field label="Note" value={draft.note || ''} onChange={v => setDraft(d => ({ ...d, note: v }))} />
+            {kind === 'nri' && <Field label="Title/Role" value={draft.title || ''} onChange={v => setDraft(d => ({ ...d, title: v }))} />}
+          </>
+        )}
+        <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.25rem', justifyContent: 'flex-end' }}>
+          <button onClick={cancel} style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--r-sm)', padding: '5px 10px', fontSize: '0.8rem', cursor: 'pointer', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+            <X size={13}/> Cancel
+          </button>
+          <button onClick={save} style={{ background: 'var(--color-maroon)', border: 'none', borderRadius: 'var(--r-sm)', padding: '5px 12px', fontSize: '0.8rem', cursor: 'pointer', color: '#fff', display: 'flex', alignItems: 'center', gap: '4px' }}>
+            <Check size={13}/> Save
+          </button>
+        </div>
+        <button onClick={onRemove} style={{ fontSize: '0.72rem', color: '#c0392b', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: '2px 0' }}>
+          🗑 Remove
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="alumni-item" style={{ position: 'relative' }}>
+      <button
+        onClick={() => setEditing(true)}
+        title="Edit alumnus"
+        style={{
+          position: 'absolute', top: '8px', right: '8px',
+          background: 'var(--color-maroon)', border: 'none', borderRadius: '50%',
+          width: '24px', height: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center',
+          cursor: 'pointer', color: '#fff', opacity: 0.85, zIndex: 10,
+        }}
+      >
+        <Pencil size={11} />
+      </button>
+      {kind === 'phd' && (
+        <>
+          <div className="alumni-name">{item.name} <span style={{ fontWeight: 400, color: 'var(--text-muted)', fontSize: '0.85rem' }}>— {item.graduated}</span></div>
+          {item.job && <div className="alumni-job">↗ {item.job}</div>}
+          {item.thesis && <div className="alumni-thesis">"{item.thesis}"</div>}
+        </>
+      )}
+      {kind === 'note' && (
+        <>
+          <div className="alumni-name">{item.name}</div>
+          {item.note && <div className="alumni-note">{item.note}</div>}
+        </>
+      )}
+      {kind === 'nri' && (
+        <>
+          <div className="alumni-name">{item.name} <span style={{ fontWeight: 400, color: 'var(--text-muted)', fontSize: '0.85rem' }}>— {item.note}</span></div>
+          {item.title && <div className="alumni-note">{item.title}</div>}
+        </>
+      )}
+    </div>
+  );
+}
+
+/* ── Alumni section (editable) ──────────────────────────── */
 function AlumniSection({ data }) {
+  const { updateSection } = useEdit();
   const [tab, setTab] = useState('phd');
   const tabs = [
-    { id: 'phd', label: 'PhD Alumni', count: data?.alumniPhd?.length },
-    { id: 'msc', label: 'MS Alumni', count: data?.alumniMsc?.length },
-    { id: 'bs', label: 'BS/Undergrad Alumni', count: data?.alumniBS?.length },
-    { id: 'nri', label: 'Research Visitors', count: data?.alumniNri?.length },
+    { id: 'phd', field: 'alumniPhd', label: 'PhD Alumni', kind: 'phd' },
+    { id: 'msc', field: 'alumniMsc', label: 'MS Alumni', kind: 'note' },
+    { id: 'bs', field: 'alumniBS', label: 'BS/Undergrad Alumni', kind: 'note' },
+    { id: 'nri', field: 'alumniNri', label: 'Research Visitors', kind: 'nri' },
   ];
+  const active = tabs.find(t => t.id === tab);
+  const items = data?.[active.field] || [];
+
+  const update = (i, newItem) => updateSection(active.field, items.map((it, idx) => idx === i ? newItem : it));
+  const remove = (i) => updateSection(active.field, items.filter((_, idx) => idx !== i));
+  const add = () => {
+    const newItem = active.kind === 'phd' ? { name: 'New Alumnus', graduated: '', job: '', thesis: '' } : { name: 'New Alumnus', note: '' };
+    updateSection(active.field, [...items, newItem]);
+  };
+
   return (
     <div>
-      <div className="alumni-tabs">
-        {tabs.map(t => (
-          <button key={t.id} className={`alumni-tab${tab === t.id ? ' active' : ''}`} onClick={() => setTab(t.id)}>
-            {t.label} {t.count ? <span style={{ opacity: 0.6, fontSize: '0.78rem' }}>({t.count})</span> : null}
-          </button>
-        ))}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.75rem' }}>
+        <div className="alumni-tabs">
+          {tabs.map(t => (
+            <button key={t.id} className={`alumni-tab${tab === t.id ? ' active' : ''}`} onClick={() => setTab(t.id)}>
+              {t.label} {data?.[t.field]?.length ? <span style={{ opacity: 0.6, fontSize: '0.78rem' }}>({data[t.field].length})</span> : null}
+            </button>
+          ))}
+        </div>
+        <button
+          onClick={add}
+          style={{
+            background: 'var(--color-maroon)', border: 'none', borderRadius: 'var(--r-full)',
+            padding: '6px 14px', fontSize: '0.8rem', fontWeight: 700, cursor: 'pointer', color: '#fff',
+            display: 'flex', alignItems: 'center', gap: '5px', boxShadow: '0 2px 8px rgba(140,29,64,0.35)'
+          }}
+        >
+          <Plus size={14} /> Add
+        </button>
       </div>
-      {tab === 'phd' && (
-        <div className="alumni-list">
-          {data?.alumniPhd?.map((a, i) => (
-            <div key={i} className="alumni-item">
-              <div className="alumni-name">{a.name} <span style={{ fontWeight: 400, color: 'var(--text-muted)', fontSize: '0.85rem' }}>— {a.graduated}</span></div>
-              {a.job && <div className="alumni-job">↗ {a.job}</div>}
-              {a.thesis && <div className="alumni-thesis">"{a.thesis}"</div>}
-            </div>
-          ))}
-        </div>
-      )}
-      {tab === 'msc' && (
-        <div className="alumni-list">
-          {data?.alumniMsc?.map((a, i) => (
-            <div key={i} className="alumni-item">
-              <div className="alumni-name">{a.name}</div>
-              {a.note && <div className="alumni-note">{a.note}</div>}
-            </div>
-          ))}
-        </div>
-      )}
-      {tab === 'bs' && (
-        <div className="alumni-list">
-          {data?.alumniBS?.map((a, i) => (
-            <div key={i} className="alumni-item">
-              <div className="alumni-name">{a.name}</div>
-              {a.note && <div className="alumni-note">{a.note}</div>}
-            </div>
-          ))}
-        </div>
-      )}
-      {tab === 'nri' && (
-        <div className="alumni-list">
-          {data?.alumniNri?.map((a, i) => (
-            <div key={i} className="alumni-item">
-              <div className="alumni-name">{a.name} <span style={{ fontWeight: 400, color: 'var(--text-muted)', fontSize: '0.85rem' }}>— {a.note}</span></div>
-              {a.title && <div className="alumni-note">{a.title}</div>}
-            </div>
-          ))}
-        </div>
-      )}
+      <div className="alumni-list" style={{ marginTop: '1.25rem' }}>
+        {items.map((a, i) => (
+          <EditableAlumniItem key={i} item={a} kind={active.kind} onChange={v => update(i, v)} onRemove={() => remove(i)} />
+        ))}
+        {items.length === 0 && (
+          <div style={{ color: 'var(--text-muted)', fontSize: '0.9rem', fontStyle: 'italic', padding: '1rem 0' }}>
+            No entries yet — click "Add" to get started.
+          </div>
+        )}
+      </div>
     </div>
   );
 }
