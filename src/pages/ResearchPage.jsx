@@ -1,12 +1,5 @@
-import React, { useState } from 'react';
-import { ChevronDown, ExternalLink, Navigation2, Layers, HeartHandshake, FlaskConical } from 'lucide-react';
-
-const ICON_MAP = {
-  'aerial-robotics':          Navigation2,    // GPS/nav icon for UAV autonomy
-  'soft-robotics':            Layers,          // layered flexible actuators
-  'human-robot-interaction':  HeartHandshake,  // human ↔ robot trust & collaboration
-};
-
+import { useState } from 'react';
+import { ChevronDown, ExternalLink } from 'lucide-react';
 
 function ProjectItem({ project }) {
   const [open, setOpen] = useState(false);

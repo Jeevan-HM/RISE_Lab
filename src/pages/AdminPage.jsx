@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Newspaper, Users, GraduationCap, BookOpen, Microscope,
   FlaskConical, Phone, Image, LogOut, Save, Plus, Trash2,
@@ -537,6 +537,7 @@ export default function AdminPage({ data: initialData, onSaved }) {
   const [toast, setToast] = useState('');
   const [saving, setSaving] = useState(false);
 
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { if (initialData) setData(initialData); }, [initialData]);
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { ExternalLink, Search } from 'lucide-react';
 
 export default function PublicationsPage({ data }) {
@@ -7,9 +7,11 @@ export default function PublicationsPage({ data }) {
 
   const allPubs = useMemo(() => {
     const list = tab === 'journal' ? (data?.journalPubs || []) : (data?.confPubs || []);
-    if (!query.trim()) return list;
+    // Sort newest first
+    const sorted = [...list].sort((a, b) => (Number(b.year) || 0) - (Number(a.year) || 0));
+    if (!query.trim()) return sorted;
     const q = query.toLowerCase();
-    return list.filter(p =>
+    return sorted.filter(p =>
       p.title?.toLowerCase().includes(q) ||
       p.authors?.toLowerCase().includes(q) ||
       p.venue?.toLowerCase().includes(q) ||
@@ -42,7 +44,6 @@ export default function PublicationsPage({ data }) {
 
       <section className="section">
         <div className="container">
-          {/* Tabs + Search */}
           <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '2rem', flexWrap: 'wrap' }}>
             <div className="tabs" style={{ margin: 0 }}>
               <button className={`tab-btn${tab === 'journal' ? ' active' : ''}`} onClick={() => { setTab('journal'); setQuery(''); }}>
@@ -52,10 +53,9 @@ export default function PublicationsPage({ data }) {
                 Conference Papers ({totalC})
               </button>
             </div>
-            <div style={{ flex: 1, maxWidth: 340, position: 'relative' }}>
-              <Search size={16} style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
+            <div className="search-wrapper">
+              <Search size={16} />
               <input
-                style={{ paddingLeft: 40, width: '100%', padding: '10px 16px 10px 40px', borderRadius: 'var(--r-full)', background: 'var(--color-surface)', border: '1px solid var(--color-border)', color: 'var(--text-primary)', fontFamily: 'inherit', fontSize: '0.9rem' }}
                 placeholder="Search publications…"
                 value={query}
                 onChange={e => setQuery(e.target.value)}

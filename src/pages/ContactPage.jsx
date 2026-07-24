@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { MapPin, Phone, Building2, ExternalLink } from 'lucide-react';
 
 export default function ContactPage({ data }) {
@@ -25,7 +25,7 @@ export default function ContactPage({ data }) {
               <div className="contact-info-block">
                 <div className="contact-icon"><Building2 size={18} /></div>
                 <div>
-                  <h4>Dr. Zhang's Office</h4>
+                  <h4>Dr. {data?.director?.name?.split(' ').pop() || 'Director'}'s Office</h4>
                   <p>{contact.directorOffice}</p>
                   {contact.directorPhone && <p style={{ marginTop: 4 }}><Phone size={12} style={{ display: 'inline', marginRight: 4 }} />{contact.directorPhone}</p>}
                 </div>

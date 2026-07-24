@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Save, LogOut, CheckCircle, Edit3, LayoutDashboard } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Save, LogOut, CheckCircle, Edit3, LayoutDashboard, ShieldAlert } from 'lucide-react';
 
 export default function Admin({ data, onSaved }) {
   const [token, setToken] = useState(localStorage.getItem('adminToken'));
@@ -10,9 +10,10 @@ export default function Admin({ data, onSaved }) {
   const [toast, setToast] = useState(false);
   const [error, setError] = useState('');
 
+  // Sync editData whenever the data prop changes (if not already set)
   useEffect(() => {
-    if (data && !editData) {
-      setEditData(JSON.stringify(data, null, 2));
+    if (data) {
+      setEditData(prev => prev || JSON.stringify(data, null, 2));
     }
   }, [data]);
 
