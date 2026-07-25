@@ -92,27 +92,54 @@ function AlumniSection({ data }) {
           </button>
         ))}
       </div>
-      <div className="alumni-list">
+      <div className="grid-4 stagger-children">
         {getList().map((a, i) => (
-          <div key={i} className="alumni-item">
+          <div key={i} className="team-card animate-fade-up">
+            <img
+              className="team-avatar"
+              src={resolveImagePath(a.photo, 'teampic') || `${import.meta.env.BASE_URL}images/teampic/sundevil.jpg`}
+              alt={a.name}
+              onError={e => { e.target.src = `${import.meta.env.BASE_URL}images/teampic/sundevil.jpg`; }}
+            />
             {tab === 'phd' && (
               <>
-                <div className="alumni-name">{a.name} <span style={{ fontWeight: 400, color: 'var(--text-muted)', fontSize: '0.85rem' }}>— {a.graduated}</span></div>
+                <div className="team-name">{a.name}</div>
+                {a.graduated && <div className="team-info">Class of {a.graduated}</div>}
                 {a.job && <div className="alumni-job">↗ {a.job}</div>}
                 {a.thesis && <div className="alumni-thesis">"{a.thesis}"</div>}
               </>
             )}
             {(tab === 'msc' || tab === 'bs') && (
               <>
-                <div className="alumni-name">{a.name}</div>
-                {a.note && <div className="alumni-note">{a.note}</div>}
+                <div className="team-name">{a.name}</div>
+                {a.note && <div className="team-info">{a.note}</div>}
               </>
             )}
             {tab === 'nri' && (
               <>
-                <div className="alumni-name">{a.name} <span style={{ fontWeight: 400, color: 'var(--text-muted)', fontSize: '0.85rem' }}>— {a.note}</span></div>
+                <div className="team-name">{a.name}</div>
+                {a.note && <div className="team-info">{a.note}</div>}
                 {a.title && <div className="alumni-note">{a.title}</div>}
               </>
+            )}
+            {(a.email || a.links?.length > 0) && (
+              <div className="team-links">
+                {a.email && (
+                  <a className="team-link" href={`mailto:${a.email}`} title="Email" aria-label={`Email ${a.name}`}>
+                    <Mail size={12} />
+                  </a>
+                )}
+                {a.links?.map((l, i) => {
+                  const isLinkedIn = l.label?.toLowerCase().includes('linkedin');
+                  const isWebsite = l.label?.toLowerCase().includes('website');
+                  return (
+                    <a key={i} className="team-link" href={l.url} target="_blank" rel="noreferrer">
+                      {isLinkedIn ? <Link2 size={12} /> : isWebsite ? <Globe size={12} /> : null}
+                      {l.label}
+                    </a>
+                  );
+                })}
+              </div>
             )}
           </div>
         ))}
@@ -162,10 +189,20 @@ export default function TeamPage({ data }) {
                       <h2 className="director-name">Dr. {data.director.name}</h2>
                       <p className="director-affil">{data.director.affiliation}</p>
                       <p className="director-bio">{data.director.bio}</p>
-                      <div style={{ marginTop: '1.25rem' }}>
+                      <div style={{ marginTop: '1.25rem', display: 'flex', flexWrap: 'wrap', gap: '0.75rem', alignItems: 'center' }}>
                         <a href={`mailto:${data.director.email}`} className="team-link">
                           <Mail size={13} /> {data.director.email}
                         </a>
+                        {data.director.links?.map((l, i) => {
+                          const isLinkedIn = l.label?.toLowerCase().includes('linkedin');
+                          const isWebsite = l.label?.toLowerCase().includes('website');
+                          return (
+                            <a key={i} className="team-link" href={l.url} target="_blank" rel="noreferrer">
+                              {isLinkedIn ? <Link2 size={13} /> : isWebsite ? <Globe size={13} /> : null}
+                              {l.label}
+                            </a>
+                          );
+                        })}
                       </div>
                     </div>
                   </div>

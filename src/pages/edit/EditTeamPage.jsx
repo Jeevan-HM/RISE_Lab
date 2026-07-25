@@ -1,8 +1,50 @@
 import { useState } from 'react';
-import { Mail, Plus, Pencil, Check, X } from 'lucide-react';
+import { Mail, Plus, Pencil, Check, X, ArrowLeft, ArrowRight } from 'lucide-react';
 import { useEdit } from '../../context/EditContext';
-import { Field, ImageField } from '../../components/DrawerFields';
+import { Field, ImageField, LinksField } from '../../components/DrawerFields';
 import { resolveImagePath } from '../../lib/images';
+
+function moveItem(arr, from, to) {
+  if (to < 0 || to >= arr.length) return arr;
+  const next = [...arr];
+  const [item] = next.splice(from, 1);
+  next.splice(to, 0, item);
+  return next;
+}
+
+/* ── Reorder arrows shown at the top-left of a card ───────── */
+function ReorderArrows({ index, total, onMove }) {
+  return (
+    <div style={{ position: 'absolute', top: '8px', left: '8px', display: 'flex', gap: '4px', zIndex: 10 }}>
+      <button
+        onClick={() => onMove(index, index - 1)}
+        disabled={index === 0}
+        title="Move earlier"
+        style={{
+          background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: '50%',
+          width: '24px', height: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center',
+          cursor: index === 0 ? 'not-allowed' : 'pointer', opacity: index === 0 ? 0.35 : 0.9, color: 'var(--text-secondary)',
+          boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
+        }}
+      >
+        <ArrowLeft size={12} />
+      </button>
+      <button
+        onClick={() => onMove(index, index + 1)}
+        disabled={index === total - 1}
+        title="Move later"
+        style={{
+          background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: '50%',
+          width: '24px', height: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center',
+          cursor: index === total - 1 ? 'not-allowed' : 'pointer', opacity: index === total - 1 ? 0.35 : 0.9, color: 'var(--text-secondary)',
+          boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
+        }}
+      >
+        <ArrowRight size={12} />
+      </button>
+    </div>
+  );
+}
 
 /* ── Reusable section-header label ──────────────────────── */
 function SectionLabel({ children, count }) {
@@ -24,7 +66,7 @@ function SectionLabel({ children, count }) {
 }
 
 /* ── Inline-editable member card ────────────────────────── */
-function EditableMemberCard({ member, onChange, onRemove }) {
+function EditableMemberCard({ member, onChange, onRemove, index, total, onMove }) {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(member);
 
@@ -38,6 +80,7 @@ function EditableMemberCard({ member, onChange, onRemove }) {
         <Field label="Info / Role" value={draft.info || ''} onChange={v => setDraft(d => ({ ...d, info: v }))} />
         <Field label="Email" value={draft.email || ''} onChange={v => setDraft(d => ({ ...d, email: v }))} />
         <ImageField label="Photo" value={draft.photo || ''} onChange={v => setDraft(d => ({ ...d, photo: v }))} folder="teampic" />
+        <LinksField label="Other Links" value={draft.links} onChange={v => setDraft(d => ({ ...d, links: v }))} desc="LinkedIn, personal website, Google Scholar, etc." />
         <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.25rem', justifyContent: 'flex-end' }}>
           <button onClick={cancel} style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--r-sm)', padding: '5px 10px', fontSize: '0.8rem', cursor: 'pointer', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
             <X size={13}/> Cancel
@@ -55,6 +98,7 @@ function EditableMemberCard({ member, onChange, onRemove }) {
 
   return (
     <div className="team-card animate-fade-up" style={{ position: 'relative', cursor: 'default' }}>
+      <ReorderArrows index={index} total={total} onMove={onMove} />
       {/* Inline edit button — always visible in edit mode */}
       <button
         onClick={() => setEditing(true)}
@@ -99,6 +143,7 @@ function EditableStudentSection({ field, label }) {
   const update = (i, newMember) => updateSection(field, items.map((m, idx) => idx === i ? newMember : m));
   const remove = (i) => updateSection(field, items.filter((_, idx) => idx !== i));
   const add = () => updateSection(field, [...items, { name: 'New Member', photo: 'sundevil.jpg', info: '', email: '' }]);
+  const move = (from, to) => updateSection(field, moveItem(items, from, to));
 
   return (
     <div style={{ marginBottom: 'var(--space-2xl)' }}>
@@ -117,7 +162,8 @@ function EditableStudentSection({ field, label }) {
       </div>
       <div className="grid-4 stagger-children">
         {items.map((m, i) => (
-          <EditableMemberCard key={i} member={m} onChange={v => update(i, v)} onRemove={() => remove(i)} />
+          <EditableMemberCard key={i} member={m} onChange={v => update(i, v)} onRemove={() => remove(i)}
+            index={i} total={items.length} onMove={move} />
         ))}
         {items.length === 0 && (
           <div style={{ gridColumn: '1 / -1', color: 'var(--text-muted)', fontSize: '0.9rem', fontStyle: 'italic', padding: '1rem 0' }}>
@@ -130,7 +176,7 @@ function EditableStudentSection({ field, label }) {
 }
 
 /* ── Inline-editable alumni item ────────────────────────── */
-function EditableAlumniItem({ item, kind, onChange, onRemove }) {
+function EditableAlumniItem({ item, kind, onChange, onRemove, index, total, onMove }) {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(item);
 
@@ -139,8 +185,9 @@ function EditableAlumniItem({ item, kind, onChange, onRemove }) {
 
   if (editing) {
     return (
-      <div className="alumni-item" style={{ border: '2px solid var(--color-maroon)', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+      <div className="team-card" style={{ border: '2px solid var(--color-maroon)', padding: '1rem', gap: '0.5rem', display: 'flex', flexDirection: 'column' }}>
         <Field label="Name" value={draft.name} onChange={v => setDraft(d => ({ ...d, name: v }))} />
+        <ImageField label="Photo" value={draft.photo || ''} onChange={v => setDraft(d => ({ ...d, photo: v }))} folder="teampic" />
         {kind === 'phd' ? (
           <>
             <Field label="Graduated" value={draft.graduated || ''} onChange={v => setDraft(d => ({ ...d, graduated: v }))} />
@@ -153,6 +200,8 @@ function EditableAlumniItem({ item, kind, onChange, onRemove }) {
             {kind === 'nri' && <Field label="Title/Role" value={draft.title || ''} onChange={v => setDraft(d => ({ ...d, title: v }))} />}
           </>
         )}
+        <Field label="Email" value={draft.email || ''} onChange={v => setDraft(d => ({ ...d, email: v }))} />
+        <LinksField label="Other Links" value={draft.links} onChange={v => setDraft(d => ({ ...d, links: v }))} desc="LinkedIn, personal website, Google Scholar, etc." />
         <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.25rem', justifyContent: 'flex-end' }}>
           <button onClick={cancel} style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--r-sm)', padding: '5px 10px', fontSize: '0.8rem', cursor: 'pointer', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
             <X size={13}/> Cancel
@@ -169,7 +218,8 @@ function EditableAlumniItem({ item, kind, onChange, onRemove }) {
   }
 
   return (
-    <div className="alumni-item" style={{ position: 'relative' }}>
+    <div className="team-card animate-fade-up" style={{ position: 'relative', cursor: 'default' }}>
+      <ReorderArrows index={index} total={total} onMove={onMove} />
       <button
         onClick={() => setEditing(true)}
         title="Edit alumnus"
@@ -182,24 +232,46 @@ function EditableAlumniItem({ item, kind, onChange, onRemove }) {
       >
         <Pencil size={11} />
       </button>
+      <img
+        className="team-avatar"
+        src={resolveImagePath(item.photo, 'teampic') || `${import.meta.env.BASE_URL}images/teampic/sundevil.jpg`}
+        alt={item.name}
+        onError={e => { e.target.src = `${import.meta.env.BASE_URL}images/teampic/sundevil.jpg`; }}
+      />
       {kind === 'phd' && (
         <>
-          <div className="alumni-name">{item.name} <span style={{ fontWeight: 400, color: 'var(--text-muted)', fontSize: '0.85rem' }}>— {item.graduated}</span></div>
+          <div className="team-name">{item.name}</div>
+          {item.graduated && <div className="team-info">Class of {item.graduated}</div>}
           {item.job && <div className="alumni-job">↗ {item.job}</div>}
           {item.thesis && <div className="alumni-thesis">"{item.thesis}"</div>}
         </>
       )}
       {kind === 'note' && (
         <>
-          <div className="alumni-name">{item.name}</div>
-          {item.note && <div className="alumni-note">{item.note}</div>}
+          <div className="team-name">{item.name}</div>
+          {item.note && <div className="team-info">{item.note}</div>}
         </>
       )}
       {kind === 'nri' && (
         <>
-          <div className="alumni-name">{item.name} <span style={{ fontWeight: 400, color: 'var(--text-muted)', fontSize: '0.85rem' }}>— {item.note}</span></div>
+          <div className="team-name">{item.name}</div>
+          {item.note && <div className="team-info">{item.note}</div>}
           {item.title && <div className="alumni-note">{item.title}</div>}
         </>
+      )}
+      {(item.email || item.links?.length > 0) && (
+        <div className="team-links" style={{ marginTop: 'var(--space-sm)' }}>
+          {item.email && (
+            <a className="team-link" href={`mailto:${item.email}`} title="Email">
+              <Mail size={12} />
+            </a>
+          )}
+          {item.links?.map((l, i) => (
+            <a key={i} className="team-link" href={l.url} target="_blank" rel="noreferrer">
+              {l.label}
+            </a>
+          ))}
+        </div>
       )}
     </div>
   );
@@ -220,8 +292,10 @@ function AlumniSection({ data }) {
 
   const update = (i, newItem) => updateSection(active.field, items.map((it, idx) => idx === i ? newItem : it));
   const remove = (i) => updateSection(active.field, items.filter((_, idx) => idx !== i));
+  const move = (from, to) => updateSection(active.field, moveItem(items, from, to));
   const add = () => {
-    const newItem = active.kind === 'phd' ? { name: 'New Alumnus', graduated: '', job: '', thesis: '' } : { name: 'New Alumnus', note: '' };
+    const base = { name: 'New Alumnus', photo: 'sundevil.jpg' };
+    const newItem = active.kind === 'phd' ? { ...base, graduated: '', job: '', thesis: '' } : { ...base, note: '' };
     updateSection(active.field, [...items, newItem]);
   };
 
@@ -246,9 +320,10 @@ function AlumniSection({ data }) {
           <Plus size={14} /> Add
         </button>
       </div>
-      <div className="alumni-list" style={{ marginTop: '1.25rem' }}>
+      <div className="grid-4 stagger-children" style={{ marginTop: '1.25rem' }}>
         {items.map((a, i) => (
-          <EditableAlumniItem key={i} item={a} kind={active.kind} onChange={v => update(i, v)} onRemove={() => remove(i)} />
+          <EditableAlumniItem key={i} item={a} kind={active.kind} onChange={v => update(i, v)} onRemove={() => remove(i)}
+            index={i} total={items.length} onMove={move} />
         ))}
         {items.length === 0 && (
           <div style={{ color: 'var(--text-muted)', fontSize: '0.9rem', fontStyle: 'italic', padding: '1rem 0' }}>
@@ -283,6 +358,7 @@ function DirectorEditor() {
           <div style={{ gridColumn: '1/-1' }}><ImageField label="Photo" value={draft.photo} onChange={v => setDraft(dd => ({ ...dd, photo: v }))} folder="teampic" /></div>
           <div style={{ gridColumn: '1/-1' }}><Field label="Affiliation" value={draft.affiliation} onChange={v => setDraft(dd => ({ ...dd, affiliation: v }))} /></div>
           <div style={{ gridColumn: '1/-1' }}><Field label="Bio" value={draft.bio} onChange={v => setDraft(dd => ({ ...dd, bio: v }))} rows={4} /></div>
+          <div style={{ gridColumn: '1/-1' }}><LinksField label="Other Links" value={draft.links} onChange={v => setDraft(dd => ({ ...dd, links: v }))} desc="LinkedIn, personal website, Google Scholar, etc." /></div>
         </div>
         <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem', justifyContent: 'flex-end' }}>
           <button onClick={() => setEditing(false)} style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--r-sm)', padding: '6px 14px', fontSize: '0.85rem', cursor: 'pointer', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '5px' }}>

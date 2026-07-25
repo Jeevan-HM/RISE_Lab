@@ -8,7 +8,7 @@ import {
 import { auth, db } from '../firebase';
 import { signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
-import { ImageField } from '../components/DrawerFields';
+import { ImageField, LinksField } from '../components/DrawerFields';
 
 // ── Helpers ────────────────────────────────────────────────
 function moveItem(arr, fromIdx, toIdx) {
@@ -223,6 +223,7 @@ function DirectorPanel({ data, onChange }) {
           <div style={{ gridColumn: '1/-1' }}><ImageField label="Photo" value={d.photo} onChange={v => up('photo', v)} folder="teampic" /></div>
           <div style={{ gridColumn: '1/-1' }}><Field label="Affiliation" value={d.affiliation} onChange={v => up('affiliation', v)} /></div>
           <div style={{ gridColumn: '1/-1' }}><Field label="Bio" value={d.bio} onChange={v => up('bio', v)} rows={6} /></div>
+          <div style={{ gridColumn: '1/-1' }}><LinksField label="Other Links" value={d.links} onChange={v => up('links', v)} desc="LinkedIn, personal website, Google Scholar, etc." /></div>
         </div>
       </div>
     </div>
@@ -249,6 +250,7 @@ function StudentListPanel({ title, field, data, onChange }) {
               <Field label="Info / Program & Year" value={m.info} onChange={v => update(i, 'info', v)} />
               <Field label="Email (optional)" value={m.email} onChange={v => update(i, 'email', v)} />
               <div style={{ gridColumn: '1/-1' }}><ImageField label="Photo" value={m.photo} onChange={v => update(i, 'photo', v)} folder="teampic" /></div>
+              <div style={{ gridColumn: '1/-1' }}><LinksField label="Other Links" value={m.links} onChange={v => update(i, 'links', v)} desc="LinkedIn, personal website, Google Scholar, etc." /></div>
             </div>
           </div>
           <div className="admin-card-actions">
@@ -274,7 +276,8 @@ function AlumniPanel({ data, onChange }) {
   const update = (i, f, v) => onChange({ ...data, [tab]: items.map((it, idx) => idx === i ? { ...it, [f]: v } : it) });
   const remove = i => onChange({ ...data, [tab]: items.filter((_, idx) => idx !== i) });
   const add = () => {
-    const newItem = tab === 'alumniPhd' ? { name: '', graduated: '', job: '', thesis: '' } : { name: '', note: '' };
+    const base = { name: '', photo: 'sundevil.jpg' };
+    const newItem = tab === 'alumniPhd' ? { ...base, graduated: '', job: '', thesis: '' } : { ...base, note: '' };
     onChange({ ...data, [tab]: [...items, newItem] });
   };
 
@@ -295,13 +298,19 @@ function AlumniPanel({ data, onChange }) {
                   <Field label="Name" value={a.name} onChange={v => update(i, 'name', v)} />
                   <Field label="Graduated" value={a.graduated} onChange={v => update(i, 'graduated', v)} />
                   <Field label="Current Position" value={a.job} onChange={v => update(i, 'job', v)} />
+                  <Field label="Email" value={a.email} onChange={v => update(i, 'email', v)} />
                   <div style={{ gridColumn: '1/-1' }}><Field label="Thesis Title" value={a.thesis} onChange={v => update(i, 'thesis', v)} rows={2} /></div>
+                  <div style={{ gridColumn: '1/-1' }}><ImageField label="Photo" value={a.photo} onChange={v => update(i, 'photo', v)} folder="teampic" /></div>
+                  <div style={{ gridColumn: '1/-1' }}><LinksField label="Other Links" value={a.links} onChange={v => update(i, 'links', v)} desc="LinkedIn, personal website, Google Scholar, etc." /></div>
                 </div>
               ) : (
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
                   <Field label="Name" value={a.name} onChange={v => update(i, 'name', v)} />
                   <Field label="Note" value={a.note} onChange={v => update(i, 'note', v)} />
                   {a.title !== undefined && <div style={{ gridColumn: '1/-1' }}><Field label="Title/Role" value={a.title} onChange={v => update(i, 'title', v)} /></div>}
+                  <Field label="Email" value={a.email} onChange={v => update(i, 'email', v)} />
+                  <div style={{ gridColumn: '1/-1' }}><ImageField label="Photo" value={a.photo} onChange={v => update(i, 'photo', v)} folder="teampic" /></div>
+                  <div style={{ gridColumn: '1/-1' }}><LinksField label="Other Links" value={a.links} onChange={v => update(i, 'links', v)} desc="LinkedIn, personal website, Google Scholar, etc." /></div>
                 </div>
               )}
             </div>

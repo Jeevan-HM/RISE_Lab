@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Upload, X, Loader2 } from 'lucide-react';
+import { Upload, X, Loader2, Plus, Trash2 } from 'lucide-react';
 import { uploadImage, resolveImagePath } from '../lib/images';
 
 /**
@@ -122,6 +122,55 @@ export function ImageField({ label, value, onChange, folder = '', desc }) {
           {error && <span style={{ fontSize: '0.78rem', color: '#c0392b' }}>{error}</span>}
         </div>
       </div>
+    </div>
+  );
+}
+
+/**
+ * Links field — editable list of { label, url } pairs, e.g. LinkedIn,
+ * personal website, Google Scholar. Email has its own dedicated field
+ * elsewhere; this is for everything else.
+ */
+export function LinksField({ label = 'Links', value, onChange, desc }) {
+  const links = value || [];
+  const update = (i, field, v) => onChange(links.map((l, idx) => idx === i ? { ...l, [field]: v } : l));
+  const remove = i => onChange(links.filter((_, idx) => idx !== i));
+  const add = () => onChange([...links, { label: '', url: '' }]);
+
+  return (
+    <div className="admin-field">
+      <label>{label}</label>
+      {desc && <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', margin: '0 0 0.5rem' }}>{desc}</p>}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        {links.map((l, i) => (
+          <div key={i} style={{ display: 'flex', gap: '0.4rem', alignItems: 'center' }}>
+            <input
+              type="text"
+              value={l.label || ''}
+              onChange={e => update(i, 'label', e.target.value)}
+              placeholder="Label (e.g. LinkedIn)"
+              style={{ flex: '0 0 38%' }}
+            />
+            <input
+              type="text"
+              value={l.url || ''}
+              onChange={e => update(i, 'url', e.target.value)}
+              placeholder="https://…"
+              style={{ flex: 1 }}
+            />
+            <button
+              type="button"
+              onClick={() => remove(i)}
+              style={{ background: 'transparent', border: '1px solid #c0392b', borderRadius: 'var(--r-sm)', width: 30, height: 30, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#c0392b', flexShrink: 0 }}
+            >
+              <Trash2 size={13} />
+            </button>
+          </div>
+        ))}
+      </div>
+      <button type="button" className="btn-add" onClick={add} style={{ marginTop: '0.5rem', alignSelf: 'flex-start' }}>
+        <Plus size={13} /> Add Link
+      </button>
     </div>
   );
 }
