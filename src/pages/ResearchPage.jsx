@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown, ExternalLink } from 'lucide-react';
+import { resolveImagePath } from '../lib/images';
 
 function ProjectItem({ project }) {
   const [open, setOpen] = useState(false);
@@ -35,7 +36,7 @@ function ProjectItem({ project }) {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
               </div>
             ) : project.image ? (
-              <img src={`${import.meta.env.BASE_URL}images/${project.image}`} alt={project.title}
+              <img src={resolveImagePath(project.image)} alt={project.title}
                 style={{ width: '100%', borderRadius: 'var(--r-md)', objectFit: 'cover', maxHeight: 240 }} />
             ) : null}
           </div>
@@ -95,7 +96,7 @@ export default function ResearchPage({ data }) {
                 </div>
                 {area.image && (
                   <div className="project-image-wrapper">
-                    <img src={`${import.meta.env.BASE_URL}images/${area.image}`} alt={area.title} loading="lazy"
+                    <img src={resolveImagePath(area.image)} alt={area.title} loading="lazy"
                          onError={e => { e.target.style.display = 'none'; }} />
                   </div>
                 )}

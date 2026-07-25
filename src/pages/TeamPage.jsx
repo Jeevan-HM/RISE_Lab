@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Mail, Link2, Globe } from 'lucide-react';
+import { resolveImagePath } from '../lib/images';
 
 // ── Section label pill ───────────────────────────────────────
 function SectionLabel({ label, count }) {
@@ -35,7 +36,7 @@ function MemberCard({ member, folder = 'teampic' }) {
     <div className="team-card animate-fade-up">
       <img
         className="team-avatar"
-        src={`${import.meta.env.BASE_URL}images/${folder}/${member.photo}`}
+        src={resolveImagePath(member.photo, folder) || `${import.meta.env.BASE_URL}images/teampic/sundevil.jpg`}
         alt={member.name}
         onError={e => { e.target.src = `${import.meta.env.BASE_URL}images/teampic/sundevil.jpg`; }}
       />
@@ -152,7 +153,7 @@ export default function TeamPage({ data }) {
                   <div className="director-card animate-fade-up">
                     <img
                       className="director-avatar"
-                      src={`${import.meta.env.BASE_URL}images/teampic/${data.director.photo}`}
+                      src={resolveImagePath(data.director.photo, 'teampic') || `${import.meta.env.BASE_URL}images/teampic/sundevil.jpg`}
                       alt={data.director.name}
                       onError={e => { e.target.src = `${import.meta.env.BASE_URL}images/teampic/sundevil.jpg`; }}
                     />

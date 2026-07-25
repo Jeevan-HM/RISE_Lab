@@ -5,6 +5,7 @@ import {
   BookOpen, Trophy, FlaskConical
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { resolveImagePath } from '../lib/images';
 
 const ICON_MAP = {
   'aerial-robotics': Navigation2,
@@ -30,7 +31,7 @@ function Carousel({ images: imagesProp }) {
     <div className="carousel-wrapper">
       {images.map((img, i) => (
         <div key={i} className={`carousel-slide${i === idx ? ' active' : ''}`}>
-          <img src={`${import.meta.env.BASE_URL}images/slide/${img}`} alt={`Lab photo ${i + 1}`} loading={i === 0 ? 'eager' : 'lazy'} />
+          <img src={resolveImagePath(img, 'slide')} alt={`Lab photo ${i + 1}`} loading={i === 0 ? 'eager' : 'lazy'} />
         </div>
       ))}
       <button className="carousel-arrow prev" onClick={() => { prev(); resetTimer(); }} aria-label="Previous"><ChevronLeft size={18} /></button>
@@ -160,7 +161,7 @@ export function DirectorBlock({ data }) {
         <div className="director-card animate-fade-up">
           <img
             className="director-avatar"
-            src={`${import.meta.env.BASE_URL}images/teampic/${data.director.photo}`}
+            src={resolveImagePath(data.director.photo, 'teampic') || `${import.meta.env.BASE_URL}images/teampic/sundevil.jpg`}
             alt={data.director.name}
             onError={e => { e.target.src = `${import.meta.env.BASE_URL}images/teampic/sundevil.jpg`; }}
           />

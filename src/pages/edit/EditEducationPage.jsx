@@ -2,7 +2,8 @@
 import { ExternalLink, Plus, Trash2 } from 'lucide-react';
 import Editable from '../../components/Editable';
 import { useEdit } from '../../context/EditContext';
-import { Field } from '../../components/DrawerFields';
+import { Field, ImageField } from '../../components/DrawerFields';
+import { resolveImagePath } from '../../lib/images';
 
 function HeroDrawer() {
   const { liveData, updateField } = useEdit();
@@ -78,7 +79,7 @@ function OutreachDrawer() {
               <Field label="URL" value={event.url} onChange={v => update(i, 'url', v)} />
             </div>
             <div style={{ marginTop: '0.5rem' }}>
-              <Field label="Image (relative to /images/)" value={event.image} onChange={v => update(i, 'image', v)} />
+              <ImageField label="Image" value={event.image} onChange={v => update(i, 'image', v)} folder="" />
             </div>
             <button className="btn-delete" onClick={() => remove(i)} style={{ marginTop: '0.5rem' }}>
               <Trash2 size={12} /> Remove Event
@@ -151,7 +152,7 @@ export default function EditEducationPage() {
                 {(outreach?.events || []).map((event, i) => (
                   <div key={i} className="outreach-card animate-fade-up" style={{ animationDelay: `${i * 0.1}s` }}>
                     {event.image && (
-                      <img src={`${import.meta.env.BASE_URL}images/${event.image}`} alt={event.name}
+                      <img src={resolveImagePath(event.image)} alt={event.name}
                         onError={e => { e.target.style.display = 'none'; }} />
                     )}
                     <div className="outreach-body">

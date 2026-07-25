@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { HeroBlock, StatsBlock, ResearchAreasBlock, DirectorBlock, CustomBlock } from '../HomePage';
 import Editable from '../../components/Editable';
 import { useEdit } from '../../context/EditContext';
-import { Field } from '../../components/DrawerFields';
+import { Field, ImageField } from '../../components/DrawerFields';
 import {
   Plus, GripVertical, Trash2, ArrowUp, ArrowDown, X,
   AlignLeft, Image, MousePointer, Heading, Minus, Megaphone
@@ -120,17 +120,16 @@ function NewsDrawer() {
 function CarouselDrawer() {
   const { liveData, updateSection } = useEdit();
   const images = liveData.homeCarouselImages || [];
-  const addImg = () => updateSection('homeCarouselImages', [...images, 'placeholder.jpg']);
+  const addImg = () => updateSection('homeCarouselImages', [...images, '']);
   const updateImg = (i, v) => { const next = [...images]; next[i] = v; updateSection('homeCarouselImages', next); };
   const rmImg = i => updateSection('homeCarouselImages', images.filter((_, idx) => idx !== i));
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-      <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Filenames must match images stored in <code>public/images/slide/</code>.</p>
       {images.map((img, i) => (
-        <div key={i} style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-end' }}>
-          <div style={{ flex: 1 }}><Field label={`Image ${i + 1}`} value={img} onChange={v => updateImg(i, v)} /></div>
-          <button className="btn-delete" onClick={() => rmImg(i)} style={{ padding: '0.5rem' }}><Trash2 size={14}/></button>
+        <div key={i} style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}>
+          <div style={{ flex: 1 }}><ImageField label={`Image ${i + 1}`} value={img} onChange={v => updateImg(i, v)} folder="slide" /></div>
+          <button className="btn-delete" onClick={() => rmImg(i)} style={{ padding: '0.5rem', marginTop: 22 }}><Trash2 size={14}/></button>
         </div>
       ))}
       <button className="btn-add" onClick={addImg} style={{ marginTop: '0.5rem' }}><Plus size={14}/> Add Carousel Image</button>
@@ -146,7 +145,7 @@ function DirectorHomeDrawer() {
       <Field label="Name" value={d.name} onChange={v => updateField('director.name', v)} />
       <Field label="Title" value={d.title} onChange={v => updateField('director.title', v)} />
       <Field label="Email" value={d.email} onChange={v => updateField('director.email', v)} />
-      <Field label="Photo filename (from teampic/)" value={d.photo} onChange={v => updateField('director.photo', v)} />
+      <ImageField label="Photo" value={d.photo} onChange={v => updateField('director.photo', v)} folder="teampic" />
       <Field label="Affiliation" value={d.affiliation} onChange={v => updateField('director.affiliation', v)} />
       <Field label="Bio" value={d.bio} onChange={v => updateField('director.bio', v)} rows={6} />
     </div>
@@ -208,7 +207,7 @@ function CustomBlockDrawer({ blockId }) {
       case 'custom-image':
         return (
           <>
-            <Field label="Image URL or filename (from public/images/)" value={block.image || ''} onChange={v => update('image', v)} />
+            <ImageField label="Image" value={block.image || ''} onChange={v => update('image', v)} folder="" />
             <Field label="Alt text / Caption" value={block.caption || ''} onChange={v => update('caption', v)} />
             <div>
               <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-secondary)', marginBottom: '0.25rem' }}>Size</label>
@@ -245,7 +244,7 @@ function CustomBlockDrawer({ blockId }) {
         return (
           <>
             <Field label="Section Title" value={block.title || ''} onChange={v => update('title', v)} />
-            <Field label="Image File (URL or filename)" value={block.image || ''} onChange={v => update('image', v)} />
+            <ImageField label="Image" value={block.image || ''} onChange={v => update('image', v)} folder="" />
             <Field label="Content (Text)" value={block.content || ''} onChange={v => update('content', v)} rows={6} />
           </>
         );

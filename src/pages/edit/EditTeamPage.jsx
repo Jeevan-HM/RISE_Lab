@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Mail, Plus, Pencil, Check, X } from 'lucide-react';
 import { useEdit } from '../../context/EditContext';
-import { Field } from '../../components/DrawerFields';
+import { Field, ImageField } from '../../components/DrawerFields';
+import { resolveImagePath } from '../../lib/images';
 
 /* ── Reusable section-header label ──────────────────────── */
 function SectionLabel({ children, count }) {
@@ -36,7 +37,7 @@ function EditableMemberCard({ member, onChange, onRemove }) {
         <Field label="Name" value={draft.name} onChange={v => setDraft(d => ({ ...d, name: v }))} />
         <Field label="Info / Role" value={draft.info || ''} onChange={v => setDraft(d => ({ ...d, info: v }))} />
         <Field label="Email" value={draft.email || ''} onChange={v => setDraft(d => ({ ...d, email: v }))} />
-        <Field label="Photo filename (from teampic/)" value={draft.photo || ''} onChange={v => setDraft(d => ({ ...d, photo: v }))} />
+        <ImageField label="Photo" value={draft.photo || ''} onChange={v => setDraft(d => ({ ...d, photo: v }))} folder="teampic" />
         <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.25rem', justifyContent: 'flex-end' }}>
           <button onClick={cancel} style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--r-sm)', padding: '5px 10px', fontSize: '0.8rem', cursor: 'pointer', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
             <X size={13}/> Cancel
@@ -73,7 +74,7 @@ function EditableMemberCard({ member, onChange, onRemove }) {
       </button>
       <img
         className="team-avatar"
-        src={`${import.meta.env.BASE_URL}images/teampic/${member.photo || 'sundevil.jpg'}`}
+        src={resolveImagePath(member.photo, 'teampic') || `${import.meta.env.BASE_URL}images/teampic/sundevil.jpg`}
         alt={member.name}
         onError={e => { e.target.src = `${import.meta.env.BASE_URL}images/teampic/sundevil.jpg`; }}
       />
@@ -279,7 +280,7 @@ function DirectorEditor() {
           <Field label="Name" value={draft.name} onChange={v => setDraft(dd => ({ ...dd, name: v }))} />
           <Field label="Title" value={draft.title} onChange={v => setDraft(dd => ({ ...dd, title: v }))} />
           <Field label="Email" value={draft.email} onChange={v => setDraft(dd => ({ ...dd, email: v }))} />
-          <Field label="Photo filename" value={draft.photo} onChange={v => setDraft(dd => ({ ...dd, photo: v }))} />
+          <div style={{ gridColumn: '1/-1' }}><ImageField label="Photo" value={draft.photo} onChange={v => setDraft(dd => ({ ...dd, photo: v }))} folder="teampic" /></div>
           <div style={{ gridColumn: '1/-1' }}><Field label="Affiliation" value={draft.affiliation} onChange={v => setDraft(dd => ({ ...dd, affiliation: v }))} /></div>
           <div style={{ gridColumn: '1/-1' }}><Field label="Bio" value={draft.bio} onChange={v => setDraft(dd => ({ ...dd, bio: v }))} rows={4} /></div>
         </div>
@@ -308,7 +309,7 @@ function DirectorEditor() {
       </div>
       <div className="director-card">
         <img className="director-avatar"
-          src={`${import.meta.env.BASE_URL}images/teampic/${d.photo}`}
+          src={resolveImagePath(d.photo, 'teampic') || `${import.meta.env.BASE_URL}images/teampic/sundevil.jpg`}
           alt={d.name}
           onError={e => { e.target.src = `${import.meta.env.BASE_URL}images/teampic/sundevil.jpg`; }} />
         <div>

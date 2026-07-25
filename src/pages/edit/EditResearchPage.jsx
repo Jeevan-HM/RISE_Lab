@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { ChevronDown, ExternalLink, Plus, Trash2, ArrowUp, ArrowDown } from 'lucide-react';
 import Editable from '../../components/Editable';
 import { useEdit } from '../../context/EditContext';
-import { Field, DrawerSection } from '../../components/DrawerFields';
+import { Field, ImageField, DrawerSection } from '../../components/DrawerFields';
+import { resolveImagePath } from '../../lib/images';
 
 function ProjectItem({ project }) {
   const [open, setOpen] = useState(false);
@@ -38,7 +39,7 @@ function ProjectItem({ project }) {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
               </div>
             ) : project.image ? (
-              <img src={`${import.meta.env.BASE_URL}images/${project.image}`} alt={project.title}
+              <img src={resolveImagePath(project.image)} alt={project.title}
                 style={{ width: '100%', borderRadius: 'var(--r-md)', objectFit: 'cover', maxHeight: 240 }} />
             ) : null}
           </div>
@@ -68,7 +69,7 @@ function ResearchAreaDrawer({ areaIndex }) {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
       <Field label="Title" value={area.title} onChange={v => updateArea('title', v)} />
       <Field label="ID (e.g. aerial-robotics)" value={area.id} onChange={v => updateArea('id', v)} />
-      <Field label="Image path (relative to /images/)" value={area.image} onChange={v => updateArea('image', v)} />
+      <ImageField label="Image" value={area.image} onChange={v => updateArea('image', v)} folder="" />
       <Field label="Overview" value={area.overview} onChange={v => updateArea('overview', v)} rows={5} />
 
       <DrawerSection title={`Projects (${(area.projects || []).length})`} />
@@ -246,7 +247,7 @@ export default function EditResearchPage() {
                   </div>
                   {area.image && (
                     <div className="project-image-wrapper">
-                      <img src={`${import.meta.env.BASE_URL}images/${area.image}`} alt={area.title} loading="lazy"
+                      <img src={resolveImagePath(area.image)} alt={area.title} loading="lazy"
                         onError={e => { e.target.style.display = 'none'; }} />
                     </div>
                   )}

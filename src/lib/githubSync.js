@@ -101,6 +101,61 @@ export async function commitToGitHub(data, message = 'Admin save') {
   return { ok: true, commitUrl: lastCommitUrl };
 }
 
+/** Read a File as a base64 string (no data: URI prefix). */
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result.split(',')[1]);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+/**
+ * Upload an image file to the configured GitHub repo under
+ * public/images/<folder>/ and return a URL that serves it immediately
+ * via raw.githubusercontent.com (no rebuild/deploy required).
+ */
+export async function uploadImageToGitHub(file, folder = '') {
+  const config = await getGitHubConfig();
+  if (!config?.token || !config?.owner || !config?.repo) {
+    throw new Error('GitHub not configured. Click ⚙ GitHub in the toolbar.');
+  }
+
+  const { token, owner, repo, branch = 'main' } = config;
+  const headers = {
+    Authorization: `Bearer ${token}`,
+    'Content-Type': 'application/json',
+    Accept: 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28',
+  };
+
+  const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_');
+  const dir = folder ? `${folder}/` : '';
+  const path = `public/images/${dir}${Date.now()}_${safeName}`;
+  const content = await fileToBase64(file);
+
+  const putRes = await fetch(
+    `${GITHUB_API}/repos/${owner}/${repo}/contents/${path}`,
+    {
+      method: 'PUT',
+      headers,
+      body: JSON.stringify({
+        message: `Upload image: ${path}`,
+        content,
+        branch,
+      }),
+    }
+  );
+
+  if (!putRes.ok) {
+    const errData = await putRes.json().catch(() => ({}));
+    throw new Error(errData.message || `GitHub upload failed (${putRes.status})`);
+  }
+
+  return `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${path}`;
+}
+
 /**
  * Fetch the list of commits that touched website-data.json.
  * Returns array of { sha, message, date, author, url }.

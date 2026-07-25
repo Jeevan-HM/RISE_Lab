@@ -8,6 +8,7 @@ import {
 import { auth, db } from '../firebase';
 import { signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
+import { ImageField } from '../components/DrawerFields';
 
 // ── Helpers ────────────────────────────────────────────────
 function moveItem(arr, fromIdx, toIdx) {
@@ -162,12 +163,12 @@ function MetaPanel({ data, onChange }) {
         Carousel Images
         <button className="btn-add" onClick={() => onChange({ ...data, homeCarouselImages: [...(data.homeCarouselImages || []), ''] })}><Plus size={13} /> Add</button>
       </div>
-      <p style={{ fontSize: '0.83rem', color: 'var(--text-muted)', marginBottom: '1rem' }}>Images from <code>public/images/slide/</code>. Use ▲▼ to reorder.</p>
+      <p style={{ fontSize: '0.83rem', color: 'var(--text-muted)', marginBottom: '1rem' }}>Use ▲▼ to reorder.</p>
       {(data.homeCarouselImages || []).map((img, i) => (
         <DraggableCard key={i} index={i} onMove={(from, to) => onChange({ ...data, homeCarouselImages: moveItem(data.homeCarouselImages, from, to) })} style={{ marginBottom: 8 }}>
           <div className="admin-card-header">
             <ReorderBtns idx={i} total={(data.homeCarouselImages || []).length} onMove={(from, to) => onChange({ ...data, homeCarouselImages: moveItem(data.homeCarouselImages, from, to) })} />
-            <div style={{ flex: 1 }}><Field label={`Image ${i + 1} filename`} value={img} onChange={v => { const next = [...(data.homeCarouselImages || [])]; next[i] = v; onChange({ ...data, homeCarouselImages: next }); }} /></div>
+            <div style={{ flex: 1 }}><ImageField label={`Image ${i + 1}`} value={img} onChange={v => { const next = [...(data.homeCarouselImages || [])]; next[i] = v; onChange({ ...data, homeCarouselImages: next }); }} folder="slide" /></div>
           </div>
           <div className="admin-card-actions">
             <button className="btn-delete" onClick={() => onChange({ ...data, homeCarouselImages: (data.homeCarouselImages || []).filter((_, idx) => idx !== i) })}><Trash2 size={13} /> Remove</button>
@@ -219,7 +220,7 @@ function DirectorPanel({ data, onChange }) {
           <Field label="Name" value={d.name} onChange={v => up('name', v)} />
           <Field label="Title" value={d.title} onChange={v => up('title', v)} />
           <Field label="Email" value={d.email} onChange={v => up('email', v)} />
-          <Field label="Photo filename (from teampic/)" value={d.photo} onChange={v => up('photo', v)} />
+          <div style={{ gridColumn: '1/-1' }}><ImageField label="Photo" value={d.photo} onChange={v => up('photo', v)} folder="teampic" /></div>
           <div style={{ gridColumn: '1/-1' }}><Field label="Affiliation" value={d.affiliation} onChange={v => up('affiliation', v)} /></div>
           <div style={{ gridColumn: '1/-1' }}><Field label="Bio" value={d.bio} onChange={v => up('bio', v)} rows={6} /></div>
         </div>
@@ -245,9 +246,9 @@ function StudentListPanel({ title, field, data, onChange }) {
             <ReorderBtns idx={i} total={items.length} onMove={move} />
             <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
               <Field label="Name" value={m.name} onChange={v => update(i, 'name', v)} />
-              <Field label="Photo filename (from teampic/)" value={m.photo} onChange={v => update(i, 'photo', v)} />
               <Field label="Info / Program & Year" value={m.info} onChange={v => update(i, 'info', v)} />
               <Field label="Email (optional)" value={m.email} onChange={v => update(i, 'email', v)} />
+              <div style={{ gridColumn: '1/-1' }}><ImageField label="Photo" value={m.photo} onChange={v => update(i, 'photo', v)} folder="teampic" /></div>
             </div>
           </div>
           <div className="admin-card-actions">
@@ -369,7 +370,7 @@ function ResearchPanel({ data, onChange }) {
             <div style={{ marginTop: '1rem' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
                 <Field label="Title" value={area.title} onChange={v => updateArea(ai, 'title', v)} />
-                <Field label="Image path (relative to /images/)" value={area.image} onChange={v => updateArea(ai, 'image', v)} />
+                <div style={{ gridColumn: '1/-1' }}><ImageField label="Image" value={area.image} onChange={v => updateArea(ai, 'image', v)} folder="" /></div>
                 <div style={{ gridColumn: '1/-1' }}><Field label="Overview" value={area.overview} onChange={v => updateArea(ai, 'overview', v)} rows={4} /></div>
               </div>
               <div style={{ fontWeight: 700, fontSize: '0.9rem', marginBottom: '0.75rem', display: 'flex', justifyContent: 'space-between' }}>
