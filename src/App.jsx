@@ -50,9 +50,11 @@ function useScrollReveal() {
 function AppLoading() {
   return (
     <div className="app-loading">
-      <div className="app-loading-logo">
-        RISE<span>Lab</span>
-      </div>
+      <img
+        src={`${import.meta.env.BASE_URL}images/logo.png`}
+        alt="RISE Lab — Robotics & Intelligent Systems Lab, Arizona State University"
+        className="app-loading-logo"
+      />
       <div className="app-loading-bar" />
       <div className="app-loading-text">Loading…</div>
     </div>
@@ -107,8 +109,11 @@ function Navbar({ theme, toggleTheme }) {
     >
       <div className="container">
         <Link to="/" className="nav-brand">
-          <span>RISE</span>
-          <span className="nav-brand-accent">Lab</span>
+          <img
+            src={`${import.meta.env.BASE_URL}images/logo-icon.png`}
+            alt="RISE Lab — Robotics & Intelligent Systems Lab, Arizona State University"
+            className="nav-logo"
+          />
         </Link>
 
         <div className="nav-links" style={{ display: 'flex' }}>
@@ -165,9 +170,11 @@ function Footer({ data }) {
       <div className="container">
         <div className="footer-grid">
           <div>
-            <div className="footer-brand">
-              RISE <span>Lab</span>
-            </div>
+            <img
+              src={`${import.meta.env.BASE_URL}images/logo.png`}
+              alt="RISE Lab — Robotics & Intelligent Systems Lab, Arizona State University"
+              className="footer-logo"
+            />
             <p className="footer-tagline">
               {data?.meta?.shortDescription || 'Robotics and Intelligent Systems Laboratory, Arizona State University.'}
             </p>

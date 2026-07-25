@@ -25,9 +25,9 @@
   --color-maroon:        #8c1d40;
   --color-maroon-soft:   rgba(140,29,64,0.08);
 
-  /* Blue accent */
-  --color-accent:        #2563eb;
-  --color-accent-soft:   rgba(37,99,235,0.08);
+  /* Accent — matches ASU gold so links stay on-brand */
+  --color-accent:        #a97520;
+  --color-accent-soft:   rgba(169,117,32,0.08);
 
   /* Text */
   --text-primary:        #111827;
@@ -94,8 +94,8 @@
   /* Fixed: dark-mode maroon-soft was inheriting incorrect light value */
   --color-maroon-soft:   rgba(184,45,88,0.15);
 
-  --color-accent:        #60a5fa;
-  --color-accent-soft:   rgba(96,165,250,0.12);
+  --color-accent:        #dbab46;
+  --color-accent-soft:   rgba(219,171,70,0.12);
 }
 
 /* ============================================================
@@ -288,6 +288,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   letter-spacing: -0.02em;
 }
 .nav-brand-accent { color: var(--color-gold); }
+.nav-logo { display: block; height: 60px; width: auto; border-radius: var(--r-sm); }
 .nav-links { display: flex; align-items: center; gap: 2px; }
 .nav-link {
   padding: 6px 13px;
@@ -1255,6 +1256,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--space-2xl); margin-bottom: var(--space-2xl); }
 .footer-brand { font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 900; margin-bottom: var(--space-md); color: #fff; }
 .footer-brand span { color: var(--color-gold); }
+.footer-logo { display: block; width: 100%; max-width: 260px; height: auto; border-radius: var(--r-md); margin-bottom: var(--space-md); }
 .footer-tagline { color: rgba(255,255,255,0.6); font-size: 0.875rem; line-height: 1.65; }
 .footer-col h5 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-md); font-weight: 700; }
 .footer-links { display: flex; flex-direction: column; gap: 10px; }
@@ -1544,14 +1546,12 @@ button { font-family: inherit; cursor: pointer; border: none; }
   gap: 1.5rem;
 }
 .app-loading-logo {
-  font-family: 'Outfit', sans-serif;
-  font-size: 2.8rem;
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  color: var(--color-maroon);
+  width: min(90vw, 420px);
+  height: auto;
+  border-radius: var(--r-lg);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
   animation: logoPulse 1.8s ease-in-out infinite;
 }
-.app-loading-logo span { color: var(--color-gold); }
 @keyframes logoPulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50%       { opacity: 0.65; transform: scale(0.97); }

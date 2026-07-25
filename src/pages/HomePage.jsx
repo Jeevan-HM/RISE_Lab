@@ -300,7 +300,7 @@ export default function HomePage({ data }) {
           );
           case 'custom-callout': {
             const calloutColors = {
-              info: { bg: 'rgba(59,130,246,0.12)', border: 'rgba(59,130,246,0.4)', color: '#60a5fa' },
+              info: { bg: 'rgba(120,80,180,0.12)', border: 'rgba(120,80,180,0.4)', color: '#9c7fd4' },
               warning: { bg: 'rgba(200,146,42,0.12)', border: 'var(--color-gold)', color: 'var(--color-gold)' },
               success: { bg: 'rgba(34,197,94,0.12)', border: 'rgba(34,197,94,0.4)', color: '#4ade80' },
               maroon: { bg: 'rgba(140,29,64,0.12)', border: 'var(--color-maroon)', color: 'var(--color-maroon)' },

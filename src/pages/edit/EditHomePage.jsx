@@ -231,7 +231,7 @@ function CustomBlockDrawer({ blockId }) {
             <div>
               <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-secondary)', marginBottom: '0.25rem' }}>Style</label>
               <select value={block.calloutStyle || 'info'} onChange={e => update('calloutStyle', e.target.value)} style={{ width: '100%', padding: '0.5rem', borderRadius: 'var(--r-sm)', border: '1px solid var(--color-border)', background: 'var(--color-surface)', color: 'var(--text-primary)' }}>
-                <option value="info">Info (Blue)</option>
+                <option value="info">Info (Purple)</option>
                 <option value="warning">Warning (Gold)</option>
                 <option value="success">Success (Green)</option>
                 <option value="maroon">Maroon</option>
@@ -347,7 +347,7 @@ function CustomBlockRenderer({ block }) {
       );
     case 'custom-callout': {
       const calloutColors = {
-        info: { bg: 'rgba(59,130,246,0.12)', border: 'rgba(59,130,246,0.4)', color: '#60a5fa' },
+        info: { bg: 'rgba(120,80,180,0.12)', border: 'rgba(120,80,180,0.4)', color: '#9c7fd4' },
         warning: { bg: 'rgba(200,146,42,0.12)', border: 'var(--color-gold)', color: 'var(--color-gold)' },
         success: { bg: 'rgba(34,197,94,0.12)', border: 'rgba(34,197,94,0.4)', color: '#4ade80' },
         maroon: { bg: 'rgba(140,29,64,0.12)', border: 'var(--color-maroon)', color: 'var(--color-maroon)' },

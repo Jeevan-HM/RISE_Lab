@@ -5,7 +5,7 @@ import { useEdit } from '../context/EditContext';
 const THEME_DEFAULTS = {
   colorMaroon:    '#8c1d40',
   colorGold:      '#c8922a',
-  colorAccent:    '#2563eb',
+  colorAccent:    '#a97520',
   colorBg:        '#fdf8f4',
   colorSurface:   '#ffffff',
   colorSurface2:  '#fdf0e5',
@@ -21,7 +21,7 @@ const THEME_GROUPS = [
     fields: [
       { key: 'colorMaroon',   label: 'Primary (Maroon)',  cssVar: '--color-maroon',   desc: 'Buttons, active states, navbar brand' },
       { key: 'colorGold',     label: 'Accent (Gold)',     cssVar: '--color-gold',     desc: 'Highlights, eyebrows, links, stats' },
-      { key: 'colorAccent',   label: 'Link Blue',         cssVar: '--color-accent',   desc: 'External links, focus rings' },
+      { key: 'colorAccent',   label: 'Link Accent',       cssVar: '--color-accent',   desc: 'External links, focus rings' },
     ],
   },
   {
