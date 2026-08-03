@@ -11,6 +11,7 @@ import TeamPage from './pages/TeamPage';
 import PublicationsPage from './pages/PublicationsPage';
 import EducationPage from './pages/EducationPage';
 import ContactPage from './pages/ContactPage';
+import NewsPage from './pages/NewsPage';
 
 // Edit mode
 import { EditProvider, useEdit } from './context/EditContext';
@@ -95,6 +96,7 @@ function Navbar({ theme, toggleTheme }) {
     { to: '/research', label: 'Research' },
     { to: '/team', label: 'Team' },
     { to: '/publications', label: 'Publications' },
+    { to: '/news', label: 'News' },
     { to: '/education', label: 'Education' },
     { to: '/contact', label: 'Contact' },
   ];
@@ -179,6 +181,7 @@ function Footer({ data }) {
               <Link to="/research">Research</Link>
               <Link to="/team">Team</Link>
               <Link to="/publications">Publications</Link>
+              <Link to="/news">News</Link>
               <Link to="/education">Education</Link>
               <Link to="/contact">Contact</Link>
             </div>
@@ -310,6 +313,7 @@ function PublicSite({ data, theme, toggleTheme }) {
         <Route path="/research"     element={<ResearchPage data={data} />} />
         <Route path="/team"         element={<TeamPage data={data} />} />
         <Route path="/publications" element={<PublicationsPage data={data} />} />
+        <Route path="/news"         element={<NewsPage data={data} />} />
         <Route path="/education"    element={<EducationPage data={data} />} />
         <Route path="/contact"      element={<ContactPage data={data} />} />
       </Routes>

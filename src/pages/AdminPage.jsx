@@ -386,22 +386,51 @@ function ResearchPanel({ data, onChange }) {
                 Projects
                 <button className="btn-add" onClick={() => addProject(ai)}><Plus size={13} /> Add Project</button>
               </div>
-              {(area.projects || []).map((proj, pi) => (
-                <DraggableCard key={pi} index={pi} onMove={(from, to) => moveProject(ai, from, to)} className="inner-project-card" style={{ background: 'var(--color-surface-2)', border: '1px solid var(--color-border)', borderRadius: 'var(--r-md)', padding: '1rem', marginBottom: '0.75rem', transition: 'all 0.2s ease' }}>
-                  <div className="admin-card-header" style={{ marginBottom: '0.75rem' }}>
-                    <ReorderBtns idx={pi} total={(area.projects || []).length} onMove={(from, to) => moveProject(ai, from, to)} />
-                    <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>{proj.title || `Project ${pi + 1}`}</span>
-                  </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
-                    <div style={{ gridColumn: '1/-1' }}><Field label="Project Title" value={proj.title} onChange={v => updateProject(ai, pi, 'title', v)} /></div>
-                    <div style={{ gridColumn: '1/-1' }}><Field label="Description" value={proj.description} onChange={v => updateProject(ai, pi, 'description', v)} rows={3} /></div>
-                    <Field label="YouTube Embed URL" value={proj.video} onChange={v => updateProject(ai, pi, 'video', v)} />
-                  </div>
-                  <div className="admin-card-actions">
-                    <button className="btn-delete" onClick={() => removeProject(ai, pi)}><Trash2 size={13} /> Remove</button>
-                  </div>
-                </DraggableCard>
-              ))}
+              {(area.projects || []).map((proj, pi) => {
+                const papers = proj.papers || [];
+                const addPaper = () => updateProject(ai, pi, 'papers', [...papers, { title: '', url: '' }]);
+                const updatePaper = (papIdx, field, val) => updateProject(ai, pi, 'papers', papers.map((p, idx) => idx === papIdx ? { ...p, [field]: val } : p));
+                const removePaper = papIdx => updateProject(ai, pi, 'papers', papers.filter((_, idx) => idx !== papIdx));
+                return (
+                  <DraggableCard key={pi} index={pi} onMove={(from, to) => moveProject(ai, from, to)} className="inner-project-card" style={{ background: 'var(--color-surface-2)', border: '1px solid var(--color-border)', borderRadius: 'var(--r-md)', padding: '1rem', marginBottom: '0.75rem', transition: 'all 0.2s ease' }}>
+                    <div className="admin-card-header" style={{ marginBottom: '0.75rem' }}>
+                      <ReorderBtns idx={pi} total={(area.projects || []).length} onMove={(from, to) => moveProject(ai, from, to)} />
+                      <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>{proj.title || `Project ${pi + 1}`}</span>
+                    </div>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+                      <div style={{ gridColumn: '1/-1' }}><Field label="Project Title" value={proj.title} onChange={v => updateProject(ai, pi, 'title', v)} /></div>
+                      <div style={{ gridColumn: '1/-1' }}><Field label="Description" value={proj.description} onChange={v => updateProject(ai, pi, 'description', v)} rows={3} /></div>
+                      <Field label="YouTube Embed URL" value={proj.video} onChange={v => updateProject(ai, pi, 'video', v)} />
+                    </div>
+
+                    {/* Representative Publications */}
+                    <div style={{ marginTop: '1rem', borderTop: '1px solid var(--color-border)', paddingTop: '0.75rem' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                        <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-muted)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                          Representative Publications
+                        </span>
+                        <button className="btn-add" onClick={addPaper}><Plus size={12} /> Add Paper</button>
+                      </div>
+                      {papers.length === 0 && (
+                        <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', margin: '0.25rem 0 0.5rem' }}>No papers added yet.</p>
+                      )}
+                      {papers.map((paper, papIdx) => (
+                        <div key={papIdx} style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '0.5rem', alignItems: 'end', marginBottom: '0.5rem', background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--r-md)', padding: '0.6rem 0.75rem' }}>
+                          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
+                            <Field label="Paper Title" value={paper.title} onChange={v => updatePaper(papIdx, 'title', v)} />
+                            <Field label="DOI / URL" value={paper.url} onChange={v => updatePaper(papIdx, 'url', v)} />
+                          </div>
+                          <button className="btn-delete" onClick={() => removePaper(papIdx)} style={{ marginBottom: '0' }}><Trash2 size={12} /></button>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="admin-card-actions">
+                      <button className="btn-delete" onClick={() => removeProject(ai, pi)}><Trash2 size={13} /> Remove Project</button>
+                    </div>
+                  </DraggableCard>
+                );
+              })}
             </div>
           )}
         </DraggableCard>

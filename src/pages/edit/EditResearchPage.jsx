@@ -62,8 +62,27 @@ function ResearchAreaDrawer({ areaIndex }) {
     const projs = (area.projects || []).map((p, i) => i === pi ? { ...p, [field]: value } : p);
     updateArea('projects', projs);
   };
-  const addProject = () => updateArea('projects', [...(area.projects || []), { title: 'New Project', description: '', video: '' }]);
+  const addProject = () => updateArea('projects', [...(area.projects || []), { title: 'New Project', description: '', video: '', papers: [] }]);
   const removeProject = pi => updateArea('projects', (area.projects || []).filter((_, i) => i !== pi));
+
+  const addPaper = pi => {
+    const projs = (area.projects || []).map((p, i) => i === pi ? { ...p, papers: [...(p.papers || []), { title: '', url: '' }] } : p);
+    updateArea('projects', projs);
+  };
+  const updatePaper = (pi, papIdx, field, val) => {
+    const projs = (area.projects || []).map((p, i) => {
+      if (i !== pi) return p;
+      return { ...p, papers: (p.papers || []).map((paper, idx) => idx === papIdx ? { ...paper, [field]: val } : paper) };
+    });
+    updateArea('projects', projs);
+  };
+  const removePaper = (pi, papIdx) => {
+    const projs = (area.projects || []).map((p, i) => {
+      if (i !== pi) return p;
+      return { ...p, papers: (p.papers || []).filter((_, idx) => idx !== papIdx) };
+    });
+    updateArea('projects', projs);
+  };
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -80,6 +99,27 @@ function ResearchAreaDrawer({ areaIndex }) {
           <Field label="Title" value={proj.title} onChange={v => updateProject(pi, 'title', v)} />
           <div style={{ marginTop: '0.5rem' }}><Field label="Description" value={proj.description} onChange={v => updateProject(pi, 'description', v)} rows={3} /></div>
           <div style={{ marginTop: '0.5rem' }}><Field label="YouTube Embed URL" value={proj.video} onChange={v => updateProject(pi, 'video', v)} /></div>
+
+          {/* Representative Publications */}
+          <div style={{ marginTop: '0.75rem', borderTop: '1px solid var(--color-border)', paddingTop: '0.5rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
+              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Representative Publications</span>
+              <button className="btn-add" onClick={() => addPaper(pi)}><Plus size={11} /> Add</button>
+            </div>
+            {(proj.papers || []).length === 0 && (
+              <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', margin: '0 0 0.25rem' }}>No papers yet.</p>
+            )}
+            {(proj.papers || []).map((paper, papIdx) => (
+              <div key={papIdx} style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--r-md)', padding: '0.5rem 0.6rem', marginBottom: '0.4rem', display: 'grid', gridTemplateColumns: '1fr auto', gap: '0.5rem', alignItems: 'end' }}>
+                <div>
+                  <Field label="Title" value={paper.title} onChange={v => updatePaper(pi, papIdx, 'title', v)} />
+                  <div style={{ marginTop: '0.3rem' }}><Field label="URL" value={paper.url} onChange={v => updatePaper(pi, papIdx, 'url', v)} /></div>
+                </div>
+                <button className="btn-delete" onClick={() => removePaper(pi, papIdx)}><Trash2 size={11} /></button>
+              </div>
+            ))}
+          </div>
+
           <button className="btn-delete" onClick={() => removeProject(pi)} style={{ marginTop: '0.5rem' }}>
             <Trash2 size={12} /> Remove Project
           </button>

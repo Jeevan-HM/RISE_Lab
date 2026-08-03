@@ -93,7 +93,7 @@ function AlumniSection({ data }) {
         ))}
       </div>
       <div className="grid-4 stagger-children">
-        {getList().map((a, i) => (
+        {getList().sort((a, b) => (a.name || '').localeCompare(b.name || '')).map((a, i) => (
           <div key={i} className="team-card animate-fade-up">
             <img
               className="team-avatar"
@@ -214,7 +214,7 @@ export default function TeamPage({ data }) {
                 <div style={{ marginBottom: 'var(--space-2xl)' }} className="reveal">
                   <SectionLabel label="Post-Doctoral Researchers" count={data.postdocStudents.length} />
                   <div className="grid-4 stagger-children">
-                    {data.postdocStudents.map((m, i) => <MemberCard key={i} member={m} />)}
+                    {[...data.postdocStudents].sort((a, b) => (a.name || '').localeCompare(b.name || '')).map((m, i) => <MemberCard key={i} member={m} />)}
                   </div>
                 </div>
               )}
@@ -224,7 +224,7 @@ export default function TeamPage({ data }) {
                 <div style={{ marginBottom: 'var(--space-2xl)' }} className="reveal">
                   <SectionLabel label="PhD Students" count={data.docStudents.length} />
                   <div className="grid-4 stagger-children">
-                    {data.docStudents.map((m, i) => <MemberCard key={i} member={m} />)}
+                    {[...data.docStudents].sort((a, b) => (a.name || '').localeCompare(b.name || '')).map((m, i) => <MemberCard key={i} member={m} />)}
                   </div>
                 </div>
               )}
@@ -234,7 +234,7 @@ export default function TeamPage({ data }) {
                 <div style={{ marginBottom: 'var(--space-2xl)' }} className="reveal">
                   <SectionLabel label="MS Students" count={data.msStudents.length} />
                   <div className="grid-4 stagger-children">
-                    {data.msStudents.map((m, i) => <MemberCard key={i} member={m} />)}
+                    {[...data.msStudents].sort((a, b) => (a.name || '').localeCompare(b.name || '')).map((m, i) => <MemberCard key={i} member={m} />)}
                   </div>
                 </div>
               )}
@@ -244,7 +244,7 @@ export default function TeamPage({ data }) {
                 <div style={{ marginBottom: 'var(--space-2xl)' }} className="reveal">
                   <SectionLabel label="Undergraduate Students" count={data.bsStudents.length} />
                   <div className="grid-4 stagger-children">
-                    {data.bsStudents.map((m, i) => <MemberCard key={i} member={m} />)}
+                    {[...data.bsStudents].sort((a, b) => (a.name || '').localeCompare(b.name || '')).map((m, i) => <MemberCard key={i} member={m} />)}
                   </div>
                 </div>
               )}

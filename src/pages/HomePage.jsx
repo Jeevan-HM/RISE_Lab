@@ -85,6 +85,11 @@ export function HeroBlock({ data }) {
                 </div>
               ))}
             </div>
+            <div style={{ marginTop: '1.25rem', paddingTop: '1rem', borderTop: '1px solid var(--color-border)' }}>
+              <Link to="/news" className="btn btn-ghost" style={{ width: '100%', justifyContent: 'center', display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.88rem' }}>
+                View all news <ArrowRight size={13} />
+              </Link>
+            </div>
           </div>
         </div>
 
