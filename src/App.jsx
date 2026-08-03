@@ -27,6 +27,7 @@ import EditTeamPage from './pages/edit/EditTeamPage';
 import EditPublicationsPage from './pages/edit/EditPublicationsPage';
 import EditEducationPage from './pages/edit/EditEducationPage';
 import EditContactPage from './pages/edit/EditContactPage';
+import EditNewsPage from './pages/edit/EditNewsPage';
 
 // ── Scroll Reveal Hook ──────────────────────────────────────
 function useScrollReveal() {
@@ -279,6 +280,7 @@ function EditModeInner({ showTheme, setShowTheme, showAdvanced, setShowAdvanced 
           <Route path="/admin/research"     element={<EditResearchPage />} />
           <Route path="/admin/team"         element={<EditTeamPage />} />
           <Route path="/admin/publications" element={<EditPublicationsPage />} />
+          <Route path="/admin/news"         element={<EditNewsPage />} />
           <Route path="/admin/education"    element={<EditEducationPage />} />
           <Route path="/admin/contact"      element={<EditContactPage />} />
         </Routes>

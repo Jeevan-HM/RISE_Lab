@@ -13,6 +13,7 @@ const PAGES = [
   { to: '/admin/research',     label: 'Research'                   },
   { to: '/admin/team',         label: 'Team'                       },
   { to: '/admin/publications', label: 'Publications'               },
+  { to: '/admin/news',         label: 'News'                       },
   { to: '/admin/education',    label: 'Education'                  },
   { to: '/admin/contact',      label: 'Contact'                    },
 ];
