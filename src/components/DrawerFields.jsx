@@ -141,27 +141,27 @@ export function LinksField({ label = 'Links', value, onChange, desc }) {
     <div className="admin-field">
       <label>{label}</label>
       {desc && <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', margin: '0 0 0.5rem' }}>{desc}</p>}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
         {links.map((l, i) => (
-          <div key={i} style={{ display: 'flex', gap: '0.4rem', alignItems: 'center' }}>
+          <div key={i} style={{ position: 'relative', display: 'flex', flexDirection: 'column', gap: '0.3rem', paddingRight: '2rem' }}>
             <input
               type="text"
               value={l.label || ''}
               onChange={e => update(i, 'label', e.target.value)}
               placeholder="Label (e.g. LinkedIn)"
-              style={{ flex: '0 0 38%' }}
+              style={{ width: '100%', boxSizing: 'border-box' }}
             />
             <input
               type="text"
               value={l.url || ''}
               onChange={e => update(i, 'url', e.target.value)}
               placeholder="https://…"
-              style={{ flex: 1 }}
+              style={{ width: '100%', boxSizing: 'border-box' }}
             />
             <button
               type="button"
               onClick={() => remove(i)}
-              style={{ background: 'transparent', border: '1px solid #c0392b', borderRadius: 'var(--r-sm)', width: 30, height: 30, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#c0392b', flexShrink: 0 }}
+              style={{ position: 'absolute', top: 0, right: 0, background: 'transparent', border: '1px solid #c0392b', borderRadius: 'var(--r-sm)', width: 28, height: 28, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#c0392b', flexShrink: 0 }}
             >
               <Trash2 size={13} />
             </button>
