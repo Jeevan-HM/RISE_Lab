@@ -80,6 +80,12 @@ function EditableMemberCard({ member, onChange, onRemove, index, total, onMove }
         <Field label="Info / Role" value={draft.info || ''} onChange={v => setDraft(d => ({ ...d, info: v }))} />
         <Field label="Email" value={draft.email || ''} onChange={v => setDraft(d => ({ ...d, email: v }))} />
         <ImageField label="Photo" value={draft.photo || ''} onChange={v => setDraft(d => ({ ...d, photo: v }))} folder="teampic" />
+        <Field
+          label="Google Scholar ID"
+          value={draft.scholarId || ''}
+          onChange={v => setDraft(d => ({ ...d, scholarId: v.trim() }))}
+          placeholder="e.g. XXXXXX (the ?user= part of their Scholar URL)"
+        />
         <LinksField label="Other Links" value={draft.links} onChange={v => setDraft(d => ({ ...d, links: v }))} desc="LinkedIn, personal website, Google Scholar, etc." />
         <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.25rem', justifyContent: 'flex-end' }}>
           <button onClick={cancel} style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--r-sm)', padding: '5px 10px', fontSize: '0.8rem', cursor: 'pointer', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
@@ -201,6 +207,12 @@ function EditableAlumniItem({ item, kind, onChange, onRemove, index, total, onMo
           </>
         )}
         <Field label="Email" value={draft.email || ''} onChange={v => setDraft(d => ({ ...d, email: v }))} />
+        <Field
+          label="Google Scholar ID"
+          value={draft.scholarId || ''}
+          onChange={v => setDraft(d => ({ ...d, scholarId: v.trim() }))}
+          placeholder="e.g. XXXXXX (the ?user= part of their Scholar URL)"
+        />
         <LinksField label="Other Links" value={draft.links} onChange={v => setDraft(d => ({ ...d, links: v }))} desc="LinkedIn, personal website, Google Scholar, etc." />
         <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.25rem', justifyContent: 'flex-end' }}>
           <button onClick={cancel} style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--r-sm)', padding: '5px 10px', fontSize: '0.8rem', cursor: 'pointer', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
@@ -358,6 +370,14 @@ function DirectorEditor() {
           <div style={{ gridColumn: '1/-1' }}><ImageField label="Photo" value={draft.photo} onChange={v => setDraft(dd => ({ ...dd, photo: v }))} folder="teampic" /></div>
           <div style={{ gridColumn: '1/-1' }}><Field label="Affiliation" value={draft.affiliation} onChange={v => setDraft(dd => ({ ...dd, affiliation: v }))} /></div>
           <div style={{ gridColumn: '1/-1' }}><Field label="Bio" value={draft.bio} onChange={v => setDraft(dd => ({ ...dd, bio: v }))} rows={4} /></div>
+          <div style={{ gridColumn: '1/-1' }}>
+            <Field
+              label="Google Scholar ID"
+              value={draft.scholarId || ''}
+              onChange={v => setDraft(dd => ({ ...dd, scholarId: v.trim() }))}
+              placeholder="e.g. XXXXXX (the ?user= part of their Scholar URL)"
+            />
+          </div>
           <div style={{ gridColumn: '1/-1' }}><LinksField label="Other Links" value={draft.links} onChange={v => setDraft(dd => ({ ...dd, links: v }))} desc="LinkedIn, personal website, Google Scholar, etc." /></div>
         </div>
         <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem', justifyContent: 'flex-end' }}>

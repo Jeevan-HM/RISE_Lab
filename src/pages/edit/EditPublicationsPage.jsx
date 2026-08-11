@@ -1,8 +1,9 @@
 import { useState, useMemo } from 'react';
-import { ExternalLink, Search, Plus, Trash2 } from 'lucide-react';
+import { ExternalLink, Search, Plus, Trash2, GraduationCap } from 'lucide-react';
 import Editable from '../../components/Editable';
 import { useEdit } from '../../context/EditContext';
 import { Field } from '../../components/DrawerFields';
+import ScholarSync from '../../components/ScholarSync';
 
 function HeroDrawer() {
   const { liveData, updateField } = useEdit();
@@ -56,6 +57,7 @@ export default function EditPublicationsPage() {
   const data = liveData;
   const [tab, setTab] = useState('journal');
   const [query, setQuery] = useState('');
+  const [showSync, setShowSync] = useState(false);
 
   const allPubs = useMemo(() => {
     const list = tab === 'journal' ? (data?.journalPubs || []) : (data?.confPubs || []);
@@ -83,6 +85,7 @@ export default function EditPublicationsPage() {
 
   return (
     <div className="page-wrapper">
+      {showSync && <ScholarSync onClose={() => setShowSync(false)} />}
       {/* Editable page hero */}
       <Editable label="Page Header" content={<HeroDrawer />} position="top-right">
         <div className="page-hero">
@@ -96,8 +99,8 @@ export default function EditPublicationsPage() {
 
       <section className="section">
         <div className="container">
+          {/* Tab bar + Scholar sync button */}
           <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '2rem', flexWrap: 'wrap' }}>
-            {/* Tab bar — Editable wrapper no longer blocks tab clicks */}
             <Editable label={`${tab === 'journal' ? 'Journal' : 'Conference'} Papers`} content={<PubDrawer tab={tab} />}>
               <div className="tabs" style={{ margin: 0, width: 'fit-content' }}>
                 <button className={`tab-btn${tab === 'journal' ? ' active' : ''}`} onClick={() => { setTab('journal'); setQuery(''); }}>
@@ -108,6 +111,25 @@ export default function EditPublicationsPage() {
                 </button>
               </div>
             </Editable>
+
+            {/* Scholar sync button */}
+            <button
+              onClick={() => setShowSync(true)}
+              style={{
+                display: 'flex', alignItems: 'center', gap: '6px',
+                background: 'linear-gradient(135deg, var(--color-maroon), #6b1230)',
+                color: '#fff', border: 'none', borderRadius: 'var(--r-full)',
+                padding: '8px 16px', fontSize: '0.82rem', fontWeight: 700,
+                cursor: 'pointer', boxShadow: '0 2px 10px rgba(140,29,64,0.35)',
+                transition: 'transform 0.15s, box-shadow 0.15s',
+              }}
+              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = '0 4px 16px rgba(140,29,64,0.45)'; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 2px 10px rgba(140,29,64,0.35)'; }}
+              title="Pull publications from Google Scholar profiles"
+            >
+              <GraduationCap size={15} />
+              Sync from Scholar
+            </button>
             <div style={{ flex: 1, maxWidth: 340, position: 'relative' }}>
               <Search size={16} style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
               <input
