@@ -1,0 +1,105 @@
+/**
+ * seed-firestore.html
+ * 
+ * Open this file in a browser (via the dev server) to push the
+ * updated website-data.json to Firestore using the Firebase client SDK.
+ * 
+ * Usage:
+ * 1. Run: npm run dev
+ * 2. Open: http://localhost:5173/seed-firestore.html
+ * 3. Enter your admin email + password
+ * 4. Click "Push Data to Firestore"
+ */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seed Firestore — RISE Lab Admin</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 600px; margin: 60px auto; padding: 0 20px; background: #f5f5f5; }
+    h1 { color: #8c1d40; }
+    input, button { width: 100%; padding: 10px; margin: 6px 0; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem; box-sizing: border-box; }
+    button { background: #8c1d40; color: #fff; border: none; cursor: pointer; font-weight: 600; }
+    button:hover { background: #6d1630; }
+    #log { background: #222; color: #4ade80; padding: 16px; border-radius: 8px; font-family: monospace; font-size: 0.85rem; min-height: 200px; white-space: pre-wrap; margin-top: 16px; }
+    .error { color: #f87171; }
+  </style>
+</head>
+<body>
+  <h1>🔥 Seed Firestore — RISE Lab</h1>
+  <p>This tool pushes the updated <code>public/database.json</code> to Firestore (requires admin login).</p>
+
+  <input type="email" id="email" placeholder="Admin email" value="" />
+  <input type="password" id="password" placeholder="Admin password" />
+  <button onclick="run()">Push Data to Firestore</button>
+
+  <div id="log">Ready. Enter your admin credentials and click the button.</div>
+
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+    import { getFirestore, doc, setDoc } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+    import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCLGyE05LWtPW3KKAn-jKK0sdGEPk0RpOw",
+      authDomain: "rise-la.firebaseapp.com",
+      projectId: "rise-la",
+      storageBucket: "rise-la.firebasestorage.app",
+      messagingSenderId: "877881657956",
+      appId: "1:877881657956:web:0e9fb95b1de55c8b1cad71"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const auth = getAuth(app);
+
+    const log = (msg, isErr = false) => {
+      const el = document.getElementById('log');
+      const line = document.createElement('div');
+      if (isErr) line.className = 'error';
+      line.textContent = msg;
+      el.appendChild(line);
+      el.scrollTop = el.scrollHeight;
+    };
+
+    window.run = async () => {
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const logEl = document.getElementById('log');
+      logEl.innerHTML = '';
+
+      if (!email || !password) { log('❌ Please enter email and password.', true); return; }
+
+      log('🔑 Signing in...');
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        log('✅ Signed in!');
+      } catch (e) {
+        log(`❌ Auth failed: ${e.message}`, true);
+        return;
+      }
+
+      log('📥 Fetching database.json...');
+      let data;
+      try {
+        const res = await fetch('/database.json');
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        data = await res.json();
+        log(`✅ Loaded data: ${data.journalPubs?.length} journal pubs, ${data.confPubs?.length} conf pubs`);
+      } catch (e) {
+        log(`❌ Failed to load database.json: ${e.message}`, true);
+        return;
+      }
+
+      log('🚀 Writing to Firestore...');
+      try {
+        await setDoc(doc(db, 'website', 'data'), data);
+        log('✅ Successfully pushed to Firestore!');
+        log('🎉 Refresh the website to see your changes.');
+      } catch (e) {
+        log(`❌ Firestore write failed: ${e.message}`, true);
+      }
+    };
+  </script>
+</body>
+</html>

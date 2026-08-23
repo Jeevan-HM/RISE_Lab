@@ -2,11 +2,16 @@ import { useState, useMemo } from 'react';
 import { ExternalLink, Search } from 'lucide-react';
 
 export default function PublicationsPage({ data }) {
-  const [tab, setTab] = useState('journal');
+  const [tab, setTab] = useState('all');
   const [query, setQuery] = useState('');
 
   const allPubs = useMemo(() => {
-    const list = tab === 'journal' ? (data?.journalPubs || []) : (data?.confPubs || []);
+    let list = [];
+    if (tab === 'journal') list = data?.journalPubs || [];
+    else if (tab === 'conf') list = data?.confPubs || [];
+    else if (tab === 'patent') list = data?.patentPubs || [];
+    else list = [...(data?.journalPubs || []), ...(data?.confPubs || []), ...(data?.patentPubs || [])];
+    
     // Sort newest first
     const sorted = [...list].sort((a, b) => (Number(b.year) || 0) - (Number(a.year) || 0));
     if (!query.trim()) return sorted;
@@ -31,6 +36,7 @@ export default function PublicationsPage({ data }) {
 
   const totalJ = data?.journalPubs?.length || 0;
   const totalC = data?.confPubs?.length || 0;
+  const totalP = data?.patentPubs?.length || 0;
 
   return (
     <div className="page-wrapper">
@@ -38,7 +44,7 @@ export default function PublicationsPage({ data }) {
         <div className="container">
           <span className="section-eyebrow">Our Research Output</span>
           <h1>Publications</h1>
-          <p>{totalJ} journal papers · {totalC} conference papers</p>
+          <p>{totalJ} journal papers · {totalC} conference papers · {totalP} patents</p>
         </div>
       </div>
 
@@ -46,12 +52,20 @@ export default function PublicationsPage({ data }) {
         <div className="container">
           <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '2rem', flexWrap: 'wrap' }}>
             <div className="tabs" style={{ margin: 0 }}>
+              <button className={`tab-btn${tab === 'all' ? ' active' : ''}`} onClick={() => { setTab('all'); setQuery(''); }}>
+                All ({totalJ + totalC + totalP})
+              </button>
               <button className={`tab-btn${tab === 'journal' ? ' active' : ''}`} onClick={() => { setTab('journal'); setQuery(''); }}>
                 Journal Papers ({totalJ})
               </button>
               <button className={`tab-btn${tab === 'conf' ? ' active' : ''}`} onClick={() => { setTab('conf'); setQuery(''); }}>
                 Conference Papers ({totalC})
               </button>
+              {totalP > 0 && (
+                <button className={`tab-btn${tab === 'patent' ? ' active' : ''}`} onClick={() => { setTab('patent'); setQuery(''); }}>
+                  Patents ({totalP})
+                </button>
+              )}
             </div>
             <div className="search-wrapper">
               <Search size={16} />

@@ -139,7 +139,7 @@ export function ResearchAreasBlock({ data }) {
               <div key={i} className="card glass-lift animate-fade-up reveal">
                 <div className="card-icon"><IconComp size={24} /></div>
                 <h3>{area.title}</h3>
-                <p>{area.overview?.substring(0, 165)}…</p>
+                <p>{area.overview}</p>
                 <div style={{ marginTop: '1.25rem' }}>
                   <Link to={`/research#${area.id}`} className="btn btn-ghost">
                     View Projects <ArrowRight size={13} />

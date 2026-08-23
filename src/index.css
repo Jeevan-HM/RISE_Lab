@@ -703,7 +703,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
   box-shadow: var(--shadow-sm);
   transition: all var(--t-med);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 .card::before {
   content: '';
@@ -713,6 +715,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
   background: linear-gradient(90deg, transparent, rgba(200,146,42,0.04), transparent);
   transition: left 0.6s ease;
   pointer-events: none;
+  border-radius: inherit;
+  clip-path: inset(0 0 0 0 round var(--r-lg));
+  z-index: 0;
 }
 .card:hover::before { left: 100%; }
 .card:hover { border-color: var(--color-border-hover); transform: translateY(-4px); box-shadow: var(--shadow-md); }

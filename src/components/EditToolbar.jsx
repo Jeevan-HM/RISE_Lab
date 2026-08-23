@@ -84,14 +84,7 @@ export default function EditToolbar({ onOpenTheme, onOpenAdvanced }) {
             Theme
           </button>
 
-          <button
-            className="edit-toolbar-btn"
-            onClick={onOpenAdvanced}
-            title="Advanced form editor"
-          >
-            <Eye size={14} />
-            Advanced
-          </button>
+
 
           {/* GitHub Settings */}
           <button

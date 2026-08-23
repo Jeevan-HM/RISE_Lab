@@ -537,6 +537,20 @@
   ],
   "confPubs": [
     {
+      "venue": "IEEE International Conference on Biomedical Robotics and Biomechatronics (BioRob)",
+      "title": "Development of a Soft Inflatable Exosuit for Knee Flexion Assistance",
+      "authors": "I. Hasan, E. Quinones Yumbla, W. Zhang",
+      "url": "https://ieeexplore.ieee.org/document/9925474",
+      "year": 2022
+    },
+    {
+      "venue": "American Control Conference (ACC)",
+      "title": "When Shall I Estimate Your Intent? Costs and Benefits of Intent Inference in Multi-Agent Interactions",
+      "authors": "S. Amatya, M. Ghimire, Y. Ren, Z. Xu, W. Zhang",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9867155",
+      "year": 2022
+    },
+    {
       "venue": "IEEE 5th International Conference on Soft Robotics (RoboSoft), pp. 390-395",
       "title": "Design, Characterization, and Dynamic Modeling of BEAST: a Bistable Elastomeric Actuator for Swift Tasks",
       "authors": "W. Tao, Z. Qiao, W. Zhang",
@@ -551,6 +565,13 @@
       "url": "https://ieeexplore.ieee.org/abstract/document/9561079/"
     },
     {
+      "venue": "IEEE 4th International Conference on Soft Robotics (RoboSoft)",
+      "title": "Design, Fabrication, and Characterization of a Helical Twisting, Contracting, and Bending Fabric Soft Continuum Actuator",
+      "authors": "P. H. Nguyen, I. I. B. Mohd, K. Duford, X. Bao, W. Zhang",
+      "url": "https://ieeexplore.ieee.org/document/9479350",
+      "year": 2021
+    },
+    {
       "title": "Collision Recovery Control of a Foldable Quadrotor",
       "venue": "IEEE/ASME International Conference on Advanced Intelligent Mechatronics (AIM), pp. 418-423",
       "url": "https://ieeexplore.ieee.org/document/9517341",
@@ -563,6 +584,20 @@
       "url": "https://ieeexplore.ieee.org/abstract/document/9341730/",
       "venue": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), pp. 1364-1370",
       "title": "Design and Control of SQUEEZE: A Spring-augmented QUadrotor for intEractions with the Environment to squeeZE-and-fly"
+    },
+    {
+      "venue": "IEEE/ASME International Conference on Advanced Intelligent Mechatronics (AIM)",
+      "title": "Ground Trajectory Control of an Unmanned Aerial-Ground Vehicle using Thrust Vectoring for Precise Grasping",
+      "authors": "S. Mishra, K. Patnaik, Y. Garrard, Z. Chase, M. Ploughe, W. Zhang",
+      "url": "https://ieeexplore.ieee.org/document/9158943",
+      "year": 2020
+    },
+    {
+      "venue": "IEEE 3rd International Conference on Soft Robotics (RoboSoft)",
+      "title": "Towards an Untethered Knit Fabric Soft Continuum Robotic Module with Embedded Fabric Sensing",
+      "authors": "P. H. Nguyen, Z. Qiao, S. Seidel, S. Amatya, I. I. B. Mohd, W. Zhang",
+      "url": "https://ieeexplore.ieee.org/document/9116025",
+      "year": 2020
     },
     {
       "authors": "G. Clark, J. Campbell, M. Rezayat, W. Zhang, H. Ben Amor",
@@ -754,6 +789,20 @@
   ],
   "journalPubs": [
     {
+      "venue": "ACM Transactions on Human-Robot Interaction (THRI)",
+      "title": "What if I'm Wrong? Team Performance and Trustworthiness when Modeling Risk-Sensitivity in Human-Robot Collaboration",
+      "authors": "M. O. Smith, W. Zhang",
+      "url": "https://dl.acm.org/doi/full/10.1145/3706068",
+      "year": 2026
+    },
+    {
+      "venue": "IEEE/ASME Transactions on Mechatronics",
+      "title": "Tactile-Based Exploration, Mapping, and Navigation With Collision-Resilient Aerial Vehicles",
+      "authors": "K. Patnaik, A. A. Pandian Saravanakumaran, W. Zhang",
+      "url": "https://ieeexplore.ieee.org/document/10988596",
+      "year": 2025
+    },
+    {
       "venue": "Frontiers in Robotics and AI, 9, 997366",
       "title": "Model-based contact detection and position control of a fabric soft robot in unknown environments",
       "authors": "Z. Qiao, P. H. Nguyen, W. Zhang",
@@ -801,6 +850,13 @@
       "venue": "IEEE Transactions on Intelligent Vehicles, 5(2), pp. 217-228",
       "year": 2020,
       "authors": "Y. Wang, Y. Ren, S. Elliott, W. Zhang"
+    },
+    {
+      "url": "https://doi.org/10.1016/j.smhl.2020.100162",
+      "title": "GaitCode: Gait-based Continuous Authentication Using Multimodal Learning and Wearable Sensors",
+      "venue": "Smart Health, 19, 100162",
+      "year": 2020,
+      "authors": "I. Papavasileiou, Z. Qiao, C. Zhang, W. Zhang, J. Bi, S. Han"
     },
     {
       "url": "https://ieeexplore.ieee.org/abstract/document/9069314/",

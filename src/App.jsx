@@ -18,7 +18,7 @@ import { EditProvider, useEdit } from './context/EditContext';
 import EditToolbar from './components/EditToolbar';
 import EditDrawer from './components/EditDrawer';
 import ThemeEditor from './components/ThemeEditor';
-import AdminPage from './pages/AdminPage';
+
 
 // Edit page variants
 import EditHomePage from './pages/edit/EditHomePage';
@@ -232,11 +232,10 @@ function ScrollTop() {
 // ── Edit Mode Wrapper ───────────────────────────────────────
 function EditModeApp({ initialData, onSaved }) {
   const [showTheme, setShowTheme] = useState(false);
-  const [showAdvanced, setShowAdvanced] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(null); // null = loading
+  const [loggedIn, setLoggedIn] = useState(null);
 
   useEffect(() => {
-    const unsub = auth.onAuthStateChanged(user => setLoggedIn(!!user));
+    const unsub = auth.onAuthStateChanged(u => setLoggedIn(!!u));
     return unsub;
   }, []);
 
@@ -245,7 +244,15 @@ function EditModeApp({ initialData, onSaved }) {
   }
 
   if (!loggedIn) {
-    return <AdminPage data={initialData} onSaved={onSaved} />;
+    return (
+      <div style={{ display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ padding: '2rem', background: 'var(--color-surface)', borderRadius: 'var(--r-md)', textAlign: 'center' }}>
+          <h2 style={{ marginBottom: '1rem' }}>Admin Access</h2>
+          <p style={{ color: 'var(--text-muted)' }}>You must be logged in to access the admin panel.</p>
+          <Link to="/" style={{ color: 'var(--color-gold)', display: 'block', marginTop: '1rem' }}>Return to Site</Link>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -253,38 +260,28 @@ function EditModeApp({ initialData, onSaved }) {
       <EditModeInner
         showTheme={showTheme}
         setShowTheme={setShowTheme}
-        showAdvanced={showAdvanced}
-        setShowAdvanced={setShowAdvanced}
       />
     </EditProvider>
   );
 }
 
-function EditModeInner({ showTheme, setShowTheme, showAdvanced, setShowAdvanced }) {
-  const { liveData } = useEdit();
-
+function EditModeInner({ showTheme, setShowTheme }) {
   return (
     <>
-      <EditToolbar
-        onOpenTheme={() => { setShowTheme(true); setShowAdvanced(false); }}
-        onOpenAdvanced={() => { setShowAdvanced(o => !o); setShowTheme(false); }}
-      />
+      <EditToolbar onOpenTheme={() => setShowTheme(true)} />
       <div style={{ height: '48px' }} />
       <ThemeEditor open={showTheme} onClose={() => setShowTheme(false)} />
       <EditDrawer />
-      {showAdvanced ? (
-        <AdminPage data={liveData} onSaved={() => {}} />
-      ) : (
-        <Routes>
-          <Route path="/admin"              element={<EditHomePage />} />
-          <Route path="/admin/research"     element={<EditResearchPage />} />
-          <Route path="/admin/team"         element={<EditTeamPage />} />
-          <Route path="/admin/publications" element={<EditPublicationsPage />} />
-          <Route path="/admin/news"         element={<EditNewsPage />} />
-          <Route path="/admin/education"    element={<EditEducationPage />} />
-          <Route path="/admin/contact"      element={<EditContactPage />} />
-        </Routes>
-      )}
+      <Routes>
+        <Route path="/admin"              element={<EditHomePage />} />
+        <Route path="/admin/research"     element={<EditResearchPage />} />
+        <Route path="/admin/team"         element={<EditTeamPage />} />
+        <Route path="/admin/publications" element={<EditPublicationsPage />} />
+        <Route path="/admin/news"         element={<EditNewsPage />} />
+        <Route path="/admin/education"    element={<EditEducationPage />} />
+        <Route path="/admin/contact"      element={<EditContactPage />} />
+        <Route path="*"                   element={<div style={{ padding: '4rem', textAlign: 'center' }}>404 Admin Page Not Found</div>} />
+      </Routes>
     </>
   );
 }
@@ -338,6 +335,7 @@ function App() {
 
   const toggleTheme = () => setTheme(prev => prev === 'light' ? 'dark' : 'light');
 
+
   const loadData = async () => {
     try {
       const docRef = doc(db, 'website', 'data');
@@ -347,12 +345,25 @@ function App() {
         setData(d);
         applyTheme(d.theme);
       } else {
-        console.error('No data document found in Firestore!');
+        // Fallback: load from local public/database.json
+        const res = await fetch(`${import.meta.env.BASE_URL}database.json`);
+        const d = await res.json();
+        setData(d);
+        applyTheme(d.theme);
       }
     } catch (e) {
-      console.error('Failed to load data from Firestore:', e);
+      console.error('Failed to load data from Firestore, trying local fallback:', e);
+      try {
+        const res = await fetch(`${import.meta.env.BASE_URL}database.json`);
+        const d = await res.json();
+        setData(d);
+        applyTheme(d.theme);
+      } catch (e2) {
+        console.error('Local fallback also failed:', e2);
+      }
     }
   };
+
 
   // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { loadData(); }, []);

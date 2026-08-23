@@ -1,11 +1,33 @@
 {
-  "meta": {
-    "labName": "RISE Lab",
-    "labFullName": "Robotics and Intelligent Systems Laboratory",
-    "university": "Arizona State University",
-    "description": "The overarching goal of our research is to integrate soft and compliant robot structures with novel learning and control algorithms to enable robots to safely and efficiently collaborate with humans and autonomously operate in challenging environments. Ongoing projects include aerial robotics, soft robotics, and human-robot interaction.",
-    "shortDescription": "Welcome to the Robotics and Intelligent Systems Laboratory (RISE). We work on design and control of advanced robotic systems, including wearable assistive robots, soft robots, and unmanned aerial vehicles.",
-    "funders": "We greatly acknowledge the National Science Foundation (NSF), Air Force Office of Scientific Research (AFOSR), Office of Naval Research (ONR), National Aeronautics and Space Administration (NASA), Science Foundation Arizona, Arizona Department of Health Services, Salt River Project, Northrop Grumman Cooperation, and Honeywell Aerospace Technologies, for supporting our past and current research."
+  "contact": {
+    "resources": [
+      {
+        "title": "SunCard Access",
+        "description": "Please fill out the ISAAC requests online at poly.engineering.asu.edu/tps-support-services/ and select Dr. Zhang for approval and processing. It usually takes about one week for you to get the access.",
+        "url": "https://poly.engineering.asu.edu/tps-support-services/"
+      },
+      {
+        "description": "Please send an email to Dr. Zhang with the email you want to use for your Slack account to join the team's channel.",
+        "title": "Joining the Slack Channel"
+      },
+      {
+        "url": "https://poly.engineering.asu.edu/tps-support-services/",
+        "title": "Lab Server and Printer Access",
+        "description": "Please submit a request to the IT department of the School. Remember to include your full name and ASUrite in your request."
+      },
+      {
+        "description": "For purchase requests, complete the purchase request form and send it to Dr. Zhang for approval. For reimbursement, please inform Dr. Zhang and get his approval before making the purchase.",
+        "title": "Purchase and Reimbursement"
+      },
+      {
+        "description": "Please send an email to Ms. Becky Montez at bmontez@asu.edu and cc Dr. Zhang for approval.",
+        "title": "Meeting Room Request"
+      }
+    ],
+    "mapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3334.522851152893!2d-111.68240278526605!3d33.305143880815784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872bad9cfe09788d%3A0x23bab37086dfdb26!2s6075%20Innovation%20Way%20W%2C%20Mesa%2C%20AZ%2085212!5e0!3m2!1sen!2sus!4v1596435460593!5m2!1sen!2sus",
+    "labLocation": "Room 179, 6075 S. Innovation Way West, Mesa, AZ 85212",
+    "directorPhone": "(480) 727-5276",
+    "directorOffice": "Room 331M, Santa Catalina Hall, 7271 E Sonoran Arroyo Mall, Mesa, AZ 85212"
   },
   "homeCarouselImages": [
     "groupphoto.jpg",
@@ -17,9 +39,459 @@
     "yousef_robot.jpg",
     "yogesh_robot.jpg"
   ],
+  "msStudents": [
+    {
+      "info": "Aerospace Engineering, 2023–",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "url": "https://www.linkedin.com/in/tolemy-nibi/"
+        }
+      ],
+      "name": "Tolemy Nibi",
+      "photo": "sundevil.jpg"
+    },
+    {
+      "info": "Mechanical Engineering",
+      "photo": "Bill.jpeg",
+      "name": "Bill Nguyen"
+    },
+    {
+      "info": "",
+      "name": "Jesse Cabrera",
+      "photo": "sundevil.jpg"
+    }
+  ],
+  "meta": {
+    "description": "The overarching goal of our research is to integrate soft and compliant robot structures with novel learning and control algorithms to enable robots to safely and efficiently collaborate with humans and autonomously operate in challenging environments. Ongoing projects include aerial robotics, soft robotics, and human-robot interaction.",
+    "shortDescription": "Welcome to the Robotics and Intelligent Systems Laboratory (RISE). We work on design and control of advanced robotic systems, including wearable assistive robots, soft robots, and unmanned aerial vehicles.",
+    "labFullName": "Robotics and Intelligent Systems Laboratory",
+    "university": "Arizona State University",
+    "funders": "We greatly acknowledge the National Science Foundation (NSF), Air Force Office of Scientific Research (AFOSR), Office of Naval Research (ONR), National Aeronautics and Space Administration (NASA), Science Foundation Arizona, Arizona Department of Health Services, Salt River Project, Northrop Grumman Cooperation, and Honeywell Aerospace Technologies, for supporting our past and current research.",
+    "labName": "RISE Lab"
+  },
+  "alumniBS": [
+    {
+      "note": "Spring 2024",
+      "name": "Nicholas Rocchi"
+    },
+    {
+      "note": "Spring 2023",
+      "name": "Sruti Ganti"
+    },
+    {
+      "note": "Spring 2021",
+      "name": "Jose Nacias, Matthew Downey, and Edward Goldenberg"
+    },
+    {
+      "note": "Spring 2020",
+      "name": "Sam Seidel"
+    },
+    {
+      "note": "Spring 2020",
+      "name": "Colton Van Hazel"
+    },
+    {
+      "note": "Fall 2019",
+      "name": "Marcus Schaller"
+    },
+    {
+      "name": "Jose Luis Rivera",
+      "note": "Spring 2019"
+    },
+    {
+      "name": "Daniel Gaytan-Jenkins",
+      "note": "Spring 2019"
+    },
+    {
+      "name": "Jonathan Bush",
+      "note": "Spring 2019"
+    },
+    {
+      "name": "Breanna Holmes",
+      "note": "Spring 2018"
+    }
+  ],
+  "alumniPhd": [
+    {
+      "graduated": "Fall 2024",
+      "name": "Dr. Sunny Amatya",
+      "job": "R&D Engineer at FANUC America Corporation",
+      "thesis": "Adaptive Decision-Making through Efficient and Transferable Intent Inference and Motion Planning"
+    },
+    {
+      "graduated": "Fall 2023",
+      "name": "Dr. S. Mostafa Rezayat Sorkhabadi",
+      "thesis": "Towards Robot-aided Gait Rehabilitation and Assistance via Characterization and Estimation of Human Locomotion",
+      "job": "R&D Mechatronic Engineer at Siemens Healthineers"
+    },
+    {
+      "thesis": "Dynamic Modeling, Robust Control and Contact Estimation of Soft Robotics",
+      "job": "",
+      "name": "Dr. Zhi Qiao",
+      "graduated": "Fall 2023"
+    },
+    {
+      "job": "Faculty at University of Puerto Rico, Carolina",
+      "thesis": "Sensing, Modeling, Control and Evaluation of Soft Robots for Wearable Applications",
+      "graduated": "Summer 2023",
+      "name": "Dr. Emiliano Quinones Yumbla"
+    },
+    {
+      "graduated": "Spring 2023",
+      "job": "Faculty at University of Michigan-Dearborn",
+      "name": "Dr. Karishma Patnaik",
+      "thesis": "Design, Control and Trajectory Planning of Reconfigurable Quadrotors"
+    },
+    {
+      "graduated": "Summer 2021",
+      "name": "Dr. Shatadal Mishra",
+      "thesis": "Modeling Human Adaptation with Game-Theoretic Intention Decoding in Human-Robot Interactions",
+      "job": "Systems Research Scientist at Toyota InfoTech R&D Labs"
+    },
+    {
+      "graduated": "Spring 2021",
+      "job": "Faculty at Huazhong University of Science and Technology",
+      "thesis": "Modeling Human Adaptation with Game-Theoretic Intention Decoding in Human-Robot Interactions",
+      "name": "Dr. Yiwei Wang"
+    },
+    {
+      "graduated": "Spring 2020",
+      "name": "Dr. Pham Huy Nguyen",
+      "thesis": "Design, Modeling, and Evaluation of Soft Poly-Limbs Toward a New Paradigm of Wearable Continuum Robotic Manipulation for Daily Living Tasks",
+      "job": "Postdoctoral Research Associate at EPFL"
+    },
+    {
+      "graduated": "Spring 2020",
+      "job": "Research Engineer at Ottobock Global Research",
+      "name": "Dr. Saivimal Sridar",
+      "thesis": "Design, Development, and Evaluation of a Soft-Inflatable Exosuit for Lower Limb Assistance"
+    },
+    {
+      "thesis": "Human Activity Recognition and Control of Wearable Robots",
+      "job": "Co-founder and CTO at Zooly Labs",
+      "graduated": "Fall 2018",
+      "name": "Dr. Prudhvi Tej Chinimilli"
+    }
+  ],
+  "bsStudents": [
+    {
+      "info": "Aerospace, Aeronautical and Astronautical Engineering, 2022–",
+      "name": "Matthew Herdegen",
+      "photo": "sundevil.jpg"
+    },
+    {
+      "name": "Raj Kodithyala",
+      "info": "Systems Engineering, 2021–",
+      "photo": "sundevil.jpg"
+    },
+    {
+      "info": "Robotics Engineering, 2021–",
+      "photo": "Colin_Fricke.jpeg",
+      "name": "Colin Fricke"
+    },
+    {
+      "info": "Computer Science, 2025–",
+      "name": "Ash Srivastava",
+      "photo": "AshSrivastava.jpg"
+    }
+  ],
+  "researchAreas": [
+    {
+      "image": "respic/uav/lab_website_all-drone_all.png",
+      "projects": [
+        {
+          "video": "https://www.youtube.com/embed/KMJfgCVvdks?si=IqiogsKKsGcQrSq5",
+          "papers": [
+            {
+              "url": "https://arc.aiaa.org/doi/abs/10.2514/6.2024-0660",
+              "title": "Nonlinear Wrench Observer of an Underactuated Aerial Manipulator"
+            },
+            {
+              "url": "https://arc.aiaa.org/doi/10.2514/6.2023-1280",
+              "title": "Multi-Objective Optimization for Quadrotor Multibody Dynamic Simulations"
+            }
+          ],
+          "description": "Make a simulation pipeline to rapidly test algorithms for aerial robots. Integrate controllers using ROS2 into a simulation environment with Ardupilot and PX4 flight controllers.",
+          "title": "High-Fidelity Simulation of Aerial Robots"
+        },
+        {
+          "video": "https://www.youtube.com/embed/jpi-mJ6xJ6o?si=X2tbF-NcHKyHICI2",
+          "papers": [
+            {
+              "title": "A Soft-Bodied Aerial Robot for Collision Resilience and Contact-Reactive Perching",
+              "url": "https://www.liebertpub.com/doi/full/10.1089/soro.2022.0010"
+            },
+            {
+              "title": "Design, Characterization and Control of a Whole-body Grasping and Perching (WHOPPEr) Drone",
+              "url": "https://ieeexplore.ieee.org/abstract/document/10341722/"
+            }
+          ],
+          "title": "Design and Control of Flexible Quadrotors",
+          "description": "To exploit the physical contact between the multi-rotor drone and its environment for better control and manipulation and higher safety. Developing various compliant multi-rotor drones for passive resilience in contacts, detecting the contacts via different sensing methods."
+        },
+        {
+          "description": "To exploit the physical contact between the multi-rotor drone and its environment for better control, motion planning and higher safety. Developing a safe planning and control algorithm for collision based efficient navigation.",
+          "title": "Contact Based Safe Navigation",
+          "video": "https://www.youtube.com/embed/tx7cvL9qyaM?si=IB3X3UdxQVEGvuZ5",
+          "papers": [
+            {
+              "title": "Tactile-based Exploration, Mapping and Navigation with Collision-Resilient Aerial Vehicles",
+              "url": "https://arxiv.org/abs/2305.17217"
+            },
+            {
+              "title": "Adaptive attitude control for foldable quadrotors",
+              "url": "https://ieeexplore.ieee.org/abstract/document/10005814"
+            }
+          ]
+        }
+      ],
+      "id": "aerial-robotics",
+      "icon": "Plane",
+      "overview": "Unmanned aerial vehicles (UAVs) have been applied in aerial photography, surveillance, search and rescue, and precision agriculture. However, autonomous operations of small UAVs in dynamic environments pose challenges on the design of vehicle hardware and the embedded autonomy algorithms. Our research in this area includes (1) design of morphing UAVs, (2) dynamic modeling and precision control for the new hardware, and (3) aerial-physical interaction for navigation and manipulation.",
+      "title": "Aerial Robotics"
+    },
+    {
+      "image": "respic/soft/lab_website_all-Soft_all.png",
+      "projects": [
+        {
+          "description": "Modeling and control of Soft Robotic Arm. Work on pneumatically operated soft robotic arm to test, train and implement models and develop control algorithms to achieve tasks including trajectory tracking.",
+          "video": "https://www.youtube.com/embed/n7Hid2VH8OA?si=m3KFShtuB-QgyWXs",
+          "title": "Soft Robotics Arm",
+          "papers": [
+            {
+              "title": "Design and Computational Modeling of Fabric Soft Pneumatic Actuators for Wearable Assistive Devices",
+              "url": "https://www.nature.com/articles/s41598-020-65003-2"
+            },
+            {
+              "title": "Design and Control of a 3-Chambered Fiber Reinforced Soft Actuator with Off-the-shelf Stretch Sensors",
+              "url": "https://link.springer.com/article/10.1007/s41315-017-0020-z"
+            }
+          ]
+        },
+        {
+          "description": "Design, characterize and test soft inflatable actuator based exosuit on healthy human subjects to evaluate the assistance provided. To evaluate the effect of exosuit during flexion and extension, surface electromyography (sEMG) sensors are placed to record the muscle activity.",
+          "video": "https://www.youtube.com/embed/2VuCrtyNzt0?si=TI-9l6E10lrhQbyB",
+          "title": "Soft Robotic Exosuits",
+          "papers": [
+            {
+              "url": "https://asmedigitalcollection.asme.org/lettersdynsys/article/4/1/011003/1193780",
+              "title": "Gait Sensing and Haptic Feedback Using an Inflatable Soft Haptic Sensor"
+            },
+            {
+              "title": "A Kinematically Constrained Kalman Filter for Sensor Fusion in a Wearable Origami Robot",
+              "url": "https://asmedigitalcollection.asme.org/lettersdynsys/article/3/1/011005/1159780/A-Kinematically-Constrained-Kalman-Filter-for"
+            }
+          ]
+        },
+        {
+          "video": "https://www.youtube.com/embed/4QxHrXKJn4M?si=pcX88zSsp6uS9ZO2",
+          "papers": [
+            {
+              "title": "Design and Gait Optimization of an In-Pipe Robot with Bistable Inflatable Fabric Actuators",
+              "url": "https://ieeexplore.ieee.org/abstract/document/10637194"
+            },
+            {
+              "title": "Design, Characterization, and Dynamic Modeling of BEAST: a Bistable Elastomeric Actuator for Swift Tasks",
+              "url": "https://ieeexplore.ieee.org/abstract/document/9762223"
+            }
+          ],
+          "description": "This pipe inspection robot consists of several bistable inflatable fabric actuators, enabling it to navigate pipes of various sizes (4–6 inches in diameter) using inchworm locomotion. Designed to handle obstacles within the pipes.",
+          "title": "Soft Pipe Inspection Robot"
+        }
+      ],
+      "icon": "Cpu",
+      "id": "soft-robotics",
+      "overview": "Soft robotics is reshaping the future of technology by developing flexible, adaptable systems that safely interact with humans and operate in complex environments. Current projects include soft robotic manipulators designed for advanced modeling and control, fabric-based exosuits for assistance and rehabilitation, and a soft pipe inspection robot capable of navigating intricate pipelines for health monitoring.",
+      "title": "Soft Robotics"
+    },
+    {
+      "title": "Human-Robot Interaction",
+      "overview": "For the humans and robots to collaborate safely and efficiently, a robot needs to understand human intents, predict human actions, consider human factors, to optimize its own actions to complete a task safely, efficiently, and friendly. We have developed a game-theoretic framework to model the bilateral inference and decision-making process between the human and robot. Applications include autonomous vehicles, collaborative manufacturing, and wearable robots.",
+      "image": "respic/hri/lab_website_all-HRI_all.png",
+      "id": "human-robot-interaction",
+      "icon": "Users",
+      "projects": [
+        {
+          "description": "Make AI better understand human preferences and decisions to make AI better able to assist. Integrate risk-aware cognitive models (CPT) into interactive AI planning in an Overcooked environment and robotic Smart Bike.",
+          "image": "respic/hri/lab_website_all-HRI_all.png",
+          "papers": [
+            {
+              "title": "What if I'm Wrong? Team Performance and Trustworthiness when Modeling Risk-Sensitivity in Human-Robot Collaboration",
+              "url": "https://dl.acm.org/doi/full/10.1145/3706068"
+            },
+            {
+              "url": "https://ieeexplore.ieee.org/abstract/document/10731453",
+              "title": "Research Needs in Human-Autonomy Teaming: Thematic Analysis of Priority Features for Testbed Development"
+            }
+          ],
+          "video": null,
+          "title": "Modeling Human Bias and Uncertainties in HRI"
+        },
+        {
+          "title": "Bilateral Reasoning and Learning in HRI",
+          "papers": [
+            {
+              "url": "https://ieeexplore.ieee.org/abstract/document/9982108",
+              "title": "Bounded Rational Game-theoretical Modeling of Human Joint Actions with Incomplete Information"
+            },
+            {
+              "url": "https://ieeexplore.ieee.org/abstract/document/9867155",
+              "title": "When Shall I Estimate Your Intent? Costs and Benefits of Intent Inference in Multi-Agent Interactions"
+            }
+          ],
+          "video": null,
+          "description": "Developing a game theoretical based controller for physical human-robot interaction scenarios such as controlling assistive wearable robots. Integrating incomplete information games with optimal control and reinforcement learning to infer human intent during HRI tasks."
+        }
+      ]
+    }
+  ],
+  "alumniNri": [
+    {
+      "title": "Undergrad Student (Computer Science), Arizona State University — FURI Spring & Fall 2020",
+      "name": "Zachary Hoffman",
+      "note": "2019–2020"
+    },
+    {
+      "note": "Summer 2020",
+      "name": "Grace Zhang",
+      "title": "Undergrad Student (Computer Science), Stanford University — NSF REU Student"
+    }
+  ],
+  "director": {
+    "photo": "WL-400450.jpg",
+    "title": "Associate Professor and Lab Director",
+    "bio": "Dr. Zhang is an Associate Professor in the School of Manufacturing Systems and Networks at the Ira A. Fulton Schools of Engineering, Arizona State University. He currently serves as the Assistant Director for Research of the School of Manufacturing Systems and Networks. His research interests lie in developing learning and control algorithms for safe and efficient human-robot collaboration, with applications in wearable robotics, soft robotics, and autonomous aerial and ground vehicles. He received his Ph.D. degree in mechanical engineering from the University of California, Berkeley. He is a recipient of an NSF CAREER Award (2020), NSF-CISE Research Initiation Initiative (CRII) Award (2018), and Bisgrove Early Career Faculty Award from Science Foundation Arizona (2016).",
+    "name": "Wenlong Zhang",
+    "affiliation": "School of Manufacturing Systems and Networks, Ira A. Fulton Schools of Engineering, Arizona State University",
+    "email": "Wenlong.Zhang@asu.edu"
+  },
+  "courses": [
+    {
+      "description": "This is a senior-level undergraduate class. Students will gain an understanding of the relationships between inputs and outputs in mechanical, electrical, and electro-mechanical systems, as well as learn the fundamental tools for control system analysis and design. Students will be curious about the transforms and modeling concepts, able to connect those concepts to real-world engineering systems, and apply those mathematical tools to improve the engineering systems and create values.",
+      "code": "EGR433",
+      "semester": "Spring Semester",
+      "title": "Transforms and System Modeling"
+    },
+    {
+      "semester": "Fall Semester",
+      "title": "System Control and Optimization",
+      "description": "This is a mixed style graduate-level control class. The first part of the class will be lecture-based, and the instructor will introduce fundamental knowledge of state-space modeling and control. The second part features a course project that students will study and apply advanced control techniques to real-world problems, including robotics, energy systems, autonomous vehicles, and chemical process.",
+      "code": "EGR556"
+    }
+  ],
+  "outreach": {
+    "events": [
+      {
+        "logo": "logopic/NRW.png",
+        "url": "https://www.nationalroboticsweek.org/",
+        "description": "A series of grassroots events and activities during the month of April aimed at increasing public awareness of the strength and importance of the U.S. robotics industry and of the tremendous social and cultural impact that robotics will have on the future.",
+        "image": "logopic/NRW_fig.JPG",
+        "name": "National Robotics Week (RoboWeek)"
+      },
+      {
+        "logo": "logopic/NOD.png",
+        "description": "Every year ASU invites the local community to visit any of the five campus locations, allowing visitors to explore the innovative spaces accessible only to ASU students.",
+        "name": "ASU Open Door",
+        "image": "logopic/NOD_fig.JPG",
+        "url": "https://opendoor.asu.edu/"
+      }
+    ],
+    "description": "The ASU RISE LAB is committed to education and outreach, and the lab has actively participated in various local outreach events. We are excited to showcase our robotics research to anyone who is interested in learning more about it. The lab will open its door annually during ASU Night of the Open Door (late January) and National Robotics Week (mid April). You are also welcome to contact Dr. Zhang if you would like to schedule a tour of the lab outside those events."
+  },
+  "alumniMsc": [
+    {
+      "name": "Yogesh Kumar",
+      "note": "Fa24, now at ASU"
+    },
+    {
+      "note": "Sp24, now at Freeport-McMoRan",
+      "name": "Harinee Kannan"
+    },
+    {
+      "name": "Madelyn Molnar",
+      "note": "Sp24, now at Southwest Research Institute"
+    },
+    {
+      "name": "Jahnav Rokalaboina",
+      "note": "Su23, now PhD student at ASU"
+    },
+    {
+      "note": "Sp23, now at Komatsu Mining",
+      "name": "Aravind Adhith P.S."
+    },
+    {
+      "name": "Qinchen Zha",
+      "note": "Sp23"
+    },
+    {
+      "note": "Sp22, now at MathWorks",
+      "name": "Reed Axman"
+    },
+    {
+      "note": "Sp22, now at Applied Medical",
+      "name": "Kyle Stewart"
+    },
+    {
+      "note": "Su21, now at Foxconn Industrial Internet",
+      "name": "Danish Faraaz Syed"
+    },
+    {
+      "note": "Su21, now PhD student at KTH",
+      "name": "Ibrahim Hasan"
+    },
+    {
+      "name": "Mason Smith",
+      "note": "Sp21, now PhD student at ASU"
+    },
+    {
+      "note": "Fa20, now at Honeywell",
+      "name": "Pallavi Shintre"
+    },
+    {
+      "note": "Fa20, now at Automotus",
+      "name": "Shubham Turakhia"
+    },
+    {
+      "name": "Hansol Moon",
+      "note": "Sp20, now at ASML"
+    },
+    {
+      "note": "Sp20, now PhD student at ASU",
+      "name": "Jonathan Bush"
+    },
+    {
+      "name": "Kashyap Sathyamurthy",
+      "note": "Sp20, now at Volansi"
+    },
+    {
+      "name": "Souvik Poddar",
+      "note": "Sp20, now PhD student at SUNY Buffalo"
+    },
+    {
+      "name": "Francisco Javier Lopez Arellano",
+      "note": "Sp19"
+    },
+    {
+      "name": "Rebecca Bell",
+      "note": "Sp19"
+    },
+    {
+      "note": "Fa18, now at Mitsubishi Electric Research Laboratories",
+      "name": "Karthik Kambam"
+    },
+    {
+      "note": "Su18",
+      "name": "Vaibhav Jhawar"
+    },
+    {
+      "name": "Mostafa Rezayat",
+      "note": "Su18"
+    }
+  ],
   "news": [
     {
-      "date": "February 2025",
+      "date": "February 2026",
       "headline": "\"What If I'm Wrong? Team Performance and Trustworthiness When Modeling Risk-Sensitivity in Human–Robot Collaboration\" was accepted to ACM THRI."
     },
     {
@@ -43,45 +515,179 @@
       "headline": "Congratulations to new PhD graduate Dr. Karishma Patnaik."
     },
     {
-      "date": "December 2021",
-      "headline": "We recently published two review papers, one on flexible multirotor UAVs and the other on wearable soft robots. Check the Publications page for more details!"
+      "headline": "We recently published two review papers, one on flexible multirotor UAVs and the other on wearable soft robots. Check the Publications page for more details!",
+      "date": "December 2021"
     },
     {
-      "date": "July 2021",
-      "headline": "Congratulations to the new PhD graduates: Dr. Yiwei Wang and Dr. Shatadal Mishra!"
+      "headline": "Congratulations to the new PhD graduates: Dr. Yiwei Wang and Dr. Shatadal Mishra!",
+      "date": "July 2021"
     },
     {
-      "date": "July 2020",
-      "headline": "Congratulations to the new PhD graduates: Dr. Pham Huy Nguyen and Dr. Saivimal Sridar!"
+      "headline": "Congratulations to the new PhD graduates: Dr. Pham Huy Nguyen and Dr. Saivimal Sridar!",
+      "date": "July 2020"
     },
     {
       "date": "March 2020",
       "headline": "Dr. Zhang has received an NSF CAREER Award to develop new algorithms for physical human-robot interaction."
     },
     {
-      "date": "May 2019",
-      "headline": "Congratulations on the new BS and MS graduates from the lab: Francisco, Becca, Jon, Daniel, and Jose!"
+      "headline": "Congratulations on the new BS and MS graduates from the lab: Francisco, Becca, Jon, Daniel, and Jose!",
+      "date": "May 2019"
     }
   ],
-  "director": {
-    "name": "Wenlong Zhang",
-    "photo": "WL-400450.jpg",
-    "title": "Associate Professor and Lab Director",
-    "email": "Wenlong.Zhang@asu.edu",
-    "affiliation": "School of Manufacturing Systems and Networks, Ira A. Fulton Schools of Engineering, Arizona State University",
-    "bio": "Dr. Zhang is an Associate Professor in the School of Manufacturing Systems and Networks at the Ira A. Fulton Schools of Engineering, Arizona State University. He currently serves as the Assistant Director for Research of the School of Manufacturing Systems and Networks. His research interests lie in developing learning and control algorithms for safe and efficient human-robot collaboration, with applications in wearable robotics, soft robotics, and autonomous aerial and ground vehicles. He received his Ph.D. degree in mechanical engineering from the University of California, Berkeley. He is a recipient of an NSF CAREER Award (2020), NSF-CISE Research Initiation Initiative (CRII) Award (2018), and Bisgrove Early Career Faculty Award from Science Foundation Arizona (2016)."
-  },
+  "confPubs": [
+    {
+      "venue": "IEEE International Conference on Biomedical Robotics and Biomechatronics (BioRob)",
+      "title": "Development of a Soft Inflatable Exosuit for Knee Flexion Assistance",
+      "authors": "I. Hasan, E. Quinones Yumbla, W. Zhang",
+      "url": "https://ieeexplore.ieee.org/document/9925474",
+      "year": 2022
+    },
+    {
+      "venue": "American Control Conference (ACC)",
+      "title": "When Shall I Estimate Your Intent? Costs and Benefits of Intent Inference in Multi-Agent Interactions",
+      "authors": "S. Amatya, M. Ghimire, Y. Ren, Z. Xu, W. Zhang",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9867155",
+      "year": 2022
+    },
+    {
+      "venue": "IEEE 5th International Conference on Soft Robotics (RoboSoft), pp. 390-395",
+      "title": "Design, Characterization, and Dynamic Modeling of BEAST: a Bistable Elastomeric Actuator for Swift Tasks",
+      "authors": "W. Tao, Z. Qiao, W. Zhang",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9762223/",
+      "year": 2022
+    },
+    {
+      "year": 2021,
+      "authors": "Y. Chen, L. Zhang, T. Merry, S. Amatya, W. Zhang, Y. Ren",
+      "venue": "IEEE International Conference on Robotics and Automation (ICRA), pp. 2761-2767",
+      "title": "When Shall I Be Empathetic? The Utility of Empathetic Parameter Estimation in Multi-Agent Interactions",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9561079/"
+    },
+    {
+      "venue": "IEEE 4th International Conference on Soft Robotics (RoboSoft)",
+      "title": "Design, Fabrication, and Characterization of a Helical Twisting, Contracting, and Bending Fabric Soft Continuum Actuator",
+      "authors": "P. H. Nguyen, I. I. B. Mohd, K. Duford, X. Bao, W. Zhang",
+      "url": "https://ieeexplore.ieee.org/document/9479350",
+      "year": 2021
+    },
+    {
+      "title": "Collision Recovery Control of a Foldable Quadrotor",
+      "venue": "IEEE/ASME International Conference on Advanced Intelligent Mechatronics (AIM), pp. 418-423",
+      "url": "https://ieeexplore.ieee.org/document/9517341",
+      "year": 2021,
+      "authors": "K. Patnaik, S. Mishra, Z. Chase, W. Zhang"
+    },
+    {
+      "year": 2020,
+      "authors": "K. Patnaik, S. Mishra, M. Rezayat, W. Zhang",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9341730/",
+      "venue": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), pp. 1364-1370",
+      "title": "Design and Control of SQUEEZE: A Spring-augmented QUadrotor for intEractions with the Environment to squeeZE-and-fly"
+    },
+    {
+      "venue": "IEEE/ASME International Conference on Advanced Intelligent Mechatronics (AIM)",
+      "title": "Ground Trajectory Control of an Unmanned Aerial-Ground Vehicle using Thrust Vectoring for Precise Grasping",
+      "authors": "S. Mishra, K. Patnaik, Y. Garrard, Z. Chase, M. Ploughe, W. Zhang",
+      "url": "https://ieeexplore.ieee.org/document/9158943",
+      "year": 2020
+    },
+    {
+      "venue": "IEEE 3rd International Conference on Soft Robotics (RoboSoft)",
+      "title": "Towards an Untethered Knit Fabric Soft Continuum Robotic Module with Embedded Fabric Sensing",
+      "authors": "P. H. Nguyen, Z. Qiao, S. Seidel, S. Amatya, I. I. B. Mohd, W. Zhang",
+      "url": "https://ieeexplore.ieee.org/document/9116025",
+      "year": 2020
+    },
+    {
+      "authors": "G. Clark, J. Campbell, M. Rezayat, W. Zhang, H. Ben Amor",
+      "year": 2020,
+      "url": "https://ieeexplore.ieee.org/abstract/document/9196676/",
+      "title": "Predictive Modeling of Periodic Behavior for Human-Robot Symbiotic Walking",
+      "venue": "IEEE International Conference on Robotics and Automation (ICRA), pp. 7599-7605"
+    },
+    {
+      "url": "https://ieeexplore.ieee.org/abstract/document/9147738/",
+      "year": 2020,
+      "authors": "S. Amatya, M. Rezayat, W. Zhang",
+      "title": "Human Learning and Coordination in Lower-limb Physical Interactions",
+      "venue": "American Control Conference (ACC), pp. 557-562"
+    },
+    {
+      "year": 2019,
+      "title": "Design, Characterization, and Mechanical Programming of Fabric-Reinforced Textile Actuators for a Soft Robotic Hand",
+      "url": "https://ieeexplore.ieee.org/document/8968497",
+      "venue": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), pp. 8312-8317",
+      "authors": "P. H. Nguyen, F. Lopez-Arellano, W. Zhang, P. Polygerinos"
+    },
+    {
+      "url": "https://ieeexplore.ieee.org/abstract/document/8794294/",
+      "title": "Fabric Soft Poly-Limbs for Physical Assistance of Daily Living Tasks",
+      "venue": "IEEE International Conference on Robotics and Automation (ICRA), pp. 8429-8435",
+      "year": 2019,
+      "authors": "P. H. Nguyen, I. I. Mohd, C. Sparks, F. Arellano, W. Zhang, P. Polygerinos"
+    },
+    {
+      "authors": "Y. Ren, S. Elliott, Y. Wang, Y. Yang, W. Zhang",
+      "url": "https://ieeexplore.ieee.org/abstract/document/8793835/",
+      "year": 2019,
+      "title": "How Shall I Drive? Interaction Modeling and Motion Planning towards Empathetic and Socially-Graceful Driving",
+      "venue": "IEEE International Conference on Robotics and Automation (ICRA), pp. 4325-4331"
+    },
+    {
+      "url": "https://ieeexplore.ieee.org/abstract/document/8815212/",
+      "authors": "Z. Qiao, P. H. Nguyen, P. Polygerinos, W. Zhang",
+      "year": 2019,
+      "title": "Dynamic Modeling and Motion Control of a Soft Robotic Arm Segment",
+      "venue": "American Control Conference (ACC), pp. 5438-5443"
+    },
+    {
+      "authors": "D. Yang, S. Mishra, D. M. Aukes, W. Zhang",
+      "url": "https://ieeexplore.ieee.org/abstract/document/8814351/",
+      "venue": "American Control Conference (ACC), pp. 2251-2256",
+      "year": 2019,
+      "title": "Design, Planning, and Control of an Origami-inspired Foldable Quad-rotor"
+    },
+    {
+      "url": "https://asmedigitalcollection.asme.org/DSCC/proceedings-abstract/DSCC2018/51913/V003T36A003/270951",
+      "year": 2018,
+      "title": "Design and Control of a Hexacopter with Soft Grasper for Autonomous Object Detection and Grasping",
+      "authors": "S. Mishra, D. Yang, C. Thalman, P. Polygerinos, W. Zhang",
+      "venue": "ASME Dynamic Systems and Control Conference (DSCC)"
+    },
+    {
+      "year": 2018,
+      "venue": "American Control Conference (ACC), pp. 2096-2101",
+      "title": "Distributed Planning of Multi-Segment Soft Robotic Arms",
+      "url": "https://ieeexplore.ieee.org/abstract/document/8430682/",
+      "authors": "W. Zhang, P. Polygerinos"
+    },
+    {
+      "venue": "IEEE-RAS International Conference on Humanoid Robots (Humanoids), pp. 305-310",
+      "authors": "Y. Wang, X. Ye, Y. Yang, W. Zhang",
+      "title": "Collision-free Trajectory Planning in Human-robot Interaction through Hand Movement Prediction from Vision",
+      "year": 2017,
+      "url": "https://ieeexplore.ieee.org/abstract/document/8246890/"
+    },
+    {
+      "year": 2016,
+      "title": "Who to Blame? Learning and Control Strategies with Information Asymmetry",
+      "url": "https://ieeexplore.ieee.org/abstract/document/7526122/",
+      "authors": "C. Liu, W. Zhang, M. Tomizuka",
+      "venue": "American Control Conference (ACC), pp. 4859-4864"
+    }
+  ],
   "docStudents": [
     {
-      "name": "Jonathan Bush",
       "photo": "jebush.jpg",
+      "name": "Jonathan Bush",
       "info": "Systems Engineering, 2020–",
       "email": "jebush2@asu.edu"
     },
     {
-      "name": "Amirali Abazari",
+      "info": "Systems Engineering, 2024–",
       "photo": "Amirali_Abazari.jpg",
-      "info": "Systems Engineering, 2024–"
+      "name": "Amirali Abazari"
     },
     {
       "name": "Brian Archambault",
@@ -89,48 +695,58 @@
       "info": "R&AS, 2025–"
     },
     {
+      "info": "R&AS, 2025–",
       "name": "Max Gao",
       "photo": "Max.jpeg",
-      "info": "R&AS, 2025–",
-      "email": "mgao18@asu.edu"
-    },
-    {
-      "name": "Yizhuang Garrard",
-      "photo": "YiZhuang.jpg",
-      "info": "Systems Engineering, 2019–",
+      "email": "mgao18@asu.edu",
       "links": [
         {
-          "url": "https://www.linkedin.com/in/yizhuang-g/",
+          "url": "https://www.linkedin.com/in/maxlgao/",
           "label": "LinkedIn"
         },
         {
-          "url": "https://yzgarrard.github.io/",
-          "label": "Website"
+          "label": "",
+          "url": ""
         }
       ]
     },
     {
-      "name": "Valentin Gaucher",
-      "photo": "val.png",
-      "info": "R&AS, 2024–",
-      "email": "vgaucher@asu.edu",
+      "info": "Systems Engineering, 2019–",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "url": "https://www.linkedin.com/in/yizhuang-g/"
+        },
+        {
+          "label": "Website",
+          "url": "https://yzgarrard.github.io/"
+        }
+      ],
+      "name": "Yizhuang Garrard",
+      "photo": "YiZhuang.jpg"
+    },
+    {
       "links": [
         {
           "url": "https://www.linkedin.com/in/valentin-gaucher-415514187",
           "label": "LinkedIn"
         }
-      ]
+      ],
+      "email": "vgaucher@asu.edu",
+      "photo": "val.png",
+      "name": "Valentin Gaucher",
+      "info": "R&AS, 2024–"
     },
     {
-      "name": "Jahnav Rokalaboina",
       "photo": "Jahnav.jpg",
-      "info": "Systems Engineering, 2024–",
       "links": [
         {
-          "url": "https://www.linkedin.com/in/jahnav-rokalaboina",
-          "label": "LinkedIn"
+          "label": "LinkedIn",
+          "url": "https://www.linkedin.com/in/jahnav-rokalaboina"
         }
-      ]
+      ],
+      "name": "Jahnav Rokalaboina",
+      "info": "Systems Engineering, 2023–"
     },
     {
       "name": "Mason Smith",
@@ -150,761 +766,223 @@
     },
     {
       "name": "Weijia Tao",
-      "photo": "wtao11.jfif",
-      "info": "Systems Engineering, 2021–"
+      "info": "Systems Engineering, 2021–",
+      "photo": "wtao11.jfif"
     },
     {
       "name": "Andres Sandoval",
-      "photo": "AndresSandoval.jpeg",
-      "info": "Systems Engineering, 2023–"
-    }
-  ],
-  "msStudents": [
+      "info": "Systems Engineering, 2023–",
+      "photo": "AndresSandoval.jpeg"
+    },
     {
-      "name": "Tolemy Nibi",
-      "photo": "sundevil.jpg",
-      "info": "Aerospace Engineering, 2023–",
       "links": [
         {
-          "url": "https://www.linkedin.com/in/tolemy-nibi/",
-          "label": "LinkedIn"
+          "label": "LinkedIn",
+          "url": "https://www.linkedin.com/in/jeevan-h-m"
         }
-      ]
-    },
-    {
-      "name": "Bill Nguyen",
-      "photo": "Bill.jpeg",
-      "info": "Mechanical Engineering"
-    },
-    {
-      "name": "Jesse Cabrera",
-      "photo": "sundevil.jpg",
-      "info": ""
-    }
-  ],
-  "bsStudents": [
-    {
-      "name": "Matthew Herdegen",
-      "photo": "sundevil.jpg",
-      "info": "Aerospace, Aeronautical and Astronautical Engineering, 2022–"
-    },
-    {
-      "name": "Raj Kodithyala",
-      "photo": "sundevil.jpg",
-      "info": "Systems Engineering, 2021–"
-    },
-    {
-      "name": "Colin Fricke",
-      "photo": "Colin_Fricke.jpeg",
-      "info": "Robotics Engineering, 2021–"
-    },
-    {
-      "name": "Ash Srivastava",
-      "photo": "AshSrivastava.jpg",
-      "info": "Computer Science, 2025–"
-    }
-  ],
-  "alumniPhd": [
-    {
-      "name": "Dr. Sunny Amatya",
-      "graduated": "Fall 2024",
-      "job": "R&D Engineer at FANUC America Corporation",
-      "thesis": "Adaptive Decision-Making through Efficient and Transferable Intent Inference and Motion Planning"
-    },
-    {
-      "name": "Dr. S. Mostafa Rezayat Sorkhabadi",
-      "graduated": "Fall 2023",
-      "job": "R&D Mechatronic Engineer at Siemens Healthineers",
-      "thesis": "Towards Robot-aided Gait Rehabilitation and Assistance via Characterization and Estimation of Human Locomotion"
-    },
-    {
-      "name": "Dr. Zhi Qiao",
-      "graduated": "Fall 2023",
-      "job": "",
-      "thesis": "Dynamic Modeling, Robust Control and Contact Estimation of Soft Robotics"
-    },
-    {
-      "name": "Dr. Emiliano Quinones Yumbla",
-      "graduated": "Summer 2023",
-      "job": "Faculty at University of Puerto Rico, Carolina",
-      "thesis": "Sensing, Modeling, Control and Evaluation of Soft Robots for Wearable Applications"
-    },
-    {
-      "name": "Dr. Karishma Patnaik",
-      "graduated": "Spring 2023",
-      "job": "Faculty at University of Michigan-Dearborn",
-      "thesis": "Design, Control and Trajectory Planning of Reconfigurable Quadrotors"
-    },
-    {
-      "name": "Dr. Shatadal Mishra",
-      "graduated": "Summer 2021",
-      "job": "Systems Research Scientist at Toyota InfoTech R&D Labs",
-      "thesis": "Modeling Human Adaptation with Game-Theoretic Intention Decoding in Human-Robot Interactions"
-    },
-    {
-      "name": "Dr. Yiwei Wang",
-      "graduated": "Spring 2021",
-      "job": "Faculty at Huazhong University of Science and Technology",
-      "thesis": "Modeling Human Adaptation with Game-Theoretic Intention Decoding in Human-Robot Interactions"
-    },
-    {
-      "name": "Dr. Pham Huy Nguyen",
-      "graduated": "Spring 2020",
-      "job": "Postdoctoral Research Associate at EPFL",
-      "thesis": "Design, Modeling, and Evaluation of Soft Poly-Limbs Toward a New Paradigm of Wearable Continuum Robotic Manipulation for Daily Living Tasks"
-    },
-    {
-      "name": "Dr. Saivimal Sridar",
-      "graduated": "Spring 2020",
-      "job": "Research Engineer at Ottobock Global Research",
-      "thesis": "Design, Development, and Evaluation of a Soft-Inflatable Exosuit for Lower Limb Assistance"
-    },
-    {
-      "name": "Dr. Prudhvi Tej Chinimilli",
-      "graduated": "Fall 2018",
-      "job": "Co-founder and CTO at Zooly Labs",
-      "thesis": "Human Activity Recognition and Control of Wearable Robots"
-    }
-  ],
-  "alumniMsc": [
-    {
-      "name": "Yogesh Kumar",
-      "note": "Fa24, now at ASU"
-    },
-    {
-      "name": "Harinee Kannan",
-      "note": "Sp24, now at Freeport-McMoRan"
-    },
-    {
-      "name": "Madelyn Molnar",
-      "note": "Sp24, now at Southwest Research Institute"
-    },
-    {
-      "name": "Jahnav Rokalaboina",
-      "note": "Su23, now PhD student at ASU"
-    },
-    {
-      "name": "Aravind Adhith P.S.",
-      "note": "Sp23, now at Komatsu Mining"
-    },
-    {
-      "name": "Qinchen Zha",
-      "note": "Sp23"
-    },
-    {
-      "name": "Reed Axman",
-      "note": "Sp22, now at MathWorks"
-    },
-    {
-      "name": "Kyle Stewart",
-      "note": "Sp22, now at Applied Medical"
-    },
-    {
-      "name": "Danish Faraaz Syed",
-      "note": "Su21, now at Foxconn Industrial Internet"
-    },
-    {
-      "name": "Ibrahim Hasan",
-      "note": "Su21, now PhD student at KTH"
-    },
-    {
-      "name": "Mason Smith",
-      "note": "Sp21, now PhD student at ASU"
-    },
-    {
-      "name": "Pallavi Shintre",
-      "note": "Fa20, now at Honeywell"
-    },
-    {
-      "name": "Shubham Turakhia",
-      "note": "Fa20, now at Automotus"
-    },
-    {
-      "name": "Hansol Moon",
-      "note": "Sp20, now at ASML"
-    },
-    {
-      "name": "Jonathan Bush",
-      "note": "Sp20, now PhD student at ASU"
-    },
-    {
-      "name": "Kashyap Sathyamurthy",
-      "note": "Sp20, now at Volansi"
-    },
-    {
-      "name": "Souvik Poddar",
-      "note": "Sp20, now PhD student at SUNY Buffalo"
-    },
-    {
-      "name": "Francisco Javier Lopez Arellano",
-      "note": "Sp19"
-    },
-    {
-      "name": "Rebecca Bell",
-      "note": "Sp19"
-    },
-    {
-      "name": "Karthik Kambam",
-      "note": "Fa18, now at Mitsubishi Electric Research Laboratories"
-    },
-    {
-      "name": "Vaibhav Jhawar",
-      "note": "Su18"
-    },
-    {
-      "name": "Mostafa Rezayat",
-      "note": "Su18"
-    }
-  ],
-  "alumniNri": [
-    {
-      "name": "Zachary Hoffman",
-      "note": "2019–2020",
-      "title": "Undergrad Student (Computer Science), Arizona State University — FURI Spring & Fall 2020"
-    },
-    {
-      "name": "Grace Zhang",
-      "note": "Summer 2020",
-      "title": "Undergrad Student (Computer Science), Stanford University — NSF REU Student"
-    }
-  ],
-  "alumniBS": [
-    {
-      "name": "Nicholas Rocchi",
-      "note": "Spring 2024"
-    },
-    {
-      "name": "Sruti Ganti",
-      "note": "Spring 2023"
-    },
-    {
-      "name": "Jose Nacias, Matthew Downey, and Edward Goldenberg",
-      "note": "Spring 2021"
-    },
-    {
-      "name": "Sam Seidel",
-      "note": "Spring 2020"
-    },
-    {
-      "name": "Colton Van Hazel",
-      "note": "Spring 2020"
-    },
-    {
-      "name": "Marcus Schaller",
-      "note": "Fall 2019"
-    },
-    {
-      "name": "Jose Luis Rivera",
-      "note": "Spring 2019"
-    },
-    {
-      "name": "Daniel Gaytan-Jenkins",
-      "note": "Spring 2019"
-    },
-    {
-      "name": "Jonathan Bush",
-      "note": "Spring 2019"
-    },
-    {
-      "name": "Breanna Holmes",
-      "note": "Spring 2018"
-    }
-  ],
-  "researchAreas": [
-    {
-      "id": "aerial-robotics",
-      "title": "Aerial Robotics",
-      "icon": "Plane",
-      "image": "respic/uav/lab_website_all-drone_all.png",
-      "overview": "Unmanned aerial vehicles (UAVs) have been applied in aerial photography, surveillance, search and rescue, and precision agriculture. However, autonomous operations of small UAVs in dynamic environments pose challenges on the design of vehicle hardware and the embedded autonomy algorithms. Our research in this area includes (1) design of morphing UAVs, (2) dynamic modeling and precision control for the new hardware, and (3) aerial-physical interaction for navigation and manipulation.",
-      "projects": [
-        {
-          "title": "High-Fidelity Simulation of Aerial Robots",
-          "description": "Make a simulation pipeline to rapidly test algorithms for aerial robots. Integrate controllers using ROS2 into a simulation environment with Ardupilot and PX4 flight controllers.",
-          "video": "https://www.youtube.com/embed/KMJfgCVvdks?si=IqiogsKKsGcQrSq5",
-          "papers": [
-            {
-              "title": "Nonlinear Wrench Observer of an Underactuated Aerial Manipulator",
-              "url": "https://arc.aiaa.org/doi/abs/10.2514/6.2024-0660"
-            },
-            {
-              "title": "Multi-Objective Optimization for Quadrotor Multibody Dynamic Simulations",
-              "url": "https://arc.aiaa.org/doi/10.2514/6.2023-1280"
-            }
-          ]
-        },
-        {
-          "title": "Design and Control of Flexible Quadrotors",
-          "description": "To exploit the physical contact between the multi-rotor drone and its environment for better control and manipulation and higher safety. Developing various compliant multi-rotor drones for passive resilience in contacts, detecting the contacts via different sensing methods.",
-          "video": "https://www.youtube.com/embed/jpi-mJ6xJ6o?si=X2tbF-NcHKyHICI2",
-          "papers": [
-            {
-              "title": "A Soft-Bodied Aerial Robot for Collision Resilience and Contact-Reactive Perching",
-              "url": "https://www.liebertpub.com/doi/full/10.1089/soro.2022.0010"
-            },
-            {
-              "title": "Design, Characterization and Control of a Whole-body Grasping and Perching (WHOPPEr) Drone",
-              "url": "https://ieeexplore.ieee.org/abstract/document/10341722/"
-            }
-          ]
-        },
-        {
-          "title": "Contact Based Safe Navigation",
-          "description": "To exploit the physical contact between the multi-rotor drone and its environment for better control, motion planning and higher safety. Developing a safe planning and control algorithm for collision based efficient navigation.",
-          "video": "https://www.youtube.com/embed/tx7cvL9qyaM?si=IB3X3UdxQVEGvuZ5",
-          "papers": [
-            {
-              "title": "Tactile-based Exploration, Mapping and Navigation with Collision-Resilient Aerial Vehicles",
-              "url": "https://arxiv.org/abs/2305.17217"
-            },
-            {
-              "title": "Adaptive attitude control for foldable quadrotors",
-              "url": "https://ieeexplore.ieee.org/abstract/document/10005814"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "soft-robotics",
-      "title": "Soft Robotics",
-      "icon": "Cpu",
-      "image": "respic/soft/lab_website_all-Soft_all.png",
-      "overview": "Soft robotics is reshaping the future of technology by developing flexible, adaptable systems that safely interact with humans and operate in complex environments. Current projects include soft robotic manipulators designed for advanced modeling and control, fabric-based exosuits for assistance and rehabilitation, and a soft pipe inspection robot capable of navigating intricate pipelines for health monitoring.",
-      "projects": [
-        {
-          "title": "Soft Robotics Arm",
-          "description": "Modeling and control of Soft Robotic Arm. Work on pneumatically operated soft robotic arm to test, train and implement models and develop control algorithms to achieve tasks including trajectory tracking.",
-          "video": "https://www.youtube.com/embed/n7Hid2VH8OA?si=m3KFShtuB-QgyWXs",
-          "papers": [
-            {
-              "title": "Design and Computational Modeling of Fabric Soft Pneumatic Actuators for Wearable Assistive Devices",
-              "url": "https://www.nature.com/articles/s41598-020-65003-2"
-            },
-            {
-              "title": "Design and Control of a 3-Chambered Fiber Reinforced Soft Actuator with Off-the-shelf Stretch Sensors",
-              "url": "https://link.springer.com/article/10.1007/s41315-017-0020-z"
-            }
-          ]
-        },
-        {
-          "title": "Soft Robotic Exosuits",
-          "description": "Design, characterize and test soft inflatable actuator based exosuit on healthy human subjects to evaluate the assistance provided. To evaluate the effect of exosuit during flexion and extension, surface electromyography (sEMG) sensors are placed to record the muscle activity.",
-          "video": "https://www.youtube.com/embed/2VuCrtyNzt0?si=TI-9l6E10lrhQbyB",
-          "papers": [
-            {
-              "title": "Gait Sensing and Haptic Feedback Using an Inflatable Soft Haptic Sensor",
-              "url": "https://asmedigitalcollection.asme.org/lettersdynsys/article/4/1/011003/1193780"
-            },
-            {
-              "title": "A Kinematically Constrained Kalman Filter for Sensor Fusion in a Wearable Origami Robot",
-              "url": "https://asmedigitalcollection.asme.org/lettersdynsys/article/3/1/011005/1159780/A-Kinematically-Constrained-Kalman-Filter-for"
-            }
-          ]
-        },
-        {
-          "title": "Soft Pipe Inspection Robot",
-          "description": "This pipe inspection robot consists of several bistable inflatable fabric actuators, enabling it to navigate pipes of various sizes (4–6 inches in diameter) using inchworm locomotion. Designed to handle obstacles within the pipes.",
-          "video": "https://www.youtube.com/embed/4QxHrXKJn4M?si=pcX88zSsp6uS9ZO2",
-          "papers": [
-            {
-              "title": "Design and Gait Optimization of an In-Pipe Robot with Bistable Inflatable Fabric Actuators",
-              "url": "https://ieeexplore.ieee.org/abstract/document/10637194"
-            },
-            {
-              "title": "Design, Characterization, and Dynamic Modeling of BEAST: a Bistable Elastomeric Actuator for Swift Tasks",
-              "url": "https://ieeexplore.ieee.org/abstract/document/9762223"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "human-robot-interaction",
-      "title": "Human-Robot Interaction",
-      "icon": "Users",
-      "image": "respic/hri/lab_website_all-HRI_all.png",
-      "overview": "For the humans and robots to collaborate safely and efficiently, a robot needs to understand human intents, predict human actions, consider human factors, to optimize its own actions to complete a task safely, efficiently, and friendly. We have developed a game-theoretic framework to model the bilateral inference and decision-making process between the human and robot. Applications include autonomous vehicles, collaborative manufacturing, and wearable robots.",
-      "projects": [
-        {
-          "title": "Modeling Human Bias and Uncertainties in HRI",
-          "description": "Make AI better understand human preferences and decisions to make AI better able to assist. Integrate risk-aware cognitive models (CPT) into interactive AI planning in an Overcooked environment and robotic Smart Bike.",
-          "video": null,
-          "image": "respic/hri/lab_website_all-HRI_all.png",
-          "papers": [
-            {
-              "title": "What if I'm Wrong? Team Performance and Trustworthiness when Modeling Risk-Sensitivity in Human-Robot Collaboration",
-              "url": "#"
-            },
-            {
-              "title": "Research Needs in Human-Autonomy Teaming: Thematic Analysis of Priority Features for Testbed Development",
-              "url": "https://ieeexplore.ieee.org/abstract/document/10731453"
-            }
-          ]
-        },
-        {
-          "title": "Bilateral Reasoning and Learning in HRI",
-          "description": "Developing a game theoretical based controller for physical human-robot interaction scenarios such as controlling assistive wearable robots. Integrating incomplete information games with optimal control and reinforcement learning to infer human intent during HRI tasks.",
-          "video": null,
-          "papers": [
-            {
-              "title": "Bounded Rational Game-theoretical Modeling of Human Joint Actions with Incomplete Information",
-              "url": "https://ieeexplore.ieee.org/abstract/document/9982108"
-            },
-            {
-              "title": "When Shall I Estimate Your Intent? Costs and Benefits of Intent Inference in Multi-Agent Interactions",
-              "url": "https://ieeexplore.ieee.org/abstract/document/9867155"
-            }
-          ]
-        }
-      ]
+      ],
+      "email": "jhebbalm@asu.edu",
+      "photo": "https://raw.githubusercontent.com/Jeevan-HM/RISE_Lab/main/public/images/teampic/1786414275108_headshot.jpg",
+      "name": "Jeevan Hebbal Manjunath",
+      "info": "Robotics and Autonomous Systems"
     }
   ],
   "journalPubs": [
     {
-      "title": "Model-based contact detection and position control of a fabric soft robot in unknown environments",
-      "authors": "Z. Qiao, P. H. Nguyen, W. Zhang",
-      "venue": "Frontiers in Robotics and AI, 9, 997366",
-      "year": 2022,
-      "url": "https://www.frontiersin.org/articles/10.3389/frobt.2022.997366/full"
+      "venue": "ACM Transactions on Human-Robot Interaction (THRI)",
+      "title": "What if I'm Wrong? Team Performance and Trustworthiness when Modeling Risk-Sensitivity in Human-Robot Collaboration",
+      "authors": "M. O. Smith, W. Zhang",
+      "url": "https://dl.acm.org/doi/full/10.1145/3706068",
+      "year": 2026
     },
     {
+      "venue": "IEEE/ASME Transactions on Mechatronics",
+      "title": "Tactile-Based Exploration, Mapping, and Navigation With Collision-Resilient Aerial Vehicles",
+      "authors": "K. Patnaik, A. A. Pandian Saravanakumaran, W. Zhang",
+      "url": "https://ieeexplore.ieee.org/document/10988596",
+      "year": 2025
+    },
+    {
+      "venue": "Frontiers in Robotics and AI, 9, 997366",
+      "title": "Model-based contact detection and position control of a fabric soft robot in unknown environments",
+      "authors": "Z. Qiao, P. H. Nguyen, W. Zhang",
+      "url": "https://www.frontiersin.org/articles/10.3389/frobt.2022.997366/full",
+      "year": 2022
+    },
+    {
+      "url": "https://ieeexplore.ieee.org/abstract/document/9852651",
       "title": "Design and Evaluation of an Invariant Extended Kalman Filter for Trunk Motion Estimation With Sensor Misalignment",
       "authors": "Z. Zhu, M. Rezayat, Y. Gu, W. Zhang",
       "venue": "IEEE/ASME Transactions on Mechatronics, 27(4), pp. 2158-2167",
-      "year": 2022,
-      "url": "https://ieeexplore.ieee.org/abstract/document/9852651"
+      "year": 2022
     },
     {
       "title": "Human Assistance and Augmentation with Wearable Soft Robotics: a Literature Review and Perspectives",
-      "authors": "E. Q. Yumbla, Z. Qiao, W. Tao, W. Zhang",
-      "venue": "Current Robotics Reports, 2, pp. 399-413",
       "year": 2021,
-      "url": "https://link.springer.com/article/10.1007/s43154-021-00067-0"
+      "url": "https://link.springer.com/article/10.1007/s43154-021-00067-0",
+      "venue": "Current Robotics Reports, 2, pp. 399-413",
+      "authors": "E. Q. Yumbla, Z. Qiao, W. Tao, W. Zhang"
     },
     {
-      "title": "Towards Reconfigurable and Flexible Multirotors - A Literature Survey and Discussion on Potential Challenges",
-      "authors": "K. Patnaik, W. Zhang",
-      "venue": "International Journal of Intelligent Robotics and Applications, 5(3), pp. 365-380",
       "year": 2021,
+      "venue": "International Journal of Intelligent Robotics and Applications, 5(3), pp. 365-380",
+      "authors": "K. Patnaik, W. Zhang",
+      "title": "Towards Reconfigurable and Flexible Multirotors - A Literature Survey and Discussion on Potential Challenges",
       "url": "https://link.springer.com/article/10.1007/s41315-021-00200-4"
     },
     {
-      "title": "Autonomous Vision-guided Object Collection from Water Surfaces with a Customized Multirotor",
-      "authors": "S. Mishra, D. F. Syed, M. Ploughe, W. Zhang",
       "venue": "IEEE/ASME Transactions on Mechatronics, 26(4), pp. 1914-1922",
+      "title": "Autonomous Vision-guided Object Collection from Water Surfaces with a Customized Multirotor",
       "year": 2021,
-      "url": "https://ieeexplore.ieee.org/abstract/document/9432733/"
+      "url": "https://ieeexplore.ieee.org/abstract/document/9432733/",
+      "authors": "S. Mishra, D. F. Syed, M. Ploughe, W. Zhang"
     },
     {
-      "title": "Design and Computational Modeling of Fabric Soft Pneumatic Actuators for Wearable Assistive Devices",
       "authors": "P. H. Nguyen, W. Zhang",
-      "venue": "Scientific Reports, 10(1), pp. 1-13",
       "year": 2020,
-      "url": "https://www.nature.com/articles/s41598-020-65003-2"
+      "url": "https://www.nature.com/articles/s41598-020-65003-2",
+      "venue": "Scientific Reports, 10(1), pp. 1-13",
+      "title": "Design and Computational Modeling of Fabric Soft Pneumatic Actuators for Wearable Assistive Devices"
     },
     {
+      "url": "https://ieeexplore.ieee.org/abstract/document/8911426/",
       "title": "Enabling Courteous Vehicle Interactions Through Game-Based and Dynamics-Aware Intent Inference",
-      "authors": "Y. Wang, Y. Ren, S. Elliott, W. Zhang",
       "venue": "IEEE Transactions on Intelligent Vehicles, 5(2), pp. 217-228",
       "year": 2020,
-      "url": "https://ieeexplore.ieee.org/abstract/document/8911426/"
+      "authors": "Y. Wang, Y. Ren, S. Elliott, W. Zhang"
     },
     {
-      "title": "Evaluating Immediate Benefits of Assisting Knee Extension with a Soft-Inflatable Exosuit",
-      "authors": "S. Sridar, Z. Qiao, A. Rascon, A. Biemond, A. Beltran, T. Maruyama, C. Kwasnica, P. Polygerinos, W. Zhang",
-      "venue": "IEEE Transactions on Medical Robotics and Bionics, 2(2), pp. 216-225",
+      "url": "https://doi.org/10.1016/j.smhl.2020.100162",
+      "title": "GaitCode: Gait-based Continuous Authentication Using Multimodal Learning and Wearable Sensors",
+      "venue": "Smart Health, 19, 100162",
       "year": 2020,
-      "url": "https://ieeexplore.ieee.org/abstract/document/9069314/"
+      "authors": "I. Papavasileiou, Z. Qiao, C. Zhang, W. Zhang, J. Bi, S. Han"
+    },
+    {
+      "url": "https://ieeexplore.ieee.org/abstract/document/9069314/",
+      "year": 2020,
+      "authors": "S. Sridar, Z. Qiao, A. Rascon, A. Biemond, A. Beltran, T. Maruyama, C. Kwasnica, P. Polygerinos, W. Zhang",
+      "title": "Evaluating Immediate Benefits of Assisting Knee Extension with a Soft-Inflatable Exosuit",
+      "venue": "IEEE Transactions on Medical Robotics and Bionics, 2(2), pp. 216-225"
     },
     {
       "title": "Towards Portability of Soft Pneumatic Exosuits using Low-Volume Inflatable Actuator Composites and a Portable Pneumatic Source",
-      "authors": "S. Sridar, S. Poddar, Y. Tong, P. Polygerinos, W. Zhang",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9067838/",
       "venue": "IEEE Robotics and Automation Letters, 5(3), pp. 4062-4069",
       "year": 2020,
-      "url": "https://ieeexplore.ieee.org/abstract/document/9067838/"
+      "authors": "S. Sridar, S. Poddar, Y. Tong, P. Polygerinos, W. Zhang"
     },
     {
-      "title": "Assessment of Human Dynamic Gait Stability with a Lower Extremity Assistive Device",
-      "authors": "P. Chinimilli, S. Rezayat, W. Zhang",
       "venue": "IEEE Transactions on Neural Systems and Rehabilitation Engineering, 28(3), pp. 669-678",
+      "title": "Assessment of Human Dynamic Gait Stability with a Lower Extremity Assistive Device",
+      "url": "https://ieeexplore.ieee.org/abstract/document/8974246/",
       "year": 2020,
-      "url": "https://ieeexplore.ieee.org/abstract/document/8974246/"
+      "authors": "P. Chinimilli, S. Rezayat, W. Zhang"
     },
     {
-      "title": "Quantitative Modeling and Analysis of Reliance in Physical Human-Machine Coordination",
-      "authors": "Y. Wang, G. J. Lematta, C.-P. Hsiung, K. Rahm, E. K. Chiou, W. Zhang",
-      "venue": "ASME Journal of Mechanisms and Robotics, 11(6), pp. 060901",
       "year": 2019,
-      "url": "https://asmedigitalcollection.asme.org/mechanismsrobotics/article-abstract/11/6/060901/958403"
+      "authors": "Y. Wang, G. J. Lematta, C.-P. Hsiung, K. Rahm, E. K. Chiou, W. Zhang",
+      "url": "https://asmedigitalcollection.asme.org/mechanismsrobotics/article-abstract/11/6/060901/958403",
+      "venue": "ASME Journal of Mechanisms and Robotics, 11(6), pp. 060901",
+      "title": "Quantitative Modeling and Analysis of Reliance in Physical Human-Machine Coordination"
     },
     {
       "title": "Automatic Virtual Impedance Adaptation of a Knee Exoskeleton for Personalized Walking Assistance",
-      "authors": "P. Chinmilli, Z. Qiao, S. Rezayet, V. Jhawar, I. Fong, W. Zhang",
       "venue": "Robotics and Autonomous Systems, 114, pp. 66-76",
-      "year": 2019,
-      "url": "https://www.sciencedirect.com/science/article/pii/S092188901830558X"
+      "url": "https://www.sciencedirect.com/science/article/pii/S092188901830558X",
+      "authors": "P. Chinmilli, Z. Qiao, S. Rezayet, V. Jhawar, I. Fong, W. Zhang",
+      "year": 2019
     },
     {
       "title": "Robust Attitude Control for Quadrotors based on Parameter Optimization of Nonlinear Disturbance Observer",
-      "authors": "S. Mishra, T. Rakstad, W. Zhang",
+      "url": "https://asmedigitalcollection.asme.org/dynamicsystems/article-abstract/141/8/081003/726532",
       "venue": "ASME Journal of Dynamic Systems, Measurement, and Control, 141(8), pp. 081003",
       "year": 2019,
-      "url": "https://asmedigitalcollection.asme.org/dynamicsystems/article-abstract/141/8/081003/726532"
+      "authors": "S. Mishra, T. Rakstad, W. Zhang"
     },
     {
+      "venue": "IEEE Reviews in Biomedical Engineering, 11(1), pp. 289-305",
       "title": "Advances in Automation Technologies for Lower-extremity Neurorehabilitation: A Review and Future Challenges",
       "authors": "W. Deng, I. Papavasileiou, Z. Qiao, W. Zhang, K.-Y. Lam, S. Han",
-      "venue": "IEEE Reviews in Biomedical Engineering, 11(1), pp. 289-305",
       "year": 2018,
       "url": "https://ieeexplore.ieee.org/abstract/document/8354783/"
     },
     {
+      "url": "https://www.frontiersin.org/articles/10.3389/frobt.2018.00044/full",
       "title": "A Soft-Inflatable Exosuit for Knee Rehabilitation: Assisting Swing Phase During Walking",
-      "authors": "S. Sridar, Z. Qiao, N. Muthukrishnan, W. Zhang, P. Polygerinos",
       "venue": "Frontiers in Robotics and AI, 5, pp. 44",
-      "year": 2018,
-      "url": "https://www.frontiersin.org/articles/10.3389/frobt.2018.00044/full"
+      "authors": "S. Sridar, Z. Qiao, N. Muthukrishnan, W. Zhang, P. Polygerinos",
+      "year": 2018
     },
     {
-      "title": "A Double Disturbance Observer Design for Compensation of Unknown Time Delay in a Wireless Motion Control System",
       "authors": "W. Zhang, M. Tomizuka, Y.-H. Wei, Q. Leng, S. Han, A. K. Mok",
-      "venue": "IEEE Transactions on Control Systems Technology, 26(2), pp. 675-683",
       "year": 2018,
+      "venue": "IEEE Transactions on Control Systems Technology, 26(2), pp. 675-683",
+      "title": "A Double Disturbance Observer Design for Compensation of Unknown Time Delay in a Wireless Motion Control System",
       "url": "https://ieeexplore.ieee.org/abstract/document/7879179/"
     },
     {
-      "title": "Optimal Collision-Free Robot Trajectory Generation Based on Time Series Prediction of Human Movement",
-      "authors": "Y. Wang, Y. Sheng, J. Wang, W. Zhang",
       "venue": "IEEE Robotics and Automation Letters, 3(1), pp. 226-233",
       "year": 2018,
-      "url": "https://ieeexplore.ieee.org/abstract/document/8004480/"
+      "title": "Optimal Collision-Free Robot Trajectory Generation Based on Time Series Prediction of Human Movement",
+      "url": "https://ieeexplore.ieee.org/abstract/document/8004480/",
+      "authors": "Y. Wang, Y. Sheng, J. Wang, W. Zhang"
     },
     {
-      "title": "Design and Control of a 3-Chambered Fiber Reinforced Soft Actuator with Off-the-shelf Stretch Sensors",
-      "authors": "S. Sridar, P. H. Nguyen, W. Zhang, P. Polygerinos",
       "venue": "International Journal of Intelligent Robotics and Applications, 1(3), pp. 342-351",
+      "title": "Design and Control of a 3-Chambered Fiber Reinforced Soft Actuator with Off-the-shelf Stretch Sensors",
+      "url": "https://link.springer.com/article/10.1007/s41315-017-0020-z",
       "year": 2017,
-      "url": "https://link.springer.com/article/10.1007/s41315-017-0020-z"
+      "authors": "S. Sridar, P. H. Nguyen, W. Zhang, P. Polygerinos"
     },
     {
-      "title": "Real-time Data-driven Gait Phase Detection using Ground Contact Force Measurements",
-      "authors": "I. Papavasileiou, W. Zhang, S. Han",
       "venue": "Smart Health, 1-2, pp. 34-49",
-      "year": 2017,
-      "url": "https://www.sciencedirect.com/science/article/pii/S2352648317300156"
+      "authors": "I. Papavasileiou, W. Zhang, S. Han",
+      "title": "Real-time Data-driven Gait Phase Detection using Ground Contact Force Measurements",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2352648317300156",
+      "year": 2017
     },
     {
+      "url": "https://asmedigitalcollection.asme.org/dynamicsystems/article-abstract/138/11/111004/473999",
       "title": "A Wireless Human Motion Monitoring System for Smart Rehabilitation",
-      "authors": "W. Zhang, M. Tomizuka, N. Byl",
-      "venue": "ASME Journal of Dynamic Systems, Measurement and Control, 138(11), pp. 111004",
       "year": 2016,
-      "url": "https://asmedigitalcollection.asme.org/dynamicsystems/article-abstract/138/11/111004/473999"
+      "venue": "ASME Journal of Dynamic Systems, Measurement and Control, 138(11), pp. 111004",
+      "authors": "W. Zhang, M. Tomizuka, N. Byl"
     },
     {
-      "title": "Clinical Benefits of Gait Training Enhanced with Visual Biofeedback of Walking Kinematics: Patients with Parkinson's Disease and Stable Post Stroke",
       "authors": "N. Byl, W. Zhang, S. Coo, M. Tomizuka",
-      "venue": "Neuropsychologia, 79(B), pp. 332-343",
+      "title": "Clinical Benefits of Gait Training Enhanced with Visual Biofeedback of Walking Kinematics: Patients with Parkinson's Disease and Stable Post Stroke",
       "year": 2015,
+      "venue": "Neuropsychologia, 79(B), pp. 332-343",
       "url": "https://www.sciencedirect.com/science/article/pii/S0028393215300051"
     },
     {
-      "title": "Modified Preview Control for a Wireless Tracking Control System with Packet Loss",
-      "authors": "W. Zhang, J. Bae, M. Tomizuka",
-      "venue": "IEEE/ASME Transactions on Mechatronics, 20(1), pp. 299-307",
       "year": 2015,
-      "url": "https://ieeexplore.ieee.org/abstract/document/6716977/"
+      "url": "https://ieeexplore.ieee.org/abstract/document/6716977/",
+      "title": "Modified Preview Control for a Wireless Tracking Control System with Packet Loss",
+      "venue": "IEEE/ASME Transactions on Mechatronics, 20(1), pp. 299-307",
+      "authors": "W. Zhang, J. Bae, M. Tomizuka"
     },
     {
-      "title": "Network-based Rehabilitation System for Improved Mobility and Tele-rehabilitation",
-      "authors": "J. Bae, W. Zhang, M. Tomizuka",
-      "venue": "IEEE Transactions on Control Systems Technology, 21(5), pp. 1980-1986",
+      "url": "https://ieeexplore.ieee.org/abstract/document/6324394/",
       "year": 2013,
-      "url": "https://ieeexplore.ieee.org/abstract/document/6324394/"
+      "title": "Network-based Rehabilitation System for Improved Mobility and Tele-rehabilitation",
+      "venue": "IEEE Transactions on Control Systems Technology, 21(5), pp. 1980-1986",
+      "authors": "J. Bae, W. Zhang, M. Tomizuka"
     },
     {
       "title": "Energy-to-peak Control for Seismic-excited Buildings with Actuator Faults and Parameter Uncertainties",
-      "authors": "W. Zhang, Y. Chen, H. Gao",
       "venue": "Journal of Sound and Vibration, 330(4), pp. 581-602",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0022460X10005869",
       "year": 2011,
-      "url": "https://www.sciencedirect.com/science/article/pii/S0022460X10005869"
+      "authors": "W. Zhang, Y. Chen, H. Gao"
     },
     {
-      "title": "Finite Frequency H-inf Control for Building under Earthquake Excitation",
       "authors": "Y. Chen, W. Zhang, H. Gao",
       "venue": "Mechatronics, 20(1), pp. 128-142",
       "year": 2010,
+      "title": "Finite Frequency H-inf Control for Building under Earthquake Excitation",
       "url": "https://www.sciencedirect.com/science/article/pii/S0957415809001767"
     }
-  ],
-  "confPubs": [
-    {
-      "title": "Design, Characterization, and Dynamic Modeling of BEAST: a Bistable Elastomeric Actuator for Swift Tasks",
-      "authors": "W. Tao, Z. Qiao, W. Zhang",
-      "venue": "IEEE 5th International Conference on Soft Robotics (RoboSoft), pp. 390-395",
-      "year": 2022,
-      "url": "https://ieeexplore.ieee.org/abstract/document/9762223/"
-    },
-    {
-      "title": "When Shall I Be Empathetic? The Utility of Empathetic Parameter Estimation in Multi-Agent Interactions",
-      "authors": "Y. Chen, L. Zhang, T. Merry, S. Amatya, W. Zhang, Y. Ren",
-      "venue": "IEEE International Conference on Robotics and Automation (ICRA), pp. 2761-2767",
-      "year": 2021,
-      "url": "https://ieeexplore.ieee.org/abstract/document/9561079/"
-    },
-    {
-      "title": "Collision Recovery Control of a Foldable Quadrotor",
-      "authors": "K. Patnaik, S. Mishra, Z. Chase, W. Zhang",
-      "venue": "IEEE/ASME International Conference on Advanced Intelligent Mechatronics (AIM), pp. 418-423",
-      "year": 2021,
-      "url": "https://ieeexplore.ieee.org/document/9517341"
-    },
-    {
-      "title": "Design and Control of SQUEEZE: A Spring-augmented QUadrotor for intEractions with the Environment to squeeZE-and-fly",
-      "authors": "K. Patnaik, S. Mishra, M. Rezayat, W. Zhang",
-      "venue": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), pp. 1364-1370",
-      "year": 2020,
-      "url": "https://ieeexplore.ieee.org/abstract/document/9341730/"
-    },
-    {
-      "title": "Predictive Modeling of Periodic Behavior for Human-Robot Symbiotic Walking",
-      "authors": "G. Clark, J. Campbell, M. Rezayat, W. Zhang, H. Ben Amor",
-      "venue": "IEEE International Conference on Robotics and Automation (ICRA), pp. 7599-7605",
-      "year": 2020,
-      "url": "https://ieeexplore.ieee.org/abstract/document/9196676/"
-    },
-    {
-      "title": "Human Learning and Coordination in Lower-limb Physical Interactions",
-      "authors": "S. Amatya, M. Rezayat, W. Zhang",
-      "venue": "American Control Conference (ACC), pp. 557-562",
-      "year": 2020,
-      "url": "https://ieeexplore.ieee.org/abstract/document/9147738/"
-    },
-    {
-      "title": "Design, Characterization, and Mechanical Programming of Fabric-Reinforced Textile Actuators for a Soft Robotic Hand",
-      "authors": "P. H. Nguyen, F. Lopez-Arellano, W. Zhang, P. Polygerinos",
-      "venue": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), pp. 8312-8317",
-      "year": 2019,
-      "url": "https://ieeexplore.ieee.org/document/8968497"
-    },
-    {
-      "title": "Fabric Soft Poly-Limbs for Physical Assistance of Daily Living Tasks",
-      "authors": "P. H. Nguyen, I. I. Mohd, C. Sparks, F. Arellano, W. Zhang, P. Polygerinos",
-      "venue": "IEEE International Conference on Robotics and Automation (ICRA), pp. 8429-8435",
-      "year": 2019,
-      "url": "https://ieeexplore.ieee.org/abstract/document/8794294/"
-    },
-    {
-      "title": "How Shall I Drive? Interaction Modeling and Motion Planning towards Empathetic and Socially-Graceful Driving",
-      "authors": "Y. Ren, S. Elliott, Y. Wang, Y. Yang, W. Zhang",
-      "venue": "IEEE International Conference on Robotics and Automation (ICRA), pp. 4325-4331",
-      "year": 2019,
-      "url": "https://ieeexplore.ieee.org/abstract/document/8793835/"
-    },
-    {
-      "title": "Dynamic Modeling and Motion Control of a Soft Robotic Arm Segment",
-      "authors": "Z. Qiao, P. H. Nguyen, P. Polygerinos, W. Zhang",
-      "venue": "American Control Conference (ACC), pp. 5438-5443",
-      "year": 2019,
-      "url": "https://ieeexplore.ieee.org/abstract/document/8815212/"
-    },
-    {
-      "title": "Design, Planning, and Control of an Origami-inspired Foldable Quad-rotor",
-      "authors": "D. Yang, S. Mishra, D. M. Aukes, W. Zhang",
-      "venue": "American Control Conference (ACC), pp. 2251-2256",
-      "year": 2019,
-      "url": "https://ieeexplore.ieee.org/abstract/document/8814351/"
-    },
-    {
-      "title": "Design and Control of a Hexacopter with Soft Grasper for Autonomous Object Detection and Grasping",
-      "authors": "S. Mishra, D. Yang, C. Thalman, P. Polygerinos, W. Zhang",
-      "venue": "ASME Dynamic Systems and Control Conference (DSCC)",
-      "year": 2018,
-      "url": "https://asmedigitalcollection.asme.org/DSCC/proceedings-abstract/DSCC2018/51913/V003T36A003/270951"
-    },
-    {
-      "title": "Distributed Planning of Multi-Segment Soft Robotic Arms",
-      "authors": "W. Zhang, P. Polygerinos",
-      "venue": "American Control Conference (ACC), pp. 2096-2101",
-      "year": 2018,
-      "url": "https://ieeexplore.ieee.org/abstract/document/8430682/"
-    },
-    {
-      "title": "Collision-free Trajectory Planning in Human-robot Interaction through Hand Movement Prediction from Vision",
-      "authors": "Y. Wang, X. Ye, Y. Yang, W. Zhang",
-      "venue": "IEEE-RAS International Conference on Humanoid Robots (Humanoids), pp. 305-310",
-      "year": 2017,
-      "url": "https://ieeexplore.ieee.org/abstract/document/8246890/"
-    },
-    {
-      "title": "Who to Blame? Learning and Control Strategies with Information Asymmetry",
-      "authors": "C. Liu, W. Zhang, M. Tomizuka",
-      "venue": "American Control Conference (ACC), pp. 4859-4864",
-      "year": 2016,
-      "url": "https://ieeexplore.ieee.org/abstract/document/7526122/"
-    }
-  ],
-  "courses": [
-    {
-      "code": "EGR433",
-      "title": "Transforms and System Modeling",
-      "semester": "Spring Semester",
-      "description": "This is a senior-level undergraduate class. Students will gain an understanding of the relationships between inputs and outputs in mechanical, electrical, and electro-mechanical systems, as well as learn the fundamental tools for control system analysis and design. Students will be curious about the transforms and modeling concepts, able to connect those concepts to real-world engineering systems, and apply those mathematical tools to improve the engineering systems and create values."
-    },
-    {
-      "code": "EGR556",
-      "title": "System Control and Optimization",
-      "semester": "Fall Semester",
-      "description": "This is a mixed style graduate-level control class. The first part of the class will be lecture-based, and the instructor will introduce fundamental knowledge of state-space modeling and control. The second part features a course project that students will study and apply advanced control techniques to real-world problems, including robotics, energy systems, autonomous vehicles, and chemical process."
-    }
-  ],
-  "outreach": {
-    "description": "The ASU RISE LAB is committed to education and outreach, and the lab has actively participated in various local outreach events. We are excited to showcase our robotics research to anyone who is interested in learning more about it. The lab will open its door annually during ASU Night of the Open Door (late January) and National Robotics Week (mid April). You are also welcome to contact Dr. Zhang if you would like to schedule a tour of the lab outside those events.",
-    "events": [
-      {
-        "name": "National Robotics Week (RoboWeek)",
-        "url": "https://www.nationalroboticsweek.org/",
-        "description": "A series of grassroots events and activities during the month of April aimed at increasing public awareness of the strength and importance of the U.S. robotics industry and of the tremendous social and cultural impact that robotics will have on the future.",
-        "logo": "logopic/NRW.png",
-        "image": "logopic/NRW_fig.JPG"
-      },
-      {
-        "name": "ASU Open Door",
-        "url": "https://opendoor.asu.edu/",
-        "description": "Every year ASU invites the local community to visit any of the five campus locations, allowing visitors to explore the innovative spaces accessible only to ASU students.",
-        "logo": "logopic/NOD.png",
-        "image": "logopic/NOD_fig.JPG"
-      }
-    ]
-  },
-  "contact": {
-    "directorOffice": "Room 331M, Santa Catalina Hall, 7271 E Sonoran Arroyo Mall, Mesa, AZ 85212",
-    "directorPhone": "(480) 727-5276",
-    "labLocation": "Room 179, 6075 S. Innovation Way West, Mesa, AZ 85212",
-    "mapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3334.522851152893!2d-111.68240278526605!3d33.305143880815784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872bad9cfe09788d%3A0x23bab37086dfdb26!2s6075%20Innovation%20Way%20W%2C%20Mesa%2C%20AZ%2085212!5e0!3m2!1sen!2sus!4v1596435460593!5m2!1sen!2sus",
-    "resources": [
-      {
-        "title": "SunCard Access",
-        "description": "Please fill out the ISAAC requests online at poly.engineering.asu.edu/tps-support-services/ and select Dr. Zhang for approval and processing. It usually takes about one week for you to get the access.",
-        "url": "https://poly.engineering.asu.edu/tps-support-services/"
-      },
-      {
-        "title": "Joining the Slack Channel",
-        "description": "Please send an email to Dr. Zhang with the email you want to use for your Slack account to join the team's channel."
-      },
-      {
-        "title": "Lab Server and Printer Access",
-        "description": "Please submit a request to the IT department of the School. Remember to include your full name and ASUrite in your request.",
-        "url": "https://poly.engineering.asu.edu/tps-support-services/"
-      },
-      {
-        "title": "Purchase and Reimbursement",
-        "description": "For purchase requests, complete the purchase request form and send it to Dr. Zhang for approval. For reimbursement, please inform Dr. Zhang and get his approval before making the purchase."
-      },
-      {
-        "title": "Meeting Room Request",
-        "description": "Please send an email to Ms. Becky Montez at bmontez@asu.edu and cc Dr. Zhang for approval."
-      }
-    ]
-  }
+  ]
 }
