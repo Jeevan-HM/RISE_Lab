@@ -2,8 +2,8 @@ import { useEffect, useState, useRef } from 'react';
 import { Routes, Route, Link, NavLink, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronUp, Sun, Moon } from 'lucide-react';
 import { doc, getDoc } from 'firebase/firestore';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { db, auth } from './firebase';
-
 import './index.css';
 import HomePage from './pages/HomePage';
 import ResearchPage from './pages/ResearchPage';
@@ -244,15 +244,7 @@ function EditModeApp({ initialData, onSaved }) {
   }
 
   if (!loggedIn) {
-    return (
-      <div style={{ display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ padding: '2rem', background: 'var(--color-surface)', borderRadius: 'var(--r-md)', textAlign: 'center' }}>
-          <h2 style={{ marginBottom: '1rem' }}>Admin Access</h2>
-          <p style={{ color: 'var(--text-muted)' }}>You must be logged in to access the admin panel.</p>
-          <Link to="/" style={{ color: 'var(--color-gold)', display: 'block', marginTop: '1rem' }}>Return to Site</Link>
-        </div>
-      </div>
-    );
+    return <LoginScreen />;
   }
 
   return (
@@ -262,6 +254,61 @@ function EditModeApp({ initialData, onSaved }) {
         setShowTheme={setShowTheme}
       />
     </EditProvider>
+  );
+}
+
+function LoginScreen() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setError('');
+    setLoading(true);
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+    } catch (err) {
+      setError(err.message || 'Failed to login');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div style={{ display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
+      <div className="glass" style={{ padding: '3rem 2.5rem', width: '100%', maxWidth: '400px', textAlign: 'center' }}>
+        <h2 style={{ marginBottom: '1.5rem', fontSize: '1.8rem' }}>Admin Login</h2>
+        {error && <div style={{ color: 'var(--color-maroon)', marginBottom: '1rem', fontSize: '0.9rem' }}>{error}</div>}
+        <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', textAlign: 'left' }}>
+          <div>
+            <label style={{ display: 'block', marginBottom: '0.4rem', fontSize: '0.9rem', fontWeight: 600 }}>Email</label>
+            <input 
+              type="email" 
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              required 
+              style={{ width: '100%', padding: '0.75rem', borderRadius: 'var(--r-sm)', border: '1px solid var(--color-border)', background: 'var(--color-bg)', color: 'var(--text-primary)' }} 
+            />
+          </div>
+          <div>
+            <label style={{ display: 'block', marginBottom: '0.4rem', fontSize: '0.9rem', fontWeight: 600 }}>Password</label>
+            <input 
+              type="password" 
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              required 
+              style={{ width: '100%', padding: '0.75rem', borderRadius: 'var(--r-sm)', border: '1px solid var(--color-border)', background: 'var(--color-bg)', color: 'var(--text-primary)' }} 
+            />
+          </div>
+          <button type="submit" className="btn btn-primary" disabled={loading} style={{ marginTop: '0.5rem', justifyContent: 'center' }}>
+            {loading ? 'Logging in...' : 'Log In'}
+          </button>
+        </form>
+        <Link to="/" style={{ color: 'var(--color-gold)', display: 'inline-block', marginTop: '1.5rem', fontSize: '0.9rem', fontWeight: 600 }}>← Return to Public Site</Link>
+      </div>
+    </div>
   );
 }
 
