@@ -99,6 +99,15 @@ function ResearchAreaDrawer({ areaIndex }) {
           <Field label="Title" value={proj.title} onChange={v => updateProject(pi, 'title', v)} />
           <div style={{ marginTop: '0.5rem' }}><Field label="Description" value={proj.description} onChange={v => updateProject(pi, 'description', v)} rows={3} /></div>
           <div style={{ marginTop: '0.5rem' }}><Field label="YouTube Embed URL" value={proj.video} onChange={v => updateProject(pi, 'video', v)} /></div>
+          <div style={{ marginTop: '0.5rem' }}>
+            <ImageField
+              label="Project Image"
+              value={proj.image}
+              onChange={v => updateProject(pi, 'image', v)}
+              folder="respic"
+              desc={proj.video ? 'A video is set, so it shows instead of this image. Clear the video URL above to show the image.' : 'Shown beside the project description.'}
+            />
+          </div>
 
           {/* Representative Publications */}
           <div style={{ marginTop: '0.75rem', borderTop: '1px solid var(--color-border)', paddingTop: '0.5rem' }}>
