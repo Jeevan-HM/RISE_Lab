@@ -372,275 +372,6 @@
       "url": "https://www.sciencedirect.com/science/article/pii/S0957415809001767"
     }
   ],
-  "bsStudents": [
-    {
-      "photo": "sundevil.jpg",
-      "info": "Aerospace, Aeronautical and Astronautical Engineering, 2022–",
-      "name": "Matthew Herdegen"
-    },
-    {
-      "info": "Systems Engineering, 2021–",
-      "photo": "sundevil.jpg",
-      "name": "Raj Kodithyala"
-    },
-    {
-      "name": "Colin Fricke",
-      "photo": "Colin_Fricke.jpeg",
-      "info": "Robotics Engineering, 2021–"
-    },
-    {
-      "name": "Ash Srivastava",
-      "photo": "AshSrivastava.jpg",
-      "info": "Computer Science, 2025–"
-    }
-  ],
-  "homeCarouselImages": [
-    "groupphoto.jpg",
-    "jon_robot.jpg",
-    "weija_robot.jpg",
-    "aravind_robot.jpg",
-    "jj_robot.jpg",
-    "mason_robot.jpg",
-    "yousef_robot.jpg",
-    "yogesh_robot.jpg"
-  ],
-  "contact": {
-    "resources": [
-      {
-        "description": "Please fill out the ISAAC requests online at poly.engineering.asu.edu/tps-support-services/ and select Dr. Zhang for approval and processing. It usually takes about one week for you to get the access.",
-        "title": "SunCard Access",
-        "url": "https://poly.engineering.asu.edu/tps-support-services/"
-      },
-      {
-        "description": "Please send an email to Dr. Zhang with the email you want to use for your Slack account to join the team's channel.",
-        "title": "Joining the Slack Channel"
-      },
-      {
-        "description": "Please submit a request to the IT department of the School. Remember to include your full name and ASUrite in your request.",
-        "url": "https://poly.engineering.asu.edu/tps-support-services/",
-        "title": "Lab Server and Printer Access"
-      },
-      {
-        "description": "For purchase requests, complete the purchase request form and send it to Dr. Zhang for approval. For reimbursement, please inform Dr. Zhang and get his approval before making the purchase.",
-        "title": "Purchase and Reimbursement"
-      },
-      {
-        "title": "Meeting Room Request",
-        "description": "Please send an email to Ms. Becky Montez at bmontez@asu.edu and cc Dr. Zhang for approval."
-      }
-    ],
-    "directorOffice": "Room 331M, Santa Catalina Hall, 7271 E Sonoran Arroyo Mall, Mesa, AZ 85212",
-    "labLocation": "Room 179, 6075 S. Innovation Way West, Mesa, AZ 85212",
-    "mapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3334.522851152893!2d-111.68240278526605!3d33.305143880815784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872bad9cfe09788d%3A0x23bab37086dfdb26!2s6075%20Innovation%20Way%20W%2C%20Mesa%2C%20AZ%2085212!5e0!3m2!1sen!2sus!4v1596435460593!5m2!1sen!2sus",
-    "directorPhone": "(480) 727-5276"
-  },
-  "outreach": {
-    "events": [
-      {
-        "name": "National Robotics Week (RoboWeek)",
-        "description": "A series of grassroots events and activities during the month of April aimed at increasing public awareness of the strength and importance of the U.S. robotics industry and of the tremendous social and cultural impact that robotics will have on the future.",
-        "url": "https://www.nationalroboticsweek.org/",
-        "image": "logopic/NRW_fig.JPG",
-        "logo": "logopic/NRW.png"
-      },
-      {
-        "description": "Every year ASU invites the local community to visit any of the five campus locations, allowing visitors to explore the innovative spaces accessible only to ASU students.",
-        "logo": "logopic/NOD.png",
-        "name": "ASU Open Door",
-        "url": "https://opendoor.asu.edu/",
-        "image": "logopic/NOD_fig.JPG"
-      }
-    ],
-    "description": "The ASU RISE LAB is committed to education and outreach, and the lab has actively participated in various local outreach events. We are excited to showcase our robotics research to anyone who is interested in learning more about it. The lab will open its door annually during ASU Night of the Open Door (late January) and National Robotics Week (mid April). You are also welcome to contact Dr. Zhang if you would like to schedule a tour of the lab outside those events."
-  },
-  "director": {
-    "photo": "WL-400450.jpg",
-    "affiliation": "School of Manufacturing Systems and Networks, Ira A. Fulton Schools of Engineering, Arizona State University",
-    "name": "Wenlong Zhang",
-    "title": "Associate Professor and Lab Director",
-    "email": "Wenlong.Zhang@asu.edu",
-    "bio": "Dr. Zhang is an Associate Professor in the School of Manufacturing Systems and Networks at the Ira A. Fulton Schools of Engineering, Arizona State University. He currently serves as the Assistant Director for Research of the School of Manufacturing Systems and Networks. His research interests lie in developing learning and control algorithms for safe and efficient human-robot collaboration, with applications in wearable robotics, soft robotics, and autonomous aerial and ground vehicles. He received his Ph.D. degree in mechanical engineering from the University of California, Berkeley. He is a recipient of an NSF CAREER Award (2020), NSF-CISE Research Initiation Initiative (CRII) Award (2018), and Bisgrove Early Career Faculty Award from Science Foundation Arizona (2016)."
-  },
-  "meta": {
-    "labFullName": "Robotics and Intelligent Systems Laboratory",
-    "shortDescription": "Welcome to the Robotics and Intelligent Systems Laboratory (RISE). We work on design and control of advanced robotic systems, including wearable assistive robots, soft robots, and unmanned aerial vehicles.",
-    "university": "Arizona State University",
-    "labName": "RISE Lab",
-    "description": "The overarching goal of our research is to integrate soft and compliant robot structures with novel learning and control algorithms to enable robots to safely and efficiently collaborate with humans and autonomously operate in challenging environments. Ongoing projects include aerial robotics, soft robotics, and human-robot interaction.",
-    "funders": "We greatly acknowledge the National Science Foundation (NSF), Air Force Office of Scientific Research (AFOSR), Office of Naval Research (ONR), National Aeronautics and Space Administration (NASA), Science Foundation Arizona, Arizona Department of Health Services, Salt River Project, Northrop Grumman Cooperation, and Honeywell Aerospace Technologies, for supporting our past and current research."
-  },
-  "alumniPhd": [
-    {
-      "graduated": "Fall 2024",
-      "name": "Dr. Sunny Amatya",
-      "thesis": "Adaptive Decision-Making through Efficient and Transferable Intent Inference and Motion Planning",
-      "job": "R&D Engineer at FANUC America Corporation"
-    },
-    {
-      "job": "R&D Mechatronic Engineer at Siemens Healthineers",
-      "name": "Dr. S. Mostafa Rezayat Sorkhabadi",
-      "graduated": "Fall 2023",
-      "thesis": "Towards Robot-aided Gait Rehabilitation and Assistance via Characterization and Estimation of Human Locomotion"
-    },
-    {
-      "name": "Dr. Zhi Qiao",
-      "job": "",
-      "graduated": "Fall 2023",
-      "thesis": "Dynamic Modeling, Robust Control and Contact Estimation of Soft Robotics"
-    },
-    {
-      "name": "Dr. Emiliano Quinones Yumbla",
-      "thesis": "Sensing, Modeling, Control and Evaluation of Soft Robots for Wearable Applications",
-      "job": "Faculty at University of Puerto Rico, Carolina",
-      "graduated": "Summer 2023"
-    },
-    {
-      "name": "Dr. Karishma Patnaik",
-      "job": "Faculty at University of Michigan-Dearborn",
-      "thesis": "Design, Control and Trajectory Planning of Reconfigurable Quadrotors",
-      "graduated": "Spring 2023"
-    },
-    {
-      "name": "Dr. Shatadal Mishra",
-      "job": "Systems Research Scientist at Toyota InfoTech R&D Labs",
-      "thesis": "Modeling Human Adaptation with Game-Theoretic Intention Decoding in Human-Robot Interactions",
-      "graduated": "Summer 2021"
-    },
-    {
-      "job": "Faculty at Huazhong University of Science and Technology",
-      "name": "Dr. Yiwei Wang",
-      "thesis": "Modeling Human Adaptation with Game-Theoretic Intention Decoding in Human-Robot Interactions",
-      "graduated": "Spring 2021"
-    },
-    {
-      "name": "Dr. Pham Huy Nguyen",
-      "graduated": "Spring 2020",
-      "job": "Postdoctoral Research Associate at EPFL",
-      "thesis": "Design, Modeling, and Evaluation of Soft Poly-Limbs Toward a New Paradigm of Wearable Continuum Robotic Manipulation for Daily Living Tasks"
-    },
-    {
-      "thesis": "Design, Development, and Evaluation of a Soft-Inflatable Exosuit for Lower Limb Assistance",
-      "name": "Dr. Saivimal Sridar",
-      "job": "Research Engineer at Ottobock Global Research",
-      "graduated": "Spring 2020"
-    },
-    {
-      "name": "Dr. Prudhvi Tej Chinimilli",
-      "graduated": "Fall 2018",
-      "job": "Co-founder and CTO at Zooly Labs",
-      "thesis": "Human Activity Recognition and Control of Wearable Robots"
-    }
-  ],
-  "docStudents": [
-    {
-      "photo": "jebush.jpg",
-      "info": "Systems Engineering, 2020–",
-      "name": "Jonathan Bush",
-      "email": "jebush2@asu.edu"
-    },
-    {
-      "info": "Systems Engineering, 2024–",
-      "photo": "Amirali_Abazari.jpg",
-      "name": "Amirali Abazari"
-    },
-    {
-      "name": "Brian Archambault",
-      "photo": "sundevil.jpg",
-      "info": "R&AS, 2025–"
-    },
-    {
-      "name": "Max Gao",
-      "info": "R&AS, 2025–",
-      "photo": "Max.jpeg",
-      "email": "mgao18@asu.edu",
-      "links": [
-        {
-          "url": "https://www.linkedin.com/in/maxlgao/",
-          "label": "LinkedIn"
-        },
-        {
-          "label": "",
-          "url": ""
-        }
-      ]
-    },
-    {
-      "links": [
-        {
-          "url": "https://www.linkedin.com/in/yizhuang-g/",
-          "label": "LinkedIn"
-        },
-        {
-          "url": "https://yzgarrard.github.io/",
-          "label": "Website"
-        }
-      ],
-      "name": "Yizhuang Garrard",
-      "photo": "YiZhuang.jpg",
-      "info": "Systems Engineering, 2019–"
-    },
-    {
-      "photo": "val.png",
-      "links": [
-        {
-          "label": "LinkedIn",
-          "url": "https://www.linkedin.com/in/valentin-gaucher-415514187"
-        }
-      ],
-      "name": "Valentin Gaucher",
-      "email": "vgaucher@asu.edu",
-      "info": "R&AS, 2024–"
-    },
-    {
-      "photo": "Jahnav.jpg",
-      "links": [
-        {
-          "label": "LinkedIn",
-          "url": "https://www.linkedin.com/in/jahnav-rokalaboina"
-        }
-      ],
-      "info": "Systems Engineering, 2023–",
-      "name": "Jahnav Rokalaboina"
-    },
-    {
-      "name": "Mason Smith",
-      "links": [
-        {
-          "label": "LinkedIn",
-          "url": "http://www.linkedin.com/in/masonowensmith"
-        }
-      ],
-      "info": "Systems Engineering, 2021–",
-      "photo": "Mason.jpg"
-    },
-    {
-      "name": "Yousef Soltanian",
-      "photo": "Yousef_cut.jpg",
-      "info": "Mechanical Engineering, 2021–"
-    },
-    {
-      "name": "Weijia Tao",
-      "photo": "wtao11.jfif",
-      "info": "Systems Engineering, 2021–"
-    },
-    {
-      "name": "Andres Sandoval",
-      "photo": "AndresSandoval.jpeg",
-      "info": "Systems Engineering, 2023–"
-    },
-    {
-      "info": "Robotics and Autonomous Systems",
-      "email": "jhebbalm@asu.edu",
-      "links": [
-        {
-          "url": "https://www.linkedin.com/in/jeevan-h-m",
-          "label": "LinkedIn"
-        }
-      ],
-      "name": "Jeevan Hebbal Manjunath",
-      "photo": "https://raw.githubusercontent.com/Jeevan-HM/RISE_Lab/main/public/images/teampic/1786414275108_headshot.jpg"
-    }
-  ],
   "courses": [
     {
       "semester": "Spring Semester",
@@ -653,18 +384,6 @@
       "code": "EGR556",
       "title": "System Control and Optimization",
       "description": "This is a mixed style graduate-level control class. The first part of the class will be lecture-based, and the instructor will introduce fundamental knowledge of state-space modeling and control. The second part features a course project that students will study and apply advanced control techniques to real-world problems, including robotics, energy systems, autonomous vehicles, and chemical process."
-    }
-  ],
-  "alumniNri": [
-    {
-      "title": "Undergrad Student (Computer Science), Arizona State University — FURI Spring & Fall 2020",
-      "note": "2019–2020",
-      "name": "Zachary Hoffman"
-    },
-    {
-      "note": "Summer 2020",
-      "name": "Grace Zhang",
-      "title": "Undergrad Student (Computer Science), Stanford University — NSF REU Student"
     }
   ],
   "confPubs": [
@@ -921,166 +640,6 @@
       "url": "https://ieeexplore.ieee.org/abstract/document/7526122/"
     }
   ],
-  "alumniMsc": [
-    {
-      "note": "Fa24, now at ASU",
-      "name": "Yogesh Kumar"
-    },
-    {
-      "note": "Sp24, now at Freeport-McMoRan",
-      "name": "Harinee Kannan"
-    },
-    {
-      "note": "Sp24, now at Southwest Research Institute",
-      "name": "Madelyn Molnar"
-    },
-    {
-      "note": "Su23, now PhD student at ASU",
-      "name": "Jahnav Rokalaboina"
-    },
-    {
-      "note": "Sp23, now at Komatsu Mining",
-      "name": "Aravind Adhith P.S."
-    },
-    {
-      "note": "Sp23",
-      "name": "Qinchen Zha"
-    },
-    {
-      "name": "Reed Axman",
-      "note": "Sp22, now at MathWorks"
-    },
-    {
-      "name": "Kyle Stewart",
-      "note": "Sp22, now at Applied Medical"
-    },
-    {
-      "note": "Su21, now at Foxconn Industrial Internet",
-      "name": "Danish Faraaz Syed"
-    },
-    {
-      "note": "Su21, now PhD student at KTH",
-      "name": "Ibrahim Hasan"
-    },
-    {
-      "name": "Mason Smith",
-      "note": "Sp21, now PhD student at ASU"
-    },
-    {
-      "name": "Pallavi Shintre",
-      "note": "Fa20, now at Honeywell"
-    },
-    {
-      "note": "Fa20, now at Automotus",
-      "name": "Shubham Turakhia"
-    },
-    {
-      "name": "Hansol Moon",
-      "note": "Sp20, now at ASML"
-    },
-    {
-      "name": "Jonathan Bush",
-      "note": "Sp20, now PhD student at ASU"
-    },
-    {
-      "name": "Kashyap Sathyamurthy",
-      "note": "Sp20, now at Volansi"
-    },
-    {
-      "name": "Souvik Poddar",
-      "note": "Sp20, now PhD student at SUNY Buffalo"
-    },
-    {
-      "name": "Francisco Javier Lopez Arellano",
-      "note": "Sp19"
-    },
-    {
-      "name": "Rebecca Bell",
-      "note": "Sp19"
-    },
-    {
-      "name": "Karthik Kambam",
-      "note": "Fa18, now at Mitsubishi Electric Research Laboratories"
-    },
-    {
-      "name": "Vaibhav Jhawar",
-      "note": "Su18"
-    },
-    {
-      "name": "Mostafa Rezayat",
-      "note": "Su18"
-    }
-  ],
-  "msStudents": [
-    {
-      "photo": "sundevil.jpg",
-      "info": "Aerospace Engineering, 2023–",
-      "links": [
-        {
-          "url": "https://www.linkedin.com/in/tolemy-nibi/",
-          "label": "LinkedIn"
-        }
-      ],
-      "name": "Tolemy Nibi"
-    },
-    {
-      "info": "Mechanical Engineering",
-      "photo": "Bill.jpeg",
-      "name": "Bill Nguyen"
-    },
-    {
-      "name": "Jesse Cabrera",
-      "photo": "sundevil.jpg",
-      "info": ""
-    }
-  ],
-  "news": [
-    {
-      "headline": "\"What If I'm Wrong? Team Performance and Trustworthiness When Modeling Risk-Sensitivity in Human–Robot Collaboration\" was accepted to ACM THRI.",
-      "date": "February 2026"
-    },
-    {
-      "headline": "Congratulations to new PhD graduate Dr. Sunny Amatya.",
-      "date": "October 2024"
-    },
-    {
-      "headline": "Congratulations to new PhD graduate Dr. Mostafa Rezayat.",
-      "date": "December 2023"
-    },
-    {
-      "headline": "Congratulations to new PhD graduate Dr. Zhi Qiao.",
-      "date": "October 2023"
-    },
-    {
-      "date": "August 2023",
-      "headline": "Congratulations to new PhD graduate Dr. Emiliano Quinones Yumbla."
-    },
-    {
-      "headline": "Congratulations to new PhD graduate Dr. Karishma Patnaik.",
-      "date": "May 2023"
-    },
-    {
-      "date": "December 2021",
-      "headline": "We recently published two review papers, one on flexible multirotor UAVs and the other on wearable soft robots. Check the Publications page for more details!"
-    },
-    {
-      "date": "July 2021",
-      "headline": "Congratulations to the new PhD graduates: Dr. Yiwei Wang and Dr. Shatadal Mishra!"
-    },
-    {
-      "date": "July 2020",
-      "headline": "Congratulations to the new PhD graduates: Dr. Pham Huy Nguyen and Dr. Saivimal Sridar!"
-    },
-    {
-      "headline": "Dr. Zhang has received an NSF CAREER Award to develop new algorithms for physical human-robot interaction.",
-      "date": "March 2020"
-    },
-    {
-      "headline": "Congratulations on the new BS and MS graduates from the lab: Francisco, Becca, Jon, Daniel, and Jose!",
-      "date": "May 2019"
-    }
-  ],
-  "patentPubs": [],
   "alumniBS": [
     {
       "note": "Spring 2024",
@@ -1171,8 +730,8 @@
               "url": "https://ieeexplore.ieee.org/document/11128035"
             },
             {
-              "title": "Adaptive attitude control for foldable quadrotors",
-              "url": "https://ieeexplore.ieee.org/abstract/document/10005814"
+              "title": "Dual Quaternion-Based Contact Modeling for Fast and Smooth Collision Recovery of Quadrotors",
+              "url": "https://ieeexplore.ieee.org/document/11569027"
             }
           ]
         }
@@ -1272,5 +831,446 @@
       ],
       "icon": "Users"
     }
-  ]
+  ],
+  "meta": {
+    "labFullName": "Robotics and Intelligent Systems Laboratory",
+    "shortDescription": "Welcome to the Robotics and Intelligent Systems Laboratory (RISE). We work on design and control of advanced robotic systems, including wearable assistive robots, soft robots, and unmanned aerial vehicles.",
+    "university": "Arizona State University",
+    "labName": "RISE Lab",
+    "description": "The overarching goal of our research is to integrate soft and compliant robot structures with novel learning and control algorithms to enable robots to safely and efficiently collaborate with humans and autonomously operate in challenging environments. Ongoing projects include aerial robotics, soft robotics, and human-robot interaction.",
+    "funders": "We greatly acknowledge the National Science Foundation (NSF), Air Force Office of Scientific Research (AFOSR), Office of Naval Research (ONR), National Aeronautics and Space Administration (NASA), Science Foundation Arizona, Arizona Department of Health Services, Salt River Project, Northrop Grumman Cooperation, and Honeywell Aerospace Technologies, for supporting our past and current research."
+  },
+  "homeCarouselImages": [
+    "groupphoto.jpg",
+    "jon_robot.jpg",
+    "weija_robot.jpg",
+    "aravind_robot.jpg",
+    "jj_robot.jpg",
+    "mason_robot.jpg",
+    "yousef_robot.jpg",
+    "yogesh_robot.jpg"
+  ],
+  "docStudents": [
+    {
+      "photo": "jebush.jpg",
+      "info": "Systems Engineering, 2020–",
+      "name": "Jonathan Bush",
+      "email": "jebush2@asu.edu"
+    },
+    {
+      "info": "Systems Engineering, 2024–",
+      "photo": "Amirali_Abazari.jpg",
+      "name": "Amirali Abazari"
+    },
+    {
+      "name": "Brian Archambault",
+      "photo": "sundevil.jpg",
+      "info": "R&AS, 2025–"
+    },
+    {
+      "name": "Max Gao",
+      "info": "R&AS, 2025–",
+      "photo": "Max.jpeg",
+      "email": "mgao18@asu.edu",
+      "links": [
+        {
+          "url": "https://www.linkedin.com/in/maxlgao/",
+          "label": "LinkedIn"
+        },
+        {
+          "label": "",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "links": [
+        {
+          "url": "https://www.linkedin.com/in/yizhuang-g/",
+          "label": "LinkedIn"
+        },
+        {
+          "url": "https://yzgarrard.github.io/",
+          "label": "Website"
+        }
+      ],
+      "name": "Yizhuang Garrard",
+      "photo": "YiZhuang.jpg",
+      "info": "Systems Engineering, 2019–"
+    },
+    {
+      "photo": "val.png",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "url": "https://www.linkedin.com/in/valentin-gaucher-415514187"
+        }
+      ],
+      "name": "Valentin Gaucher",
+      "email": "vgaucher@asu.edu",
+      "info": "R&AS, 2024–"
+    },
+    {
+      "photo": "Jahnav.jpg",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "url": "https://www.linkedin.com/in/jahnav-rokalaboina"
+        }
+      ],
+      "info": "Systems Engineering, 2023–",
+      "name": "Jahnav Rokalaboina"
+    },
+    {
+      "name": "Mason Smith",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "url": "http://www.linkedin.com/in/masonowensmith"
+        }
+      ],
+      "info": "Systems Engineering, 2021–",
+      "photo": "Mason.jpg"
+    },
+    {
+      "name": "Yousef Soltanian",
+      "photo": "Yousef_cut.jpg",
+      "info": "Mechanical Engineering, 2021–"
+    },
+    {
+      "name": "Weijia Tao",
+      "photo": "wtao11.jfif",
+      "info": "Systems Engineering, 2021–"
+    },
+    {
+      "name": "Andres Sandoval",
+      "photo": "AndresSandoval.jpeg",
+      "info": "Systems Engineering, 2023–"
+    },
+    {
+      "info": "Robotics and Autonomous Systems",
+      "email": "jhebbalm@asu.edu",
+      "links": [
+        {
+          "url": "https://www.linkedin.com/in/jeevan-h-m",
+          "label": "LinkedIn"
+        }
+      ],
+      "name": "Jeevan Hebbal Manjunath",
+      "photo": "https://raw.githubusercontent.com/Jeevan-HM/RISE_Lab/main/public/images/teampic/1786414275108_headshot.jpg"
+    }
+  ],
+  "bsStudents": [
+    {
+      "photo": "sundevil.jpg",
+      "info": "Aerospace, Aeronautical and Astronautical Engineering, 2022–",
+      "name": "Matthew Herdegen"
+    },
+    {
+      "info": "Systems Engineering, 2021–",
+      "photo": "sundevil.jpg",
+      "name": "Raj Kodithyala"
+    },
+    {
+      "name": "Colin Fricke",
+      "photo": "Colin_Fricke.jpeg",
+      "info": "Robotics Engineering, 2021–"
+    },
+    {
+      "name": "Ash Srivastava",
+      "photo": "AshSrivastava.jpg",
+      "info": "Computer Science, 2025–"
+    }
+  ],
+  "alumniMsc": [
+    {
+      "note": "Fa24, now at ASU",
+      "name": "Yogesh Kumar"
+    },
+    {
+      "note": "Sp24, now at Freeport-McMoRan",
+      "name": "Harinee Kannan"
+    },
+    {
+      "note": "Sp24, now at Southwest Research Institute",
+      "name": "Madelyn Molnar"
+    },
+    {
+      "note": "Su23, now PhD student at ASU",
+      "name": "Jahnav Rokalaboina"
+    },
+    {
+      "note": "Sp23, now at Komatsu Mining",
+      "name": "Aravind Adhith P.S."
+    },
+    {
+      "note": "Sp23",
+      "name": "Qinchen Zha"
+    },
+    {
+      "name": "Reed Axman",
+      "note": "Sp22, now at MathWorks"
+    },
+    {
+      "name": "Kyle Stewart",
+      "note": "Sp22, now at Applied Medical"
+    },
+    {
+      "note": "Su21, now at Foxconn Industrial Internet",
+      "name": "Danish Faraaz Syed"
+    },
+    {
+      "note": "Su21, now PhD student at KTH",
+      "name": "Ibrahim Hasan"
+    },
+    {
+      "name": "Mason Smith",
+      "note": "Sp21, now PhD student at ASU"
+    },
+    {
+      "name": "Pallavi Shintre",
+      "note": "Fa20, now at Honeywell"
+    },
+    {
+      "note": "Fa20, now at Automotus",
+      "name": "Shubham Turakhia"
+    },
+    {
+      "name": "Hansol Moon",
+      "note": "Sp20, now at ASML"
+    },
+    {
+      "name": "Jonathan Bush",
+      "note": "Sp20, now PhD student at ASU"
+    },
+    {
+      "name": "Kashyap Sathyamurthy",
+      "note": "Sp20, now at Volansi"
+    },
+    {
+      "name": "Souvik Poddar",
+      "note": "Sp20, now PhD student at SUNY Buffalo"
+    },
+    {
+      "name": "Francisco Javier Lopez Arellano",
+      "note": "Sp19"
+    },
+    {
+      "name": "Rebecca Bell",
+      "note": "Sp19"
+    },
+    {
+      "name": "Karthik Kambam",
+      "note": "Fa18, now at Mitsubishi Electric Research Laboratories"
+    },
+    {
+      "name": "Vaibhav Jhawar",
+      "note": "Su18"
+    },
+    {
+      "name": "Mostafa Rezayat",
+      "note": "Su18"
+    }
+  ],
+  "news": [
+    {
+      "headline": "\"What If I'm Wrong? Team Performance and Trustworthiness When Modeling Risk-Sensitivity in Human–Robot Collaboration\" was accepted to ACM THRI.",
+      "date": "February 2026"
+    },
+    {
+      "headline": "Congratulations to new PhD graduate Dr. Sunny Amatya.",
+      "date": "October 2024"
+    },
+    {
+      "headline": "Congratulations to new PhD graduate Dr. Mostafa Rezayat.",
+      "date": "December 2023"
+    },
+    {
+      "headline": "Congratulations to new PhD graduate Dr. Zhi Qiao.",
+      "date": "October 2023"
+    },
+    {
+      "date": "August 2023",
+      "headline": "Congratulations to new PhD graduate Dr. Emiliano Quinones Yumbla."
+    },
+    {
+      "headline": "Congratulations to new PhD graduate Dr. Karishma Patnaik.",
+      "date": "May 2023"
+    },
+    {
+      "date": "December 2021",
+      "headline": "We recently published two review papers, one on flexible multirotor UAVs and the other on wearable soft robots. Check the Publications page for more details!"
+    },
+    {
+      "date": "July 2021",
+      "headline": "Congratulations to the new PhD graduates: Dr. Yiwei Wang and Dr. Shatadal Mishra!"
+    },
+    {
+      "date": "July 2020",
+      "headline": "Congratulations to the new PhD graduates: Dr. Pham Huy Nguyen and Dr. Saivimal Sridar!"
+    },
+    {
+      "headline": "Dr. Zhang has received an NSF CAREER Award to develop new algorithms for physical human-robot interaction.",
+      "date": "March 2020"
+    },
+    {
+      "headline": "Congratulations on the new BS and MS graduates from the lab: Francisco, Becca, Jon, Daniel, and Jose!",
+      "date": "May 2019"
+    }
+  ],
+  "msStudents": [
+    {
+      "photo": "sundevil.jpg",
+      "info": "Aerospace Engineering, 2023–",
+      "links": [
+        {
+          "url": "https://www.linkedin.com/in/tolemy-nibi/",
+          "label": "LinkedIn"
+        }
+      ],
+      "name": "Tolemy Nibi"
+    },
+    {
+      "info": "Mechanical Engineering",
+      "photo": "Bill.jpeg",
+      "name": "Bill Nguyen"
+    },
+    {
+      "name": "Jesse Cabrera",
+      "photo": "sundevil.jpg",
+      "info": ""
+    }
+  ],
+  "patentPubs": [],
+  "alumniPhd": [
+    {
+      "graduated": "Fall 2024",
+      "name": "Dr. Sunny Amatya",
+      "thesis": "Adaptive Decision-Making through Efficient and Transferable Intent Inference and Motion Planning",
+      "job": "R&D Engineer at FANUC America Corporation"
+    },
+    {
+      "job": "R&D Mechatronic Engineer at Siemens Healthineers",
+      "name": "Dr. S. Mostafa Rezayat Sorkhabadi",
+      "graduated": "Fall 2023",
+      "thesis": "Towards Robot-aided Gait Rehabilitation and Assistance via Characterization and Estimation of Human Locomotion"
+    },
+    {
+      "name": "Dr. Zhi Qiao",
+      "job": "",
+      "graduated": "Fall 2023",
+      "thesis": "Dynamic Modeling, Robust Control and Contact Estimation of Soft Robotics"
+    },
+    {
+      "name": "Dr. Emiliano Quinones Yumbla",
+      "thesis": "Sensing, Modeling, Control and Evaluation of Soft Robots for Wearable Applications",
+      "job": "Faculty at University of Puerto Rico, Carolina",
+      "graduated": "Summer 2023"
+    },
+    {
+      "name": "Dr. Karishma Patnaik",
+      "job": "Faculty at University of Michigan-Dearborn",
+      "thesis": "Design, Control and Trajectory Planning of Reconfigurable Quadrotors",
+      "graduated": "Spring 2023"
+    },
+    {
+      "name": "Dr. Shatadal Mishra",
+      "job": "Systems Research Scientist at Toyota InfoTech R&D Labs",
+      "thesis": "Modeling Human Adaptation with Game-Theoretic Intention Decoding in Human-Robot Interactions",
+      "graduated": "Summer 2021"
+    },
+    {
+      "job": "Faculty at Huazhong University of Science and Technology",
+      "name": "Dr. Yiwei Wang",
+      "thesis": "Modeling Human Adaptation with Game-Theoretic Intention Decoding in Human-Robot Interactions",
+      "graduated": "Spring 2021"
+    },
+    {
+      "name": "Dr. Pham Huy Nguyen",
+      "graduated": "Spring 2020",
+      "job": "Postdoctoral Research Associate at EPFL",
+      "thesis": "Design, Modeling, and Evaluation of Soft Poly-Limbs Toward a New Paradigm of Wearable Continuum Robotic Manipulation for Daily Living Tasks"
+    },
+    {
+      "thesis": "Design, Development, and Evaluation of a Soft-Inflatable Exosuit for Lower Limb Assistance",
+      "name": "Dr. Saivimal Sridar",
+      "job": "Research Engineer at Ottobock Global Research",
+      "graduated": "Spring 2020"
+    },
+    {
+      "name": "Dr. Prudhvi Tej Chinimilli",
+      "graduated": "Fall 2018",
+      "job": "Co-founder and CTO at Zooly Labs",
+      "thesis": "Human Activity Recognition and Control of Wearable Robots"
+    }
+  ],
+  "director": {
+    "photo": "WL-400450.jpg",
+    "affiliation": "School of Manufacturing Systems and Networks, Ira A. Fulton Schools of Engineering, Arizona State University",
+    "name": "Wenlong Zhang",
+    "title": "Associate Professor and Lab Director",
+    "email": "Wenlong.Zhang@asu.edu",
+    "bio": "Dr. Zhang is an Associate Professor in the School of Manufacturing Systems and Networks at the Ira A. Fulton Schools of Engineering, Arizona State University. He currently serves as the Assistant Director for Research of the School of Manufacturing Systems and Networks. His research interests lie in developing learning and control algorithms for safe and efficient human-robot collaboration, with applications in wearable robotics, soft robotics, and autonomous aerial and ground vehicles. He received his Ph.D. degree in mechanical engineering from the University of California, Berkeley. He is a recipient of an NSF CAREER Award (2020), NSF-CISE Research Initiation Initiative (CRII) Award (2018), and Bisgrove Early Career Faculty Award from Science Foundation Arizona (2016)."
+  },
+  "outreach": {
+    "events": [
+      {
+        "name": "National Robotics Week (RoboWeek)",
+        "description": "A series of grassroots events and activities during the month of April aimed at increasing public awareness of the strength and importance of the U.S. robotics industry and of the tremendous social and cultural impact that robotics will have on the future.",
+        "url": "https://www.nationalroboticsweek.org/",
+        "image": "logopic/NRW_fig.JPG",
+        "logo": "logopic/NRW.png"
+      },
+      {
+        "description": "Every year ASU invites the local community to visit any of the five campus locations, allowing visitors to explore the innovative spaces accessible only to ASU students.",
+        "logo": "logopic/NOD.png",
+        "name": "ASU Open Door",
+        "url": "https://opendoor.asu.edu/",
+        "image": "logopic/NOD_fig.JPG"
+      }
+    ],
+    "description": "The ASU RISE LAB is committed to education and outreach, and the lab has actively participated in various local outreach events. We are excited to showcase our robotics research to anyone who is interested in learning more about it. The lab will open its door annually during ASU Night of the Open Door (late January) and National Robotics Week (mid April). You are also welcome to contact Dr. Zhang if you would like to schedule a tour of the lab outside those events."
+  },
+  "alumniNri": [
+    {
+      "title": "Undergrad Student (Computer Science), Arizona State University — FURI Spring & Fall 2020",
+      "note": "2019–2020",
+      "name": "Zachary Hoffman"
+    },
+    {
+      "note": "Summer 2020",
+      "name": "Grace Zhang",
+      "title": "Undergrad Student (Computer Science), Stanford University — NSF REU Student"
+    }
+  ],
+  "contact": {
+    "resources": [
+      {
+        "description": "Please fill out the ISAAC requests online at poly.engineering.asu.edu/tps-support-services/ and select Dr. Zhang for approval and processing. It usually takes about one week for you to get the access.",
+        "title": "SunCard Access",
+        "url": "https://poly.engineering.asu.edu/tps-support-services/"
+      },
+      {
+        "description": "Please send an email to Dr. Zhang with the email you want to use for your Slack account to join the team's channel.",
+        "title": "Joining the Slack Channel"
+      },
+      {
+        "description": "Please submit a request to the IT department of the School. Remember to include your full name and ASUrite in your request.",
+        "url": "https://poly.engineering.asu.edu/tps-support-services/",
+        "title": "Lab Server and Printer Access"
+      },
+      {
+        "description": "For purchase requests, complete the purchase request form and send it to Dr. Zhang for approval. For reimbursement, please inform Dr. Zhang and get his approval before making the purchase.",
+        "title": "Purchase and Reimbursement"
+      },
+      {
+        "title": "Meeting Room Request",
+        "description": "Please send an email to Ms. Becky Montez at bmontez@asu.edu and cc Dr. Zhang for approval."
+      }
+    ],
+    "directorOffice": "Room 331M, Santa Catalina Hall, 7271 E Sonoran Arroyo Mall, Mesa, AZ 85212",
+    "labLocation": "Room 179, 6075 S. Innovation Way West, Mesa, AZ 85212",
+    "mapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3334.522851152893!2d-111.68240278526605!3d33.305143880815784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872bad9cfe09788d%3A0x23bab37086dfdb26!2s6075%20Innovation%20Way%20W%2C%20Mesa%2C%20AZ%2085212!5e0!3m2!1sen!2sus!4v1596435460593!5m2!1sen!2sus",
+    "directorPhone": "(480) 727-5276"
+  }
 }
