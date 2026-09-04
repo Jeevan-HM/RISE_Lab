@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Mail, Plus, Pencil, Check, X, ArrowLeft, ArrowRight } from 'lucide-react';
 import { useEdit } from '../../context/EditContext';
 import { Field, ImageField, LinksField } from '../../components/DrawerFields';
@@ -131,6 +131,9 @@ function EditableMemberCard({ member, onChange, onRemove, index, total, onMove, 
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(member);
 
+  // Sync draft if the underlying member changes (e.g. array shifted after a deletion/move)
+  useEffect(() => { setDraft(member); }, [member]);
+
   const save = () => { onChange(draft); setEditing(false); };
   const cancel = () => { setDraft(member); setEditing(false); };
 
@@ -143,7 +146,10 @@ function EditableMemberCard({ member, onChange, onRemove, index, total, onMove, 
         <ImageField label="Photo" value={draft.photo || ''} onChange={v => setDraft(d => ({ ...d, photo: v }))} folder="teampic" />
         <LinksField label="Other Links" value={draft.links} onChange={v => setDraft(d => ({ ...d, links: v }))} desc="LinkedIn, personal website, Google Scholar, etc." />
 
-        <MoveCategorySelect currentField={currentField} onMoveToSection={onMoveToSection} />
+        <MoveCategorySelect currentField={currentField} onMoveToSection={(val) => {
+          setEditing(false);
+          onMoveToSection(val);
+        }} />
 
         <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.25rem', justifyContent: 'flex-end' }}>
           <button onClick={cancel} style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--r-sm)', padding: '5px 10px', fontSize: '0.8rem', cursor: 'pointer', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
@@ -153,8 +159,8 @@ function EditableMemberCard({ member, onChange, onRemove, index, total, onMove, 
             <Check size={13} /> Save
           </button>
         </div>
-        <button onClick={onRemove} style={{ fontSize: '0.72rem', color: '#c0392b', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: '2px 0' }}>
-          🗑 Remove member
+        <button onClick={() => { setEditing(false); onRemove(); }} style={{ fontSize: '0.72rem', color: '#c0392b', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: '2px 0' }}>
+          🗑 Remove
         </button>
       </div>
     );
@@ -245,6 +251,9 @@ function EditableAlumniItem({ item, kind, onChange, onRemove, index, total, onMo
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(item);
 
+  // Sync draft if the underlying item changes (e.g. array shifted after a deletion/move)
+  useEffect(() => { setDraft(item); }, [item]);
+
   const save = () => { onChange(draft); setEditing(false); };
   const cancel = () => { setDraft(item); setEditing(false); };
 
@@ -268,7 +277,10 @@ function EditableAlumniItem({ item, kind, onChange, onRemove, index, total, onMo
         <Field label="Email" value={draft.email || ''} onChange={v => setDraft(d => ({ ...d, email: v }))} />
         <LinksField label="Other Links" value={draft.links} onChange={v => setDraft(d => ({ ...d, links: v }))} desc="LinkedIn, personal website, Google Scholar, etc." />
 
-        <MoveCategorySelect currentField={currentField} onMoveToSection={onMoveToSection} />
+        <MoveCategorySelect currentField={currentField} onMoveToSection={(val) => {
+          setEditing(false);
+          onMoveToSection(val);
+        }} />
 
         <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.25rem', justifyContent: 'flex-end' }}>
           <button onClick={cancel} style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--r-sm)', padding: '5px 10px', fontSize: '0.8rem', cursor: 'pointer', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
@@ -278,7 +290,7 @@ function EditableAlumniItem({ item, kind, onChange, onRemove, index, total, onMo
             <Check size={13} /> Save
           </button>
         </div>
-        <button onClick={onRemove} style={{ fontSize: '0.72rem', color: '#c0392b', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: '2px 0' }}>
+        <button onClick={() => { setEditing(false); onRemove(); }} style={{ fontSize: '0.72rem', color: '#c0392b', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: '2px 0' }}>
           🗑 Remove
         </button>
       </div>
