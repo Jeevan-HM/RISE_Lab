@@ -39,6 +39,23 @@ export function EditProvider({ initialData, onSaved, children }) {
     setDirtyFlag(true);
   }, []);
 
+  const moveItemBetweenSections = useCallback((fromField, toField, itemIndex) => {
+    setLiveData(prev => {
+      const next = JSON.parse(JSON.stringify(prev));
+      const sourceList = next[fromField] || [];
+      const targetList = next[toField] || [];
+      if (itemIndex >= 0 && itemIndex < sourceList.length) {
+        const [item] = sourceList.splice(itemIndex, 1);
+        targetList.push(item);
+        next[fromField] = sourceList;
+        next[toField] = targetList;
+      }
+      return next;
+    });
+    isDirty.current = true;
+    setDirtyFlag(true);
+  }, []);
+
   const openPanel = useCallback((config) => {
     setActivePanel(config); // config = { title, content }
   }, []);
@@ -89,6 +106,7 @@ export function EditProvider({ initialData, onSaved, children }) {
       setLiveData,
       updateField,
       updateSection,
+      moveItemBetweenSections,
       activePanel,
       openPanel,
       closePanel,

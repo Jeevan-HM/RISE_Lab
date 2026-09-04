@@ -66,7 +66,7 @@ function SectionLabel({ children, count }) {
 }
 
 /* ── Inline-editable member card ────────────────────────── */
-function EditableMemberCard({ member, onChange, onRemove, index, total, onMove }) {
+function EditableMemberCard({ member, onChange, onRemove, index, total, onMove, currentField, onMoveToSection }) {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(member);
 
@@ -81,6 +81,28 @@ function EditableMemberCard({ member, onChange, onRemove, index, total, onMove }
         <Field label="Email" value={draft.email || ''} onChange={v => setDraft(d => ({ ...d, email: v }))} />
         <ImageField label="Photo" value={draft.photo || ''} onChange={v => setDraft(d => ({ ...d, photo: v }))} folder="teampic" />
         <LinksField label="Other Links" value={draft.links} onChange={v => setDraft(d => ({ ...d, links: v }))} desc="LinkedIn, personal website, Google Scholar, etc." />
+        
+        <div className="admin-field" style={{ marginTop: '0.5rem' }}>
+          <label>Move to Category</label>
+          <select 
+            value={currentField}
+            onChange={(e) => {
+              if (e.target.value !== currentField) {
+                onMoveToSection(e.target.value);
+              }
+            }}
+          >
+            <option value="postdocStudents">Post-Doctoral Researchers</option>
+            <option value="docStudents">PhD Students</option>
+            <option value="msStudents">MS Students</option>
+            <option value="bsStudents">Undergraduate Students</option>
+            <option value="alumniPhd">PhD Alumni</option>
+            <option value="alumniMsc">MS Alumni</option>
+            <option value="alumniBS">BS/Undergrad Alumni</option>
+            <option value="alumniNri">Research Visitors</option>
+          </select>
+        </div>
+
         <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.25rem', justifyContent: 'flex-end' }}>
           <button onClick={cancel} style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--r-sm)', padding: '5px 10px', fontSize: '0.8rem', cursor: 'pointer', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
             <X size={13} /> Cancel
@@ -137,7 +159,7 @@ function EditableMemberCard({ member, onChange, onRemove, index, total, onMove }
 
 /* ── Editable grid section for a student group ──────────── */
 function EditableStudentSection({ field, label }) {
-  const { liveData, updateSection } = useEdit();
+  const { liveData, updateSection, moveItemBetweenSections } = useEdit();
   const items = liveData[field] || [];
 
   const update = (i, newMember) => updateSection(field, items.map((m, idx) => idx === i ? newMember : m));
@@ -163,7 +185,8 @@ function EditableStudentSection({ field, label }) {
       <div className="grid-4 stagger-children">
         {items.map((m, i) => (
           <EditableMemberCard key={i} member={m} onChange={v => update(i, v)} onRemove={() => remove(i)}
-            index={i} total={items.length} onMove={move} />
+            index={i} total={items.length} onMove={move}
+            currentField={field} onMoveToSection={(toField) => moveItemBetweenSections(field, toField, i)} />
         ))}
         {items.length === 0 && (
           <div style={{ gridColumn: '1 / -1', color: 'var(--text-muted)', fontSize: '0.9rem', fontStyle: 'italic', padding: '1rem 0' }}>
@@ -176,7 +199,7 @@ function EditableStudentSection({ field, label }) {
 }
 
 /* ── Inline-editable alumni item ────────────────────────── */
-function EditableAlumniItem({ item, kind, onChange, onRemove, index, total, onMove }) {
+function EditableAlumniItem({ item, kind, onChange, onRemove, index, total, onMove, currentField, onMoveToSection }) {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(item);
 
@@ -202,6 +225,28 @@ function EditableAlumniItem({ item, kind, onChange, onRemove, index, total, onMo
         )}
         <Field label="Email" value={draft.email || ''} onChange={v => setDraft(d => ({ ...d, email: v }))} />
         <LinksField label="Other Links" value={draft.links} onChange={v => setDraft(d => ({ ...d, links: v }))} desc="LinkedIn, personal website, Google Scholar, etc." />
+        
+        <div className="admin-field" style={{ marginTop: '0.5rem' }}>
+          <label>Move to Category</label>
+          <select 
+            value={currentField}
+            onChange={(e) => {
+              if (e.target.value !== currentField) {
+                onMoveToSection(e.target.value);
+              }
+            }}
+          >
+            <option value="postdocStudents">Post-Doctoral Researchers</option>
+            <option value="docStudents">PhD Students</option>
+            <option value="msStudents">MS Students</option>
+            <option value="bsStudents">Undergraduate Students</option>
+            <option value="alumniPhd">PhD Alumni</option>
+            <option value="alumniMsc">MS Alumni</option>
+            <option value="alumniBS">BS/Undergrad Alumni</option>
+            <option value="alumniNri">Research Visitors</option>
+          </select>
+        </div>
+
         <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.25rem', justifyContent: 'flex-end' }}>
           <button onClick={cancel} style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--r-sm)', padding: '5px 10px', fontSize: '0.8rem', cursor: 'pointer', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
             <X size={13} /> Cancel
@@ -279,7 +324,7 @@ function EditableAlumniItem({ item, kind, onChange, onRemove, index, total, onMo
 
 /* ── Alumni section (editable) ──────────────────────────── */
 function AlumniSection({ data }) {
-  const { updateSection } = useEdit();
+  const { updateSection, moveItemBetweenSections } = useEdit();
   const [tab, setTab] = useState('phd');
   const tabs = [
     { id: 'phd', field: 'alumniPhd', label: 'PhD Alumni', kind: 'phd' },
@@ -323,7 +368,8 @@ function AlumniSection({ data }) {
       <div className="grid-4 stagger-children" style={{ marginTop: '1.25rem' }}>
         {items.map((a, i) => (
           <EditableAlumniItem key={i} item={a} kind={active.kind} onChange={v => update(i, v)} onRemove={() => remove(i)}
-            index={i} total={items.length} onMove={move} />
+            index={i} total={items.length} onMove={move}
+            currentField={active.field} onMoveToSection={(toField) => moveItemBetweenSections(active.field, toField, i)} />
         ))}
         {items.length === 0 && (
           <div style={{ color: 'var(--text-muted)', fontSize: '0.9rem', fontStyle: 'italic', padding: '1rem 0' }}>

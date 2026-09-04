@@ -102,7 +102,7 @@ export function ImageField({ label, value, onChange, folder = '', desc }) {
           )}
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', flex: 1 }}>
-          <div style={{ display: 'flex', gap: '0.5rem' }}>
+          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
             <button
               type="button"
               className="btn-add"
@@ -149,14 +149,14 @@ export function LinksField({ label = 'Links', value, onChange, desc }) {
               value={l.label || ''}
               onChange={e => update(i, 'label', e.target.value)}
               placeholder="Label (e.g. LinkedIn)"
-              style={{ flex: '0 0 38%' }}
+              style={{ flex: '0 0 38%', minWidth: 0 }}
             />
             <input
               type="text"
               value={l.url || ''}
               onChange={e => update(i, 'url', e.target.value)}
               placeholder="https://…"
-              style={{ flex: 1 }}
+              style={{ flex: 1, minWidth: 0 }}
             />
             <button
               type="button"
