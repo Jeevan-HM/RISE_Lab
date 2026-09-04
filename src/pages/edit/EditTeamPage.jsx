@@ -46,6 +46,67 @@ function ReorderArrows({ index, total, onMove }) {
   );
 }
 
+/* ── Move-between-levels dropdown (current team + alumni) ── */
+const CATEGORY_GROUPS = [
+  {
+    label: 'Current Team',
+    options: [
+      ['postdocStudents', 'Post-Doctoral Researchers'],
+      ['docStudents', 'PhD Students'],
+      ['msStudents', 'MS Students'],
+      ['bsStudents', 'Undergraduate Students'],
+    ],
+  },
+  {
+    label: 'Alumni',
+    options: [
+      ['alumniPhd', 'PhD Alumni'],
+      ['alumniMsc', 'MS Alumni'],
+      ['alumniBS', 'BS/Undergrad Alumni'],
+      ['alumniNri', 'Research Visitors'],
+    ],
+  },
+];
+
+function MoveCategorySelect({ currentField, onMoveToSection }) {
+  return (
+    <div className="admin-field" style={{ marginTop: '0.5rem' }}>
+      <label>Level / Category</label>
+      <select
+        value={currentField}
+        onChange={(e) => {
+          if (e.target.value !== currentField) onMoveToSection(e.target.value);
+        }}
+      >
+        {CATEGORY_GROUPS.map(g => (
+          <optgroup key={g.label} label={g.label}>
+            {g.options.map(([val, text]) => (
+              <option key={val} value={val}>{text}</option>
+            ))}
+          </optgroup>
+        ))}
+      </select>
+      <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', margin: '4px 0 0' }}>
+        Changing this moves the person to that section (and to the Alumni tab if you pick an alumni level). Save to keep the change.
+      </p>
+    </div>
+  );
+}
+
+/* ── Shared style for the expanded inline editor ─────────── */
+const EDIT_CARD_STYLE = {
+  border: '2px solid var(--color-maroon)',
+  padding: '1.25rem',
+  gap: '0.5rem',
+  display: 'flex',
+  flexDirection: 'column',
+  gridColumn: '1 / -1',
+  overflow: 'visible',
+  maxWidth: '620px',
+  margin: '0 auto',
+  width: '100%',
+};
+
 /* ── Reusable section-header label ──────────────────────── */
 function SectionLabel({ children, count }) {
   return (
@@ -75,33 +136,14 @@ function EditableMemberCard({ member, onChange, onRemove, index, total, onMove, 
 
   if (editing) {
     return (
-      <div className="team-card" style={{ border: '2px solid var(--color-maroon)', padding: '1rem', gap: '0.5rem', display: 'flex', flexDirection: 'column' }}>
+      <div className="team-card" style={EDIT_CARD_STYLE}>
         <Field label="Name" value={draft.name} onChange={v => setDraft(d => ({ ...d, name: v }))} />
         <Field label="Info / Role" value={draft.info || ''} onChange={v => setDraft(d => ({ ...d, info: v }))} />
         <Field label="Email" value={draft.email || ''} onChange={v => setDraft(d => ({ ...d, email: v }))} />
         <ImageField label="Photo" value={draft.photo || ''} onChange={v => setDraft(d => ({ ...d, photo: v }))} folder="teampic" />
         <LinksField label="Other Links" value={draft.links} onChange={v => setDraft(d => ({ ...d, links: v }))} desc="LinkedIn, personal website, Google Scholar, etc." />
-        
-        <div className="admin-field" style={{ marginTop: '0.5rem' }}>
-          <label>Move to Category</label>
-          <select 
-            value={currentField}
-            onChange={(e) => {
-              if (e.target.value !== currentField) {
-                onMoveToSection(e.target.value);
-              }
-            }}
-          >
-            <option value="postdocStudents">Post-Doctoral Researchers</option>
-            <option value="docStudents">PhD Students</option>
-            <option value="msStudents">MS Students</option>
-            <option value="bsStudents">Undergraduate Students</option>
-            <option value="alumniPhd">PhD Alumni</option>
-            <option value="alumniMsc">MS Alumni</option>
-            <option value="alumniBS">BS/Undergrad Alumni</option>
-            <option value="alumniNri">Research Visitors</option>
-          </select>
-        </div>
+
+        <MoveCategorySelect currentField={currentField} onMoveToSection={onMoveToSection} />
 
         <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.25rem', justifyContent: 'flex-end' }}>
           <button onClick={cancel} style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--r-sm)', padding: '5px 10px', fontSize: '0.8rem', cursor: 'pointer', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
@@ -208,7 +250,7 @@ function EditableAlumniItem({ item, kind, onChange, onRemove, index, total, onMo
 
   if (editing) {
     return (
-      <div className="team-card" style={{ border: '2px solid var(--color-maroon)', padding: '1rem', gap: '0.5rem', display: 'flex', flexDirection: 'column' }}>
+      <div className="team-card" style={EDIT_CARD_STYLE}>
         <Field label="Name" value={draft.name} onChange={v => setDraft(d => ({ ...d, name: v }))} />
         <ImageField label="Photo" value={draft.photo || ''} onChange={v => setDraft(d => ({ ...d, photo: v }))} folder="teampic" />
         {kind === 'phd' ? (
@@ -225,27 +267,8 @@ function EditableAlumniItem({ item, kind, onChange, onRemove, index, total, onMo
         )}
         <Field label="Email" value={draft.email || ''} onChange={v => setDraft(d => ({ ...d, email: v }))} />
         <LinksField label="Other Links" value={draft.links} onChange={v => setDraft(d => ({ ...d, links: v }))} desc="LinkedIn, personal website, Google Scholar, etc." />
-        
-        <div className="admin-field" style={{ marginTop: '0.5rem' }}>
-          <label>Move to Category</label>
-          <select 
-            value={currentField}
-            onChange={(e) => {
-              if (e.target.value !== currentField) {
-                onMoveToSection(e.target.value);
-              }
-            }}
-          >
-            <option value="postdocStudents">Post-Doctoral Researchers</option>
-            <option value="docStudents">PhD Students</option>
-            <option value="msStudents">MS Students</option>
-            <option value="bsStudents">Undergraduate Students</option>
-            <option value="alumniPhd">PhD Alumni</option>
-            <option value="alumniMsc">MS Alumni</option>
-            <option value="alumniBS">BS/Undergrad Alumni</option>
-            <option value="alumniNri">Research Visitors</option>
-          </select>
-        </div>
+
+        <MoveCategorySelect currentField={currentField} onMoveToSection={onMoveToSection} />
 
         <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.25rem', justifyContent: 'flex-end' }}>
           <button onClick={cancel} style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--r-sm)', padding: '5px 10px', fontSize: '0.8rem', cursor: 'pointer', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '4px' }}>

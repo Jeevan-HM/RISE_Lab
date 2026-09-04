@@ -143,20 +143,20 @@ export function LinksField({ label = 'Links', value, onChange, desc }) {
       {desc && <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', margin: '0 0 0.5rem' }}>{desc}</p>}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
         {links.map((l, i) => (
-          <div key={i} style={{ display: 'flex', gap: '0.4rem', alignItems: 'center' }}>
+          <div key={i} style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', alignItems: 'center' }}>
             <input
               type="text"
               value={l.label || ''}
               onChange={e => update(i, 'label', e.target.value)}
               placeholder="Label (e.g. LinkedIn)"
-              style={{ flex: '0 0 38%', minWidth: 0 }}
+              style={{ flex: '1 1 120px', minWidth: 0 }}
             />
             <input
               type="text"
               value={l.url || ''}
               onChange={e => update(i, 'url', e.target.value)}
               placeholder="https://…"
-              style={{ flex: 1, minWidth: 0 }}
+              style={{ flex: '3 1 180px', minWidth: 0 }}
             />
             <button
               type="button"
