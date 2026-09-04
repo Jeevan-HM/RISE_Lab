@@ -1399,6 +1399,13 @@
   ],
   "journalPubs": [
     {
+      "title": "Mutual Adaptation and Influence: Survey of Latent Dynamics Models in Human-Robot Interaction",
+      "authors": "MO Smith, S Amatya, SY Soltanian, J Bush, W Zhang",
+      "venue": "TechRxiv",
+      "year": 2025,
+      "url": "https://www.techrxiv.org/articles/preprint/Mutual_Adaptation_and_Influence_Survey_of_Latent_Dynamics_Models_in_Human-Robot_Interaction/21927780"
+    },
+    {
       "title": "Dual Quaternion Based Contact Modeling for Fast and Smooth Collision Recovery of Quadrotors",
       "authors": "V. Gaucher, W. Zhang",
       "venue": "IEEE Control Systems Letters",
