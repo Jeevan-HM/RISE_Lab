@@ -1655,7 +1655,13 @@
       "name": "Aishani Pathak",
       "photo": "sundevil.jpg",
       "email": "ajpathak@asu.edu",
-      "info": "Computer Science"
+      "info": "Computer Science",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "url": "https://www.linkedin.com/in/aishani-pathak-492269168/?isSelfProfile=false"
+        }
+      ]
     }
   ],
   "researchAreas": [
