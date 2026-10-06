@@ -383,6 +383,14 @@
         {
           "url": "https://www.linkedin.com/in/jahnav-rokalaboina",
           "label": "LinkedIn"
+        },
+        {
+          "label": "Portfolio",
+          "url": "https://jrokalab.github.io/"
+        },
+        {
+          "label": "Google Scholar",
+          "url": "https://scholar.google.com/citations?user=8311CTQAAAAJ&hl=en&oi=ao"
         }
       ],
       "info": "Systems Engineering, 2023–",
@@ -407,7 +415,13 @@
     {
       "name": "Andres Sandoval",
       "photo": "AndresSandoval.jpeg",
-      "info": "Systems Engineering, 2023–"
+      "info": "Systems Engineering, 2023–",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "url": "https://www.linkedin.com/in/andres-r-sandoval/"
+        }
+      ]
     },
     {
       "photo": "https://raw.githubusercontent.com/Jeevan-HM/RISE_Lab/main/public/images/teampic/1786414275108_headshot.jpg",
