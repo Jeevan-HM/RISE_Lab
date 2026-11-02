@@ -1051,12 +1051,17 @@ button { font-family: inherit; cursor: pointer; border: none; }
   margin-top: var(--space-2xl);
 }
 .funder-logo {
-  height: 48px;
+  height: 72px;
   width: auto;
-  max-width: 110px;
+  max-width: 160px;
   object-fit: contain;
-  filter: grayscale(0.6) opacity(0.65);
+  filter: grayscale(0.3) opacity(0.8);
   transition: filter var(--t-med), transform var(--t-med);
+}
+.funder-logo--wide {
+  height: auto;
+  width: 180px;
+  max-width: 220px;
 }
 .funder-logo:hover { filter: none; transform: scale(1.08); }
 
